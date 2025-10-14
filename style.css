@@ -67,6 +67,8 @@ body {
     text-align: center;
     box-shadow: 0px 0px 30px black;
     box-sizing: border-box; /* Asegura que padding no agrande el elemento */
+    text-decoration: none;
+
 }
 
 .text {
@@ -106,6 +108,8 @@ body {
     .Accesos {
         font-size: 24px;
         padding: 2%;
+        font-family: sans-serif;
+        text-decoration: none;
     }
 
     .text {
