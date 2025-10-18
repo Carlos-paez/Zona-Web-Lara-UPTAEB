@@ -1,28 +1,29 @@
+/* === Estilos generales del cuerpo (sin cambios disruptivos) === */
 body {
     background-color: lightgrey;
     text-align: center;
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
 }
 
-.baner {
+  /* === Banner === */
+.banner {
     text-align: center;
     display: grid;
     grid-template-columns: 100px auto;
     column-gap: 1rem;
     align-items: center;
     background-image: url("assets/fondo_baner.jpg");
-    background-origin: padding-box;
-    background-clip: padding-box;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     font-style: oblique;
     font-size: 30px;
-    font-family:sans-serif;
     color: dodgerblue;
     -webkit-text-stroke: 1px black;
     border: 6px solid black;
-    padding: 10px; /* Añadido para evitar recortes en móviles */
+    padding: 10px;
 }
 
 .logo {
@@ -31,7 +32,7 @@ body {
 }
 
 .name {
-    grid-column-start: 2; /* Cambiado de 3 a 2 para que funcione en 2 columnas */
+    grid-column-start: 2;
     grid-column-end: 3;
 }
 
@@ -42,7 +43,8 @@ body {
     height: auto;
 }
 
-.targetas {
+  /* === Tarjetas originales (opcional: puedes mantenerlas o eliminarlas si usas el menú) === */
+.cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
@@ -50,37 +52,156 @@ body {
     margin: 30px;
 }
 
-.Accesos {
-    padding: 1% 1%;
+.card-link {
+    padding: 10px;
     background-image: url("assets/Fondo_boton.jpg");
-    background-origin: padding-box;
-    background-clip: padding-box;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     font-style: oblique;
     font-size: 30px;
-    font-family:sans-serif;
     color: black;
     border-radius: 8px;
     width: 100%;
-    height: auto;
     text-align: center;
     box-shadow: 0px 0px 30px black;
-    box-sizing: border-box; /* Asegura que padding no agrande el elemento */
     text-decoration: none;
-
+    display: block;
+    box-sizing: border-box;
 }
 
+  /* === Texto central === */
 .text {
     width: 60%;
     margin: auto;
     text-align: justify;
     font-family: sans-serif;
+    /* MEJORA: Añadido margen inferior para reemplazar el <br> */
+    margin-bottom: 20px;
 }
 
-/* ✅ Responsive: Pantallas pequeñas (móviles) */
+  /* El .text necesita un margen superior para el primer elemento */
+.text:first-of-type {
+    margin-top: 30px;
+}
+
+    /*
+    ╔══════════════════════════════════════════════════════════════╗
+    ║                    MENÚ DESPLEGABLE AISLADO                  ║
+    ╚══════════════════════════════════════════════════════════════╝
+  */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    /* MEJORA: Añadido margen para separarlo del contenido */
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.dropbtn {
+    background-color:cornflowerblue;
+    color: white;
+    padding: 16px 50px;
+    font-size: 16px;
+    font-family: sans-serif;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+    background-color: #3e8e41;
+    outline: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-left: 8px;
+    background-color: white;
+    min-width: 220px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    z-index: 1000;
+    list-style: none;
+    padding: 6px 0;
+    /* MEJORA: Asegura que el texto dentro esté alineado a la izquierda */
+    text-align: left;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 20px;
+    color: black;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 18px;
+    font-style: oblique;
+    background-image: url("assets/Fondo_boton.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 6px;
+    margin: 4px 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.dropdown-content a:hover,
+.dropdown-content a:focus {
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    outline: 2px solid dodgerblue;
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+    display: block;
+}
+
+  /* ============================================== */
+  /* === INICIO DE ESTILOS AÑADIDOS PARA MEJORA === */
+  /* ============================================== */
+
+  /* === Imágenes de Contenido === */
+  /* Nueva clase para reemplazar estilos en línea y <br> */
+.content-image {
+    display: block;
+    width: 60%; /* Coincide con el ancho del texto */
+    max-width: 700px; /* Límite para que no sea demasiado grande */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin: 20px auto 30px auto; /* Centra y añade espacio (top, horizontal, bottom) */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+  /* === Pie de Página === */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 40px;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
+}
+
+  /* ============================================== */
+  /* === FIN DE ESTILOS AÑADIDOS PARA MEJORA ===== */
+  /* ============================================== */
+
+  /* === Responsive: en móviles, abrir abajo === */
 @media (max-width: 768px) {
-    .baner {
+    .banner {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto;
         row-gap: 10px;
@@ -96,23 +217,40 @@ body {
     .name {
         grid-column: 1;
         grid-row: 2;
+        justify-self: center;
     }
 
-    .targetas {
+    .cards {
         grid-template-columns: 1fr;
-        padding: 20px 20px;
+        padding: 20px;
         margin: 20px;
         gap: 20px;
     }
 
-    .Accesos {
+    .card-link {
         font-size: 24px;
         padding: 2%;
-        font-family: sans-serif;
-        text-decoration: none;
     }
 
     .text {
         width: 90%;
+    }
+
+    /* Menú en móviles: abajo, no a la derecha */
+    .dropdown-content {
+        top: 100%;
+        left: 0;
+        margin-left: 0;
+        margin-top: 8px;
+    }
+
+    .dropdown-content a {
+        font-size: 20px;
+        padding: 14px 20px;
+    }
+
+    /* === MEJORA RESPONSIVE AÑADIDA === */
+    .content-image {
+      width: 90%; /* Hace la imagen más ancha en móviles */
     }
 }
