@@ -53,10 +53,6 @@ body {
 
 .card-link {
     padding: 10px;
-    background-image: url("assets/Fondo_boton.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
     font-style: oblique;
     font-size: 30px;
     color: black;
