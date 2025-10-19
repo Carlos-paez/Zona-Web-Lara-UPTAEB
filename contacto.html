@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zona Web Lara</title>
     <link rel="stylesheet" href="style.css"/>     
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500&display=swap" rel="stylesheet">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
 </head>
 <body>
@@ -18,34 +19,54 @@
             </div>
         </div>
 
-        <div class="dropdown">
-            <button class="dropbtn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2M7 7h10M7 12h10M7 17h6"/></svg><br>Conocenos</button>
-            <div class="dropdown-content">
-                <a href="index.html">Inicio</a>
-                <a href="nosotros.html">Nosotros</a>
-                <a href="servicios.html">Servicios</a>
-                <a href="contacto.html">Contacto</a>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger-icon">☰</label>
+
+        <nav class="nav-bar">
+            <div class="dropdown">
+                <a href="index.html" class="dropbtn">Inicio</a>
             </div>
-        </div>
+            
+            <div class="dropdown">
+                <a href="nosotros.html" class="dropbtn">Nosotros</a>
+            </div>
+
+            <div class="dropdown">
+                <a href="servicios.html" class="dropbtn">Servicios</a>
+            </div>
+
+            <div class="dropdown">
+                <a href="contacto.html" class="dropbtn">Contacto</a>
+            </div>
+        </nav>
     </header>
 
     <main>
-        <h4>Estamos ubicados en Pavía, listos para atender sus necesidades digitales y de oficina</h4>
+        <div class="text">
+            <h3><span style="text-decoration:underline;">Contáctanos por Correo</span></h3>
+            <p>Utiliza el siguiente botón para enviarnos un correo electrónico. Te responderemos a la brevedad posible.</p>
 
-        <br><br>
+            <button class="button" style="margin-top: 20px; margin-bottom: 20px;">
+                <a href="mailto:zonaweblara@gmail.com" style="text-decoration: none; color: inherit;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.33em" height="1em" viewBox="0 0 256 193"><path fill="#4285f4" d="M58.182 192.05V93.14L27.507 65.077L0 49.504v125.091c0 9.658 7.825 17.455 17.455 17.455z"/><path fill="#34a853" d="M197.818 192.05h40.727c9.659 0 17.455-7.826 17.455-17.455V49.505l-31.156 17.837l-27.026 25.798z"/><path fill="#ea4335" d="m58.182 93.14l-4.174-38.647l4.174-36.989L128 69.868l69.818-52.364l4.669 34.992l-4.669 40.644L128 145.504z"/><path fill="#fbbc04" d="M197.818 17.504V93.14L256 49.504V26.231c0-21.585-24.64-33.89-41.89-20.945z"/><path fill="#c5221f" d="m0 49.504l26.759 20.07L58.182 93.14V17.504L41.89 5.286C24.61-7.66 0 4.646 0 26.23z"/></svg>
+                    &nbsp; Enviar Correo
+                </a>
+            </button>
+        </div>
 
-        <h3><span style="text-decoration: underline;">Dirección:</span> Av. Ali Primera, Km 9 / Avenida Ali Primera, Km. 10, Local # 4, Pavía – Barquisimeto Estado Lara</h3>
 
-        <br><br><br>
+        <div class="text">
+            <h3><span style="text-decoration:underline;">Nuestra Ubicación</span></h3>
+            <p>Estamos ubicados en Pavía, listos para atender sus necesidades digitales y de oficina.</p>
+            <p><strong>Dirección:</strong> Av. Ali Primera, Km 9 / Avenida Ali Primera, Km. 10, Local # 4, Pavía – Barquisimeto Estado Lara</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15707.954752187313!2d-69.29415449999999!3d10.09101145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e833405c92c57f7%3A0x8e833405c92c57f7!2sPavi%CC%81a%2C%20Lara%2C%20Venezuela!5e0!3m2!1sen!2sus!4v1678252200000!5m2!1sen!2sus" width="100%" height="450" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="content-image"></iframe>
+        </div>
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <div class="text">
+            <h3><span style="text-decoration:underline;">Redes Sociales</span></h3>
+            <p>Síguenos en nuestras redes para estar al tanto de las últimas novedades y ofertas.</p>
 
-        <a href="https://wa.me/4125022286?text=Saludos" target=”_blank” class="whatsapp-btn">
-            <i class="bi bi-whatsapp"></i>
-        </a>
-
-        <!-- From Uiverse.io by wilsondesouza --> 
-<ul class="example-2">
+        <ul class="example-2">
     <li class="icon-content">
     <a
         data-social="whatsapp"
@@ -119,15 +140,14 @@
         <div class="tooltip">Instagram</div>
     </li>
     </ul>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
-        <br><br><br>
-
-        <button class="button">
-            <a href="mailto:zonaweblara@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="1.33em" height="1em" viewBox="0 0 256 193"><path fill="#4285f4" d="M58.182 192.05V93.14L27.507 65.077L0 49.504v125.091c0 9.658 7.825 17.455 17.455 17.455z"/><path fill="#34a853" d="M197.818 192.05h40.727c9.659 0 17.455-7.826 17.455-17.455V49.505l-31.156 17.837l-27.026 25.798z"/><path fill="#ea4335" d="m58.182 93.14l-4.174-38.647l4.174-36.989L128 69.868l69.818-52.364l4.669 34.992l-4.669 40.644L128 145.504z"/><path fill="#fbbc04" d="M197.818 17.504V93.14L256 49.504V26.231c0-21.585-24.64-33.89-41.89-20.945z"/><path fill="#c5221f" d="m0 49.504l26.759 20.07L58.182 93.14V17.504L41.89 5.286C24.61-7.66 0 4.646 0 26.23z"/></svg></a>
-        </button>
+        <a href="https://wa.me/4125022286?text=Saludos" target=”_blank” class="whatsapp-btn">
+            <i class="bi bi-whatsapp"></i>
+        </a>
 
     </main>
-    
+
     <footer>
         <p>&copy; 2025 Zona Web Lara. Todos los derechos reservados.</p>
     </footer>

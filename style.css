@@ -1,28 +1,33 @@
-/* === Estilos generales del cuerpo (sin cambios disruptivos) === */
+/* Importación de Google Fonts para una tipografía más "llamativa" */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500&display=swap');
+
+/* === Estilos generales del cuerpo === */
 body {
-    background-color: lightgrey;
+    background-color: #f4f4f4; /* Fondo más claro */
     text-align: center;
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif; /* Nueva fuente principal */
+    color: #333; /* Texto oscuro */
 }
 
   /* === Banner === */
 .banner {
     text-align: center;
     display: grid;
-    grid-template-columns: 100px auto;
+    grid-template-columns: 100px auto; /* Diseño de escritorio */
     column-gap: 1rem;
     align-items: center;
     background-image: url("assets/fondo_baner.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    font-style: oblique;
-    font-size: 30px;
-    color: dodgerblue;
-    -webkit-text-stroke: 1px black;
-    border: 6px solid black;
-    padding: 10px;
+    /* Ajustes para la fuente "llamativa" */
+    font-family: 'Oswald', sans-serif;
+    font-size: 35px; /* Más grande */
+    color:#007bff; /* Dorado llamativo */
+    -webkit-text-stroke: 1px black; /* Borde rojo oscuro para contraste */
+    border: 6px solid #1a1a1a;
+    padding: 15px 10px; /* Más padding */
 }
 
 .logo {
@@ -33,272 +38,262 @@ body {
 .name {
     grid-column-start: 2;
     grid-column-end: 3;
+    text-align: center; /* Alineación a la izquierda en desktop */
 }
 
 .logo img {
     border-radius: 50%;
-    border: 2px solid black;
+    border: 2px solid white; /* Borde blanco para el logo */
     max-width: 100%;
     height: auto;
 }
 
-  /* === Tarjetas originales (opcional: puedes mantenerlas o eliminarlas si usas el menú) === */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    padding: 30px 100px;
-    margin: 30px;
-}
-
-.card-link {
-    padding: 10px;
-    font-style: oblique;
-    font-size: 30px;
-    color: black;
-    border-radius: 8px;
-    width: 100%;
-    text-align: center;
-    box-shadow: 0px 0px 30px black;
-    text-decoration: none;
-    display: block;
-    box-sizing: border-box;
-}
-
   /* === Texto central === */
 .text {
-    width: 60%;
+    width: 70%; 
     margin: auto;
     text-align: justify;
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.7; 
+    font-size: 16px;
     margin-bottom: 20px;
+    padding: 15px; /* Más padding para móvil */
+    background-color: white; 
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-  /* El .text necesita un margen superior para el primer elemento */
+.text h3 {
+    font-family: 'Oswald', sans-serif;
+    color: #007bff; /* Títulos en azul brillante */
+    text-align: center;
+    margin-top: 0;
+    padding-top: 15px;
+    font-size: 24px; /* Un poco más grande */
+}
+
 .text:first-of-type {
     margin-top: 30px;
 }
 
-    /*
-    ╔══════════════════════════════════════════════════════════════╗
-    ║                    MENÚ DESPLEGABLE AISLADO                  ║
-    ╚══════════════════════════════════════════════════════════════╝
-  */
+/* ============================================================== */
+/* === MENÚ HORIZONTAL (Diseño Desktop) - Barra de navegación con títulos de página === */
+/* ============================================================== */
+
+header {
+    background-color: #333; /* Fondo oscuro para la barra */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    position: relative; 
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Ocultar el mecanismo de hamburguesa por defecto en desktop */
+.menu-toggle,
+.hamburger-icon {
+    display: none;
+}
 
 .dropdown {
     position: relative;
-    display: inline-block;
-    /* MEJORA: Añadido margen para separarlo del contenido */
-    margin-top: 15px;
-    margin-bottom: 15px;
+    display: inline-block; 
+    margin: 0;
 }
 
+/* Estilo aplicado a los enlaces (<a>) de la barra de navegación */
 .dropbtn {
-    background-color:cornflowerblue;
+    background-color: transparent; 
     color: white;
-    padding: 16px 50px;
-    font-size: 16px;
-    font-family: sans-serif;
+    padding: 18px 25px; /* Aumentado para hacer la barra más alta */
+    font-size: 18px;
+    font-family: 'Oswald', sans-serif;
     border: none;
-    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none; /* Importante para los enlaces (<a>) */
+    display: block; /* Ocupa todo el espacio para el área de clic */
 }
 
 .dropbtn:hover,
 .dropbtn:focus {
-    background-color: #3e8e41;
-    outline: none;
+    background-color: #007bff; /* Resaltado de hover */
+    color: white;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 100%;
-    margin-left: 8px;
-    background-color: white;
-    min-width: 220px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    border-radius: 8px;
-    z-index: 1000;
-    list-style: none;
-    padding: 6px 0;
-    /* MEJORA: Asegura que el texto dentro esté alineado a la izquierda */
-    text-align: left;
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 12px 20px;
-    color: black;
-    text-decoration: none;
-    font-family: sans-serif;
-    font-size: 18px;
-    font-style: oblique;
-    background-image: url("assets/Fondo_boton.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    border-radius: 6px;
-    margin: 4px 10px;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.dropdown-content a:hover,
-.dropdown-content a:focus {
-    transform: translateX(4px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    outline: 2px solid dodgerblue;
-    background-color: rgba(255, 255, 255, 0.95);
-}
-
-.dropdown:hover .dropdown-content,
-.dropdown:focus-within .dropdown-content {
-    display: block;
-}
-
-  /* ============================================== */
-  /* === INICIO DE ESTILOS AÑADIDOS PARA MEJORA === */
-  /* ============================================== */
-
-  /* === Imágenes de Contenido === */
-  /* Nueva clase para reemplazar estilos en línea y <br> */
+/* === Imágenes de Contenido === */
 .content-image {
     display: block;
-    width: 60%; /* Coincide con el ancho del texto */
-    max-width: 700px; /* Límite para que no sea demasiado grande */
-    height: auto; /* Mantiene la proporción de la imagen */
-    margin: 20px auto 30px auto; /* Centra y añade espacio (top, horizontal, bottom) */
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    width: 70%; 
+    max-width: 800px; 
+    height: auto;
+    margin: 20px auto 30px auto;
+    border-radius: 10px; 
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    border: 3px solid #007bff; 
 }
 
-  /* === Pie de Página === */
+/* === Pie de Página === */
 footer {
-    background-color: #333;
-    color: white;
+    background-color: #1a1a1a; 
+    color: #bbb;
     text-align: center;
-    padding: 20px 10px;
-    margin-top: 40px;
-    font-family: sans-serif;
-    font-size: 14px;
+    padding: 25px 10px;
+    margin-top: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
 }
 
 footer p {
     margin: 0;
 }
 
-  /* ============================================== */
-  /* === FIN DE ESTILOS AÑADIDOS PARA MEJORA ===== */
-  /* ============================================== */
+/* Estilos de lista para los archivos nosotros y servicios */
+.text ul li, .text ol li {
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-align: left; 
+    margin-left: 20px; 
+}
 
-  /* === Responsive: en móviles, abrir abajo === */
+.text ol li h4 {
+    font-family: 'Oswald', sans-serif;
+    color: #D4AF37; 
+    font-size: 22px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+
+/* ============================================================== */
+/* === Responsive: Menú Móvil (max-width: 768px) === */
+/* ============================================================== */
 @media (max-width: 768px) {
-    .banner {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
-        row-gap: 10px;
-        font-size: 24px;
-        padding: 15px;
+    /* Mostrar el ícono de hamburguesa */
+    .hamburger-icon {
+        display: flex;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        background-color: transparent; /* Fondo transparente */
+        padding-right: 25px;
+        color: #007bff; /* Color azul para las barras horizontales */
+        font-size: 30px;
+        align-items: center;
+        cursor: pointer;
+        z-index: 1001; 
+    }
+    
+    .hamburger-icon:hover {
+        color: #0056b3; /* Azul más oscuro para el hover de las barras */
     }
 
+    /* Banner: Cambiar a una sola columna para que el logo y nombre se apilen */
+    .banner {
+        grid-template-columns: 1fr; 
+        font-size: 25px;
+        padding: 15px 10px; 
+    }
+    
     .logo {
-        grid-column: 1;
-        grid-row: 1;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        margin-bottom: 5px;
     }
 
     .name {
-        grid-column: 1;
-        grid-row: 2;
-        justify-self: center;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        text-align: center;
     }
 
-    .cards {
-        grid-template-columns: 1fr;
-        padding: 20px;
-        margin: 20px;
-        gap: 20px;
-    }
-
-    .card-link {
-        font-size: 24px;
-        padding: 2%;
+    .logo img {
+        width: 80px;
+        height: 80px;
     }
 
     .text {
-        width: 90%;
+        width: 90%; 
+        margin: 20px auto;
+        padding: 15px;
+        font-size: 15px;
     }
 
-    /* Menú en móviles: abajo, no a la derecha */
-    .dropdown-content {
-        top: 100%;
-        left: 0;
-        margin-left: 0;
-        margin-top: 8px;
-    }
-
-    .dropdown-content a {
-        font-size: 20px;
-        padding: 14px 20px;
-    }
-
-    /* === MEJORA RESPONSIVE AÑADIDA === */
     .content-image {
-      width: 90%; /* Hace la imagen más ancha en móviles */
+      width: 90%;
+    }
+    
+    /* Ocultar la navegación por defecto en móvil */
+    .nav-bar {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        background-color: #333;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        z-index: 999;
+    }
+
+    /* Mostrar la navegación cuando el checkbox está marcado */
+    .menu-toggle:checked ~ .nav-bar {
+        display: flex;
+    }
+    
+    /* Ocultamos el checkbox */
+    .menu-toggle {
+        opacity: 0;
+        position: absolute;
+        height: 0;
+        width: 0;
+    }
+
+    /* Menú en móviles: forzamos el modo vertical y hacemos los botones de ancho completo */
+    .nav-bar .dropdown {
+        width: 100%;
+        margin: 0;
+        border-bottom: 1px solid #444; 
+    }
+    
+    .nav-bar .dropdown:last-child {
+        border-bottom: none;
+    }
+
+    .dropbtn {
+        width: 100%;
+        text-align: left; 
+        padding: 15px 25px;
+        background-color: #333; 
+    }
+    
+    .dropbtn:hover {
+        background-color: #007bff;
+    }
+    
+    /* WhatsApp button adjustment */
+    .whatsapp-btn {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .whatsapp-btn i {
+        font-size: 24px;
     }
 }
 
-/*Estilos generales del boton whatsapp*/
-.whatsapp-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 9999;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: #25D366;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    animation: breathe 2s ease-in-out infinite;
-}
-
-/*Estilos solo al icono whatsapp*/
-.whatsapp-btn i {
-    color: #fff;
-    font-size: 24px;
-    animation: beat 2s ease-in-out infinite;
-    text-decoration: none;
-}
-
-/*Estilos con animation contorno respirando*/
-@keyframes breathe {
-    0% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
-    }
-    70% {
-        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-    }
-}
-
-/*Estilos de animacion del icono latiendo*/
-@keyframes beat {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.2);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
+/* Estilos de botón de correo y redes sociales (sin cambios relevantes) */
 
 /* From Uiverse.io by gagan-gv */ 
 .button {
@@ -368,7 +363,7 @@ ul {
     align-items: center;
 }
 .example-2 .icon-content {
-    margin: 0 10px;
+    margin: 0 15px; 
     position: relative;
 }
 .example-2 .icon-content .tooltip {
@@ -395,12 +390,13 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
-    height: 50px;
+    width: 55px; 
+    height: 55px;
     border-radius: 50%;
     color: #4d4d4d;
     background-color: #fff;
     transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .example-2 .icon-content a:hover {
     box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
@@ -408,8 +404,8 @@ ul {
 .example-2 .icon-content a svg {
     position: relative;
     z-index: 1;
-    width: 30px;
-    height: 30px;
+    width: 35px; 
+    height: 35px;
 }
 .example-2 .icon-content a:hover {
     color: white;
@@ -452,4 +448,55 @@ ul {
 .example-2 .icon-content a[data-social="youtube"] .filled,
 .example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
     background-color: #ff0000;
+}
+
+/*Estilos generales del boton whatsapp*/
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  animation: breathe 2s ease-in-out infinite;
+}
+
+/*Estilos solo al icono whatsapp*/
+.whatsapp-btn i {
+  color: #fff;
+  font-size: 24px;
+  animation: beat 2s ease-in-out infinite;
+  text-decoration: none;
+}
+
+/*Estilos con animation contorno respirando*/
+@keyframes breathe {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+/*Estilos de animacion del icono latiendo*/
+@keyframes beat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
