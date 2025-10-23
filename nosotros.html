@@ -1,90 +1,210 @@
 <!DOCTYPE html>
-<html lang="es"> <head>
-    <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Zona Web Lara</title> <link rel="stylesheet" href="style.css"/> <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500&display=swap" rel="stylesheet">
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon"> </head>
+<!-- Declara el tipo de documento como HTML5, lo que asegura que el navegador interprete el código según los estándares modernos -->
+
+<html lang="es">
+<!-- Etiqueta raíz del documento HTML; el atributo 'lang="es"' indica que el contenido está en español, lo cual es útil para accesibilidad y SEO -->
+
+<head>
+    <!-- Sección de metadatos del documento, no visible directamente en la página pero esencial para su configuración -->
+
+    <meta charset="UTF-8">
+    <!-- Define la codificación de caracteres como UTF-8, permitiendo el uso correcto de caracteres especiales y acentos en español -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura la vista en dispositivos móviles: el ancho se ajusta al del dispositivo y el zoom inicial es 1 (sin acercar ni alejar) -->
+
+    <title>Zona Web Lara</title>
+    <!-- Establece el título de la pestaña del navegador -->
+
+    <link rel="stylesheet" href="style.css"/>
+    <!-- Enlaza una hoja de estilos CSS externa llamada 'style.css' para aplicar estilos personalizados a la página -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <!-- Importa dos fuentes de Google Fonts: Montserrat (pesos 400 y 700) y Oswald (peso 500), para usar en el diseño tipográfico -->
+
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <!-- Define el ícono que aparece en la pestaña del navegador (favicon), ubicado en la carpeta 'assets' -->
+</head>
+
 <body>
-    <header> <div class="banner"> <div class="logo">
+    <!-- Cuerpo principal del documento, contiene todo el contenido visible de la página -->
+
+    <header>
+        <!-- Sección de encabezado de la página, que incluye el banner y la barra de navegación -->
+
+        <div class="banner">
+            <!-- Contenedor visual superior (banner) que agrupa el logo y el nombre de la empresa -->
+
+            <div class="logo">
+                <!-- Div que contiene el logo de la empresa -->
                 <img src="assets/logo_zwl.png" class="logo img" alt="Logo de Zona Web Lara">
+                <!-- Imagen del logo, cargada desde la carpeta 'assets', con texto alternativo para accesibilidad y SEO -->
             </div>
+
             <div class="name">
-                <h1>Zona Web Lara</h1> </div>
+                <!-- Div que contiene el nombre textual de la empresa -->
+                <h1>Zona Web Lara</h1>
+                <!-- Encabezado de nivel 1 que muestra el nombre de la empresa en letras grandes -->
+            </div>
         </div>
 
         <input type="checkbox" id="menu-toggle" class="menu-toggle">
-        <label for="menu-toggle" class="hamburger-icon">☰</label>
+        <!-- Checkbox oculto utilizado como mecanismo de control para el menú hamburguesa en dispositivos móviles (no visible, pero activa/desactiva el menú) -->
 
-        <nav class="nav-bar"> <div class="dropdown">
-                <a href="index.html" class="dropbtn">Inicio</a>
-            </div>
-            
+        <label for="menu-toggle" class="hamburger-icon">☰</label>
+        <!-- Etiqueta clickeable que actúa como el ícono de menú hamburguesa (☰); al hacer clic, alterna el estado del checkbox 'menu-toggle' -->
+
+        <nav class="nav-bar">
+            <!-- Barra de navegación principal, que contiene los enlaces a las distintas secciones del sitio -->
+
             <div class="dropdown">
-                <a href="nosotros.html" class="dropbtn">Nosotros</a> </div>
+                <!-- Contenedor de un elemento de menú (aunque no es un dropdown funcional en este caso, sigue la estructura de un menú desplegable potencial) -->
+                <a href="index.html" class="dropbtn">Inicio</a>
+                <!-- Enlace al inicio del sitio; la clase 'dropbtn' sugiere estilo de botón de dropdown, aunque aquí solo es un enlace simple -->
+            </div>
+
+            <div class="dropdown">
+                <a href="nosotros.html" class="dropbtn">Nosotros</a>
+                <!-- Enlace a la página 'nosotros.html' -->
+            </div>
 
             <div class="dropdown">
                 <a href="servicios.html" class="dropbtn">Servicios</a>
+                <!-- Enlace a la página 'servicios.html' -->
             </div>
 
             <div class="dropdown">
                 <a href="contacto.html" class="dropbtn">Contacto</a>
+                <!-- Enlace a la página 'contacto.html' -->
             </div>
         </nav>
     </header>
 
-    <main> <div class="text"> <h3><span style="text-decoration:underline;">Nuestra Historia</span></h3> <p>Una empresa venezolana con sede en el Estado Lara, específicamente en Pavía, inició sus actividades en el año 2015, marcando su entrada en el mercado local como un proveedor integral de artículos escolares y de oficina, servicios de impresión y acceso a internet.
+    <main>
+        <!-- Contenido principal de la página, centrado en la información institucional de la empresa -->
+
+        <div class="text">
+            <!-- Contenedor de texto con información narrativa -->
+            <h3><span style="text-decoration:underline;">Nuestra Historia</span></h3>
+            <!-- Título de nivel 3 con subrayado aplicado mediante estilo en línea para destacar la sección -->
+            <p>Una empresa venezolana con sede en el Estado Lara, específicamente en Pavía, inició sus actividades en el año 2015, marcando su entrada en el mercado local como un proveedor integral de artículos escolares y de oficina, servicios de impresión y acceso a internet.
                 Desde sus inicios, la empresa se propuso satisfacer las necesidades tanto de estudiantes como de profesionales y público en general, ofreciendo una variedad de productos y servicios esenciales en un mismo lugar. Esta propuesta de valor, que combinaba la venta de útiles con servicios tecnológicos, buscaba brindar comodidad y soluciones prácticas a sus clientes y demostrando ser una fórmula acertada desde sus primeros pasos.
                 Lo que comenzó como una iniciativa local pronto se convirtió en un punto de referencia gracias a la constancia y la dedicación de su equipo. A lo largo de los años, Zona Web Lara, C.A. no solo se limitó a ofrecer productos y servicios, sino que cultivó relaciones sólidas con sus clientes, entendiendo sus necesidades cambiantes y adaptando su oferta para satisfacerlas de manera efectiva.
                 Nuestro enfoque centrado en el cliente, sumado a la calidad de nuestros productos y servicios, ha sido fundamental para el crecimiento sostenido de la empresa. Hoy en día, Zona Web Lara, C.A. se enorgullece de contar con una base de más de 5000 clientes, un testimonio elocuente de la confianza y la fidelidad que ha logrado construir a lo largo de su trayectoria.
                 Alcanzar esta significativa cifra de clientes no es solo un número, sino el reflejo de un compromiso continuo con la excelencia, la atención personalizada y la capacidad de evolucionar en un entorno dinámico. La empresa ha sabido mantenerse relevante, adaptándose a los avances tecnológicos y a las nuevas demandas del mercado, sin perder de vista la calidad y la eficiencia en cada interacción.
                 
                 La empresa mira hacia el futuro con el objetivo de seguir siendo un aliado estratégico para todos aquellos que buscan soluciones integrales en artículos escolares y de oficina, servicios de impresión e internet en el estado Lara.</p>
+            <!-- Párrafo extenso que describe la historia, evolución y logros de la empresa -->
         </div>
 
-        <br><br><br> <img src="assets/logo_zwl.png" class="content-image" alt="Logo de Zona Web Lara">
+        <br><br><br>
+        <!-- Tres saltos de línea consecutivos para crear espacio vertical entre secciones (método básico, no recomendado en CSS moderno, pero funcional) -->
 
-        <br><br><br> <div class="text">
-            <h3><span style="text-decoration:underline;">Ejes principales</span></h3> 
+        <img src="assets/logo_zwl.png" class="content-image" alt="Logo de Zona Web Lara">
+        <!-- Imagen del logo insertada nuevamente como parte del contenido visual, con clase 'content-image' para estilización y texto alternativo -->
 
-            <ul> <li>Brindar apoyo en trámites y documentación en el ámbito legal</li>
-                <br> <li>Prestar herramientas tecnológicas a los estudiantes y personas que requieran de procesos computacionales o servicios de “cyber”.</li>
-                <br> <li>Venta de productos de papelería, bisutería y accesorios tecnológicos. </li>
+        <br><br><br>
+        <!-- Tres saltos de línea para separar visualmente la siguiente sección -->
+
+        <div class="text">
+            <!-- Nuevo bloque de texto -->
+            <h3><span style="text-decoration:underline;">Ejes principales</span></h3>
+            <!-- Título subrayado de la sección "Ejes principales" -->
+
+            <ul>
+                <!-- Lista desordenada que enumera los ejes estratégicos de la empresa -->
+                <li>Brindar apoyo en trámites y documentación en el ámbito legal</li>
+                <!-- Primer ítem de la lista: apoyo legal -->
+                <br>
+                <!-- Salto de línea dentro de la lista (no semántico, pero usado para espaciado visual) -->
+                <li>Prestar herramientas tecnológicas a los estudiantes y personas que requieran de procesos computacionales o servicios de “cyber”.</li>
+                <!-- Segundo ítem: servicios tecnológicos -->
+                <br>
+                <!-- Salto de línea adicional -->
+                <li>Venta de productos de papelería, bisutería y accesorios tecnológicos. </li>
+                <!-- Tercer ítem: venta de productos diversos -->
             </ul>
         </div>
 
-        <br><br><br> <img src="assets/zwl/Papeleria.jpg" class="content-image" alt="Artículos de papelería de Zona Web Lara">
+        <br><br><br>
+        <!-- Espaciado antes de la siguiente imagen -->
 
-        <br><br><br> <div class="text">
-            <h3><span style="text-decoration:underline;">Nuestra Misión</span></h3> <p>En nuestro Ciber, la misión es crear un entorno dinámico e inclusivo en el que las personas puedan conectarse, explorar y participar en el mundo digital. Nos dedicamos a proporcionar una infraestructura tecnológica de primera categoría, un servicio de atención al cliente excepcional y un espacio cómodo para que nuestros clientes puedan dedicarse a sus intereses digitales. Centrados en ofrecer acceso a Internet de alta velocidad, navegación segura y una amplia gama de servicios, nuestro objetivo es ser el destino al que acuden las personas que buscan una experiencia de navegación fiable y agradable en un entorno seguro y acogedor.</p>
+        <img src="assets/zwl/Papeleria.jpg" class="content-image" alt="Artículos de papelería de Zona Web Lara">
+        <!-- Imagen representativa de la sección de papelería -->
+
+        <br><br><br>
+        <!-- Espaciado antes del bloque de "Nuestra Misión" -->
+
+        <div class="text">
+            <h3><span style="text-decoration:underline;">Nuestra Misión</span></h3>
+            <!-- Título subrayado de la sección de misión -->
+            <p>En nuestro Ciber, la misión es crear un entorno dinámico e inclusivo en el que las personas puedan conectarse, explorar y participar en el mundo digital. Nos dedicamos a proporcionar una infraestructura tecnológica de primera categoría, un servicio de atención al cliente excepcional y un espacio cómodo para que nuestros clientes puedan dedicarse a sus intereses digitales. Centrados en ofrecer acceso a Internet de alta velocidad, navegación segura y una amplia gama de servicios, nuestro objetivo es ser el destino al que acuden las personas que buscan una experiencia de navegación fiable y agradable en un entorno seguro y acogedor.</p>
+            <!-- Descripción detallada de la misión institucional -->
         </div>
 
-        <br><br><br> <img src="assets/zwl/Cyber1.png" class="content-image" alt="Imagen del interior del Cyber de Zona Web Lara">
+        <br><br><br>
+        <!-- Espaciado antes de la imagen del cyber -->
 
-        <br><br><br> <div class="text">
-            <h3><span style="text-decoration:underline;">Nuestra Visión</span></h3> <p>Nuestra visión es ser el principal ciber que revoluciona la forma en que las personas se conectan y se relacionan con el mundo digital. Nos esforzamos por estar a la vanguardia de la tecnología, ofreciendo instalaciones de última generación y una experiencia digital envolvente que supere las expectativas. Nuestra visión abarca la creación de un espacio vibrante e integrador donde personas de todos los ámbitos puedan reunirse para conectar, trabajar, aprender y jugar. Queremos ser un centro de innovación que fomente la creatividad y la colaboración entre nuestros clientes. Centrándonos en el futuro y adaptándonos continuamente al cambiante panorama digital, queremos convertirnos en un destino de confianza para todas las necesidades digitales, estableciendo nuevos estándares en el sector de los ciber.</p>
+        <img src="assets/zwl/Cyber1.png" class="content-image" alt="Imagen del interior del Cyber de Zona Web Lara">
+        <!-- Imagen del interior del local de internet ("cyber") -->
+
+        <br><br><br>
+        <!-- Espaciado antes de la sección de visión -->
+
+        <div class="text">
+            <h3><span style="text-decoration:underline;">Nuestra Visión</span></h3>
+            <!-- Título subrayado de la sección de visión -->
+            <p>Nuestra visión es ser el principal ciber que revoluciona la forma en que las personas se conectan y se relacionan con el mundo digital. Nos esforzamos por estar a la vanguardia de la tecnología, ofreciendo instalaciones de última generación y una experiencia digital envolvente que supere las expectativas. Nuestra visión abarca la creación de un espacio vibrante e integrador donde personas de todos los ámbitos puedan reunirse para conectar, trabajar, aprender y jugar. Queremos ser un centro de innovación que fomente la creatividad y la colaboración entre nuestros clientes. Centrándonos en el futuro y adaptándonos continuamente al cambiante panorama digital, queremos convertirnos en un destino de confianza para todas las necesidades digitales, estableciendo nuevos estándares en el sector de los ciber.</p>
+            <!-- Descripción aspiracional de la visión futura de la empresa -->
         </div>
 
-        <br><br><br> <img src="assets/zwl/papeleria 2.jpg" class="content-image" alt="Segunda imagen de artículos de papelería">
+        <br><br><br>
+        <!-- Espaciado antes de la segunda imagen de papelería -->
 
-        <br><br><br> <div class="text">
-            <h3><span style="text-decoration:underline;">Valores que nos Representan</span></h3> <ol type="I">
+        <img src="assets/zwl/papeleria 2.jpg" class="content-image" alt="Segunda imagen de artículos de papelería">
+        <!-- Segunda imagen ilustrativa de productos de papelería -->
+
+        <br><br><br>
+        <!-- Espaciado antes de la sección de valores -->
+
+        <div class="text">
+            <h3><span style="text-decoration:underline;">Valores que nos Representan</span></h3>
+            <!-- Título subrayado de la sección de valores institucionales -->
+            <ol type="I">
+                <!-- Lista ordenada con numeración en números romanos mayúsculas (I, II, III) -->
                 <li>Centrados en el cliente: Damos prioridad a la satisfacción y las necesidades de nuestros clientes, garantizando que tengan una experiencia fluida y agradable en nuestro cyber.</li>
-                
-                <br> <li>Excelencia: Buscamos la excelencia en todos los aspectos de nuestro negocio, desde la calidad de nuestros servicios hasta el mantenimiento de nuestras instalaciones, para ofrecer la mejor experiencia posible a nuestros clientes.</li>
-                
-                <br> <li>Innovación: Buscamos constantemente tecnologías, servicios e ideas innovadoras para mantenernos a la vanguardia y ofrecer soluciones punteras a nuestros clientes.</li>
+                <!-- Primer valor: enfoque en el cliente -->
+                <br>
+                <!-- Salto de línea dentro de la lista (nuevamente, para espaciado visual no semántico) -->
+                <li>Excelencia: Buscamos la excelencia en todos los aspectos de nuestro negocio, desde la calidad de nuestros servicios hasta el mantenimiento de nuestras instalaciones, para ofrecer la mejor experiencia posible a nuestros clientes.</li>
+                <!-- Segundo valor: excelencia -->
+                <br>
+                <!-- Salto de línea adicional -->
+                <li>Innovación: Buscamos constantemente tecnologías, servicios e ideas innovadoras para mantenernos a la vanguardia y ofrecer soluciones punteras a nuestros clientes.</li>
+                <!-- Tercer valor: innovación -->
             </ol>
         </div>
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <!-- Enlace a la hoja de estilos de Bootstrap Icons, que permite usar íconos vectoriales (como el de WhatsApp) -->
 
         <a href="https://wa.me/4125022286?text=Saludos" target=”_blank” class="whatsapp-btn">
-            <i class="bi bi-whatsapp"></i> </a>
+            <!-- Enlace que abre una conversación de WhatsApp predefinida al número especificado; el atributo 'target="_blank"' abre en una nueva pestaña -->
+            <i class="bi bi-whatsapp"></i>
+            <!-- Ícono de WhatsApp proporcionado por Bootstrap Icons -->
+        </a>
 
-        <br><br><br> <img src="assets/zwl/juguetes.jpg" class="content-image" alt="Imagen de la sección de juguetes">
+        <br><br><br>
+        <!-- Espaciado antes de la imagen de juguetes -->
 
+        <img src="assets/zwl/juguetes.jpg" class="content-image" alt="Imagen de la sección de juguetes">
+        <!-- Imagen de la sección de juguetes, mostrando diversificación de productos -->
     </main>
 
-    
-    <footer> <p>&copy; 2025 Zona Web Lara. Todos los derechos reservados.</p>
+    <footer>
+        <!-- Pie de página del sitio web -->
+        <p>&copy; 2025 Zona Web Lara. Todos los derechos reservados.</p>
+        <!-- Texto de derechos de autor, con el símbolo © representado mediante la entidad HTML '&copy;' -->
     </footer>
 
 </body>
