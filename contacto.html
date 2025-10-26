@@ -30,52 +30,60 @@
     <!-- Cuerpo principal del documento, contiene todo el contenido visible de la página -->
 
     <header>
-        <!-- Sección de encabezado de la página, que incluye el logo, nombre y menú de navegación -->
+        <!-- Sección de encabezado de la página, que incluye logo, nombre y menú de navegación -->
 
         <div class="banner">
-            <!-- Contenedor visual que agrupa el logo y el nombre de la empresa en una barra superior -->
+            <!-- Contenedor visual que agrupa el logo y el nombre de la empresa en una barra superior (banner) -->
 
             <div class="logo">
-                <!-- Contenedor específico para el logo de la marca -->
+                <!-- Contenedor específico para el logo de la empresa -->
+
                 <img src="assets/logo_zwl.png" class="logo img" alt="Logo de Zona Web Lara">
-                <!-- Imagen del logo, cargada desde la carpeta 'assets', con texto alternativo para accesibilidad -->
+                <!-- Imagen del logo, ubicada en la carpeta "assets", con clase CSS "logo img" y texto alternativo accesible -->
             </div>
 
             <div class="name">
                 <!-- Contenedor para el nombre textual de la empresa -->
+
                 <h1>Zona Web Lara</h1>
-                <!-- Título de nivel 1 que muestra el nombre de la empresa en el encabezado -->
+                <!-- Título principal del encabezado, mostrando el nombre de la empresa en tamaño grande -->
             </div>
         </div>
 
         <input type="checkbox" id="menu-toggle" class="menu-toggle">
-        <!-- Checkbox invisible que actúa como interruptor para activar/desactivar el menú hamburguesa en dispositivos móviles -->
+        <!-- Casilla de verificación oculta (usada como interruptor) para controlar la visibilidad del menú en móviles; no se muestra visualmente pero es clave para la interacción -->
 
         <label for="menu-toggle" class="hamburger-icon">☰</label>
-        <!-- Etiqueta que representa visualmente el ícono de menú hamburguesa (☰); al hacer clic, activa el checkbox anterior -->
+        <!-- Etiqueta clickeable que actúa como ícono de hamburguesa (☰); al hacer clic, activa/desactiva el checkbox y muestra/oculta el menú en dispositivos móviles -->
 
         <nav class="nav-bar">
             <!-- Barra de navegación principal que contiene los enlaces del sitio -->
 
             <div class="dropdown">
-                <!-- Contenedor de un elemento de menú (aunque no es un dropdown funcional en este caso, solo agrupa el enlace) -->
+                <!-- Contenedor para cada elemento del menú (aunque actualmente no tiene submenús, se usa la clase "dropdown" por posible expansión futura) -->
+
                 <a href="index.html" class="dropbtn">Inicio</a>
-                <!-- Enlace al inicio del sitio; la clase 'dropbtn' podría usarse para estilos futuros -->
+                <!-- Enlace al inicio del sitio; la clase "dropbtn" sugiere un botón de menú desplegable (aunque aquí es un enlace simple) -->
             </div>
 
             <div class="dropdown">
                 <a href="nosotros.html" class="dropbtn">Nosotros</a>
-                <!-- Enlace a la página 'Nosotros' -->
+                <!-- Enlace a la página "Nosotros" -->
             </div>
 
             <div class="dropdown">
                 <a href="servicios.html" class="dropbtn">Servicios</a>
-                <!-- Enlace a la página 'Servicios' -->
+                <!-- Enlace a la página "Servicios" -->
             </div>
 
             <div class="dropdown">
                 <a href="contacto.html" class="dropbtn">Contacto</a>
-                <!-- Enlace a la página 'Contacto' -->
+                <!-- Enlace a la página "Contacto" -->
+            </div>
+
+            <div class="dropdown">
+                <a href="manual.html" class="dropbtn"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48"><path fill="#90caf9" d="M40 45H8V3h22l10 10z"/><path fill="#e1f5fe" d="M38.5 14H29V4.5z"/><path fill="#1976d2" d="M16 21h17v2H16zm0 4h13v2H16zm0 4h17v2H16zm0 4h13v2H16z"/></svg></a>
+                <!-- Enlace a la página "Nosotros" -->
             </div>
         </nav>
     </header>

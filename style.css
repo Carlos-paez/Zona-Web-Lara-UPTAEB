@@ -502,3 +502,66 @@ ul {
     transform: scale(1); /* Al final, el icono vuelve a su tamaño normal. */
 }
 }
+
+
+.manual-container {
+            width: 70%; /* Usa el ancho de la clase .text */
+            margin: 30px auto 20px auto; /* Centra y aplica márgenes. */
+            text-align: justify; /* Justifica el texto. */
+            line-height: 1.7;
+            font-size: 16px;
+            padding: 15px;
+            background-color: white; /* Fondo blanco para el bloque de contenido. */
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        /* Uso de estilos de títulos del CSS original */
+        .manual-container h1 {
+            font-family: 'Oswald', sans-serif;
+            color: #007bff;
+            text-align: center;
+            font-size: 30px;
+            border-bottom: 3px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .manual-container h2 {
+            font-family: 'Oswald', sans-serif;
+            color: #555;
+            text-align: center;
+            font-size: 26px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        
+        .manual-container h3 {
+            font-family: 'Oswald', sans-serif;
+            color: #007bff; /* Usa el color de los h3 del .text */
+            text-align: center;
+            margin-top: 20px;
+            font-size: 22px;
+        }
+
+        .manual-container ul, .manual-container ol {
+            padding-left: 20px;
+            text-align: left;
+        }
+        
+        .manual-container li {
+             font-weight: 500;
+             margin-bottom: 10px;
+             text-align: left;
+             margin-left: 0;
+        }
+        
+        .manual-container .tip {
+            background-color: #e6f7ff;
+            border-left: 5px solid #007bff;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            text-align: left;
+        }
