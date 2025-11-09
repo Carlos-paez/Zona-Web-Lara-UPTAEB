@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!-- Declara el tipo de documento como HTML5, lo que permite al navegador interpretar correctamente el código -->
+
+<html lang="es">
+<!-- Etiqueta raíz del documento HTML; el atributo lang="es" indica que el contenido está en español -->
+
+<head>
+    <!-- Sección del encabezado del documento: contiene metadatos y enlaces a recursos externos -->
+
+    <meta charset="UTF-8">
+    <!-- Define la codificación de caracteres como UTF-8, permitiendo mostrar correctamente caracteres especiales (como tildes o ñ) -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura la vista en dispositivos móviles: ancho igual al del dispositivo y escala inicial de 1 (sin zoom) -->
+
+    <title>Zona Web Lara</title>
+    <!-- Establece el título de la pestaña del navegador -->
+
+    <link rel="stylesheet" href="style.css"/>
+    <!-- Enlaza una hoja de estilos CSS externa llamada "style.css" para aplicar estilos personalizados a la página -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <!-- Importa fuentes tipográficas desde Google Fonts: Montserrat (pesos 400 y 700) y Oswald (peso 500) para usar en el diseño -->
+
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <!-- Define el ícono que aparece en la pestaña del navegador (favicon), ubicado en la carpeta "assets" -->
+</head>
+
+<body>
+    <!-- Cuerpo principal del documento: contiene todo el contenido visible de la página -->
+
+    <header>
+        <!-- Sección de encabezado de la página, que incluye logo, nombre y menú de navegación -->
+
+        <div class="banner">
+            <!-- Contenedor visual que agrupa el logo y el nombre de la empresa en una barra superior (banner) -->
+
+            <div class="logo">
+                <!-- Contenedor específico para el logo de la empresa -->
+
+                <img src="assets/logo_zwl.png" class="logo img" alt="Logo de Zona Web Lara">
+                <!-- Imagen del logo, ubicada en la carpeta "assets", con clase CSS "logo img" y texto alternativo accesible -->
+            </div>
+
+            <div class="name">
+                <!-- Contenedor para el nombre textual de la empresa -->
+
+                <h1>Zona Web Lara</h1>
+                <!-- Título principal del encabezado, mostrando el nombre de la empresa en tamaño grande -->
+            </div>
+        </div>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <!-- Casilla de verificación oculta (usada como interruptor) para controlar la visibilidad del menú en móviles; no se muestra visualmente pero es clave para la interacción -->
+
+        <label for="menu-toggle" class="hamburger-icon">☰</label>
+        <!-- Etiqueta clickeable que actúa como ícono de hamburguesa (☰); al hacer clic, activa/desactiva el checkbox y muestra/oculta el menú en dispositivos móviles -->
+
+        <nav class="nav-bar">
+            <!-- Barra de navegación principal que contiene los enlaces del sitio -->
+
+            <div class="dropdown">
+                <!-- Contenedor para cada elemento del menú (aunque actualmente no tiene submenús, se usa la clase "dropdown" por posible expansión futura) -->
+
+                <a href="index.html" class="dropbtn">Inicio</a>
+                <!-- Enlace al inicio del sitio; la clase "dropbtn" sugiere un botón de menú desplegable (aunque aquí es un enlace simple) -->
+            </div>
+
+            <div class="dropdown">
+                <a href="nosotros.html" class="dropbtn">Nosotros</a>
+                <!-- Enlace a la página "Nosotros" -->
+            </div>
+
+            <div class="dropdown">
+                <a href="servicios.html" class="dropbtn">Servicios</a>
+                <!-- Enlace a la página "Servicios" -->
+            </div>
+
+            <div class="dropdown">
+                <a href="contacto.html" class="dropbtn">Contacto</a>
+                <!-- Enlace a la página "Contacto" -->
+            </div>
+
+            <div class="dropdown">
+                <a href="manual.html" class="dropbtn"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48"><path fill="#90caf9" d="M40 45H8V3h22l10 10z"/><path fill="#e1f5fe" d="M38.5 14H29V4.5z"/><path fill="#1976d2" d="M16 21h17v2H16zm0 4h13v2H16zm0 4h17v2H16zm0 4h13v2H16z"/></svg></a>
+                <!-- Enlace a la página "Nosotros" -->
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Contenido principal de la página, centrado en la información institucional -->
+
+        <div class="text">
+            <!-- Contenedor de texto descriptivo -->
+
+            <h3><span style="text-decoration: underline;">Quiénes Somos y Nuestra Trayectoria</span></h3>
+            <!-- Subtítulo con subrayado aplicado mediante estilo en línea; describe la sección sobre la historia de la empresa -->
+
+            <p>Zona Web Lara, C.A. es una empresa venezolana con sede en el Estado Lara, específicamente en Pavía. Iniciamos nuestras actividades en el año 2015, marcando nuestra entrada en el mercado local. Desde nuestros inicios, nos hemos consolidado como un proveedor integral, buscando la constancia y la dedicación para cultivar relaciones sólidas con nuestros clientes.
+            Hemos mantenido un enfoque centrado en el cliente, lo que nos ha permitido crecer de manera sostenida y adaptarnos continuamente a los avances tecnológicos y las nuevas demandas del mercado, sin sacrificar la calidad y la eficiencia.</p>
+            <!-- Párrafo que describe la trayectoria, ubicación, año de fundación y filosofía de la empresa -->
+        </div>
+
+        <img src="assets/zwl/Local.jpg" class="content-image" alt="Imagen de artículos de papelería">
+        <!-- Imagen ilustrativa del local físico; la clase "content-image" aplica estilos desde CSS; el texto alternativo describe el contenido para accesibilidad -->
+
+        <div class="text">
+            <h3><span style="text-decoration: underline;">Nuestra Propuesta de Valor Integral (Misión y Servicios)</span></h3>
+            <!-- Subtítulo subrayado que introduce la misión y enfoque de valor de la empresa -->
+
+            <p>Nuestra misión es crear un entorno dinámico e inclusivo donde las personas puedan conectarse, explorar y participar plenamente en el mundo digital. Para lograrlo, ofrecemos una propuesta de valor única que combina tecnología y conveniencia.</p>
+            <!-- Párrafo que explica la misión institucional y el enfoque estratégico -->
+        </div>
+
+        <img src="assets/zwl/cyber 2.png" class="content-image" alt="Imagen de un cyber café">
+        <!-- Imagen que representa el entorno del cyber café; el nombre del archivo contiene un espacio, lo cual es válido pero no recomendado en entornos estrictos -->
+
+        <div class="text">
+            <h3><span style="text-decoration: underline;">Servicios Clave:</span></h3>
+            <!-- Subtítulo subrayado que introduce la lista de servicios principales -->
+
+            <ol type="I">
+                <!-- Lista ordenada que usa números romanos mayúsculas (I, II, III...) como marcadores -->
+
+                <li> Infraestructura Tecnológica: Proveemos una infraestructura tecnológica de primera categoría, garantizando acceso a Internet de alta velocidad y navegación segura.</li>
+                <!-- Primer ítem de la lista: describe el servicio de infraestructura tecnológica -->
+
+                <br>
+                <!-- Salto de línea forzado (no semántico; idealmente se manejaría con CSS, pero aquí se usa para espaciar visualmente los ítems) -->
+
+                <li>Comodidad Centralizada: Somos el destino al que acuden las personas que buscan una experiencia de navegación fiable y agradable en un entorno seguro y acogedor. Nuestra propuesta inicial buscaba satisfacer tanto a estudiantes como a profesionales, ofreciendo una variedad de productos y servicios esenciales en un mismo lugar.</li>
+                <!-- Segundo ítem: enfatiza la comodidad y enfoque integral del lugar -->
+
+                <br>
+                <!-- Otro salto de línea visual entre ítems -->
+
+                <li>Soluciones Integrales: Ofrecemos servicios de impresión, junto con la venta de artículos escolares y de oficina. Esta combinación de útiles y servicios tecnológicos brinda soluciones prácticas a nuestros clientes.</li>
+                <!-- Tercer ítem: detalla servicios complementarios como impresión y venta de útiles -->
+
+                <br>
+                <!-- Salto de línea adicional -->
+
+                <li>Atención Excepcional: Nos dedicamos a proporcionar un servicio de atención al cliente excepcional.</li>
+                <!-- Cuarto ítem: destaca el compromiso con la calidad en el trato al cliente -->
+            </ol>
+        </div>
+
+        <img src="assets/legal1.jpg" class="content-image" alt="Imagen de documentos legales">
+        <!-- Imagen que representa aspectos legales o formales de la empresa -->
+
+        <link rel="stylesheet" href="  https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css  ">
+        <!-- Enlace a la hoja de estilos de Bootstrap Icons (con espacios innecesarios en la URL, pero funcional); permite usar íconos como el de WhatsApp -->
+
+        <a href="https://wa.me/4125022286?text=Saludos" target=”_blank” class="whatsapp-btn">
+            <!-- Enlace que abre una conversación de WhatsApp predefinida; el atributo target=”_blank” (con comillas curvas incorrectas) debería ser target="_blank" (comillas rectas), pero el navegador lo interpreta igual -->
+            <i class="bi bi-whatsapp"></i>
+            <!-- Ícono de WhatsApp proporcionado por Bootstrap Icons; la clase "bi bi-whatsapp" lo renderiza -->
+        </a>
+    </main>
+
+    <footer>
+        <!-- Pie de página que contiene información legal o de derechos de autor -->
+
+        <p>&copy; 2025 Zona Web Lara. Todos los derechos reservados.</p>
+        <!-- Texto de copyright con el símbolo © (codificado como &copy;) y el año actual; indica propiedad intelectual del contenido -->
+    </footer>
+
+</body>
+</html>

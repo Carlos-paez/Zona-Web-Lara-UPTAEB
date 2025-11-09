@@ -1,0 +1,567 @@
+/* Importación de Google Fonts para una tipografía más "llamativa" */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500&display=swap'); /* Importa las fuentes 'Montserrat' (pesos 400 y 700) y 'Oswald' (peso 500) de Google Fonts. */
+
+/* === Estilos generales del cuerpo === */
+body {
+    background-color: #f4f4f4; /* Establece el color de fondo general del cuerpo de la página a un gris muy claro. */
+    text-align: center; /* Centra horizontalmente el contenido en línea (como texto e imágenes) dentro del cuerpo. */
+    margin: 0; /* Elimina el margen exterior predeterminado que suelen aplicar los navegadores al cuerpo de la página. */
+    padding: 0; /* Elimina el relleno interior predeterminado que suelen aplicar los navegadores al cuerpo de la página. */
+    font-family: 'Montserrat', sans-serif; /* Establece 'Montserrat' como la fuente de texto principal, con una fuente genérica 'sans-serif' como alternativa. */
+    color: #333; /* Establece el color de texto base a un gris muy oscuro. */
+}
+
+ /* === Banner === */
+.banner {
+    text-align: center; /* Centra el texto y el contenido en línea horizontalmente dentro del banner. */
+    display: grid; /* Establece un layout de rejilla (grid) para la disposición de los elementos internos (logo y nombre). */
+    grid-template-columns: 100px auto; /* Define las columnas de la rejilla: la primera con un ancho fijo de 100px (para el logo) y la segunda con el ancho restante ('auto') (para el nombre). */
+    column-gap: 1rem; /* Define el espacio o brecha entre las columnas de la rejilla. */
+    align-items: center; /* Alinea los elementos de la rejilla verticalmente al centro de cada fila. */
+    background-image: url("assets/fondo_baner.jpg"); /* Establece una imagen como fondo del banner. */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se duplique o repita. */
+    background-size: cover; /* Ajusta el tamaño de la imagen de fondo para que cubra completamente el área del banner, recortando si es necesario. */
+    /* Ajustes para la fuente "llamativa" */
+    font-family: 'Oswald', sans-serif; /* Aplica la fuente 'Oswald' específicamente al texto dentro del banner. */
+    font-size: 35px; /* Establece un tamaño de fuente grande para el texto del banner. */
+    color:#007bff; /* Establece el color del texto a un azul brillante. */
+    -webkit-text-stroke: 1px black; /* Agrega un borde o contorno de 1px negro alrededor del texto (propiedad específica de navegadores basados en WebKit, como Chrome y Safari). */
+    border: 6px solid #1a1a1a; /* Agrega un borde sólido de 6 píxeles de grosor y color gris oscuro alrededor de todo el banner. */
+    padding: 15px 10px; /* Aplica un relleno interior de 15px arriba y abajo, y 10px a los lados. */
+}
+
+.logo {
+    grid-column-start: 1; /* Indica que el elemento con clase 'logo' debe comenzar en la línea de inicio de la primera columna de la rejilla. */
+    grid-column-end: 2; /* Indica que el elemento con clase 'logo' debe terminar en la línea de inicio de la segunda columna de la rejilla (ocupando solo la primera columna). */
+}
+
+.name {
+    grid-column-start: 2; /* Indica que el elemento con clase 'name' debe comenzar en la línea de inicio de la segunda columna de la rejilla. */
+    grid-column-end: 3; /* Indica que el elemento con clase 'name' debe terminar en la línea de inicio de la tercera columna de la rejilla (ocupando solo la segunda columna). */
+    text-align: center; /* Centra el texto dentro del contenedor con clase 'name'. */
+}
+
+.logo img {
+    border-radius: 50%; /* Hace que la imagen dentro de '.logo' tenga forma completamente circular. */
+    border: 2px solid white; /* Agrega un borde sólido de 2 píxeles de grosor y color blanco alrededor de la imagen. */
+    max-width: 100%; /* Asegura que el ancho de la imagen no exceda el 100% de su contenedor padre (.logo). */
+    height: auto; /* Mantiene la relación de aspecto original de la imagen al ajustarse el ancho. */
+}
+
+ /* === Texto central === */
+.text {
+    width: 70%; /* Establece el ancho del contenedor de texto al 70% del ancho de su contenedor padre. */
+    margin: auto; /* Aplica un margen automático a los lados, centrándolo horizontalmente en el viewport. */
+    text-align: justify; /* Justifica el texto, alineándolo tanto a la izquierda como a la derecha (excepto la última línea). */
+    font-family: 'Montserrat', sans-serif; /* Establece 'Montserrat' como la fuente para el contenido principal de texto. */
+    line-height: 1.7; /* Establece la altura de línea a 1.7 veces el tamaño de la fuente para mejorar la legibilidad. */
+    font-size: 16px; /* Establece el tamaño de fuente base para el texto dentro de este contenedor. */
+    margin-bottom: 20px; /* Aplica un margen de 20 píxeles debajo del bloque de texto. */
+    padding: 15px; /* Aplica un relleno interior de 15 píxeles alrededor del contenido. */
+    background-color: white; /* Establece el color de fondo del bloque de texto a blanco. */
+    border-radius: 8px; /* Aplica un redondeo de 8 píxeles a las esquinas del bloque. */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Aplica una sombra sutil (desplazamiento en Y de 2px, desenfoque de 5px, color negro con 10% de opacidad). */
+}
+
+.text h3 {
+    font-family: 'Oswald', sans-serif; /* Aplica la fuente 'Oswald' específicamente a los títulos H3 dentro de '.text'. */
+    color: #007bff; /* Establece el color de los títulos H3 a azul brillante. */
+    text-align: center; /* Centra el texto de los títulos H3. */
+    margin-top: 0; /* Elimina el margen superior predeterminado de los H3. */
+    padding-top: 15px; /* Agrega un relleno superior de 15 píxeles, separando el título del borde superior del contenedor '.text'. */
+    font-size: 24px; /* Establece el tamaño de fuente para los títulos H3. */
+}
+
+.text:first-of-type {
+    margin-top: 30px; /* Aplica un margen superior de 30 píxeles solo al primer elemento con la clase '.text' en el documento. */
+}
+
+/* ============================================================== */
+/* === MENÚ HORIZONTAL (Diseño Desktop) === */
+/* ============================================================== */
+
+header {
+    background-color: #333; /* Establece un color de fondo gris oscuro para el encabezado (header). */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* Aplica una sombra inferior con un desplazamiento en Y de 4px, desenfoque de 6px y color negro con 20% de opacidad. */
+    position: relative; /* Establece el contexto de posicionamiento para los elementos hijos con posición absoluta (como el menú hamburguesa en móvil). */
+}
+
+.nav-bar {
+    display: flex; /* Utiliza el modelo de caja flexible (flexbox) para la disposición de los elementos hijos. */
+    justify-content: center; /* Centra los elementos flexibles (enlaces del menú) horizontalmente a lo largo del eje principal. */
+    list-style: none; /* Elimina los marcadores o bullets predeterminados de la lista. */
+    padding: 0; /* Elimina el relleno interior predeterminado de la lista. */
+    margin: 0; /* Elimina el margen exterior predeterminado de la lista. */
+}
+
+/* Ocultar el mecanismo de hamburguesa por defecto en desktop */
+.menu-toggle,
+.hamburger-icon {
+    display: none; /* Oculta tanto el checkbox (`.menu-toggle`) como el icono de hamburguesa (`.hamburger-icon`) en resoluciones de escritorio. */
+}
+
+.dropdown {
+    position: relative; /* Establece el contexto de posicionamiento relativo para los elementos de lista (para posibles submenús). */
+    display: inline-block; /* Hace que el elemento se comporte como un bloque, pero fluya en línea con el texto. */
+    margin: 0; /* Elimina cualquier margen predeterminado. */
+}
+
+/* Estilo aplicado a los enlaces (<a>) de la barra de navegación */
+.dropbtn {
+    background-color: transparent; /* Establece el fondo del botón de enlace como transparente. */
+    color: white; /* Establece el color del texto a blanco. */
+    padding: 18px 25px; /* Aplica un relleno interior de 18px arriba/abajo y 25px a los lados. */
+    font-size: 18px; /* Establece el tamaño de fuente. */
+    font-family: 'Oswald', sans-serif; /* Aplica la fuente 'Oswald'. */
+    border: none; /* Elimina cualquier borde predeterminado. */
+    cursor: pointer; /* Cambia el cursor a un puntero al pasar sobre el elemento. */
+    transition: background-color 0.3s, color 0.3s; /* Aplica una transición suave de 0.3 segundos para los cambios de color de fondo y de texto. */
+    text-transform: uppercase; /* Convierte todo el texto del enlace a mayúsculas. */
+    font-weight: 500; /* Establece el grosor de la fuente a 500. */
+    text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces. */
+    display: block; /* Hace que el enlace ocupe todo el espacio de su contenedor padre (`.dropdown`). */
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+    background-color: #007bff; /* Cambia el color de fondo a azul brillante cuando el usuario pasa el ratón o el elemento tiene el foco. */
+    color: white; /* Mantiene el color del texto en blanco. */
+}
+
+/* === Imágenes de Contenido === */
+.content-image {
+    display: block; /* Hace que la imagen se comporte como un elemento de bloque, lo que permite aplicarle márgenes automáticos. */
+    width: 70%; /* Establece el ancho de la imagen al 70% del ancho de su contenedor padre. */
+    max-width: 800px; /* Limita el ancho máximo de la imagen a 800 píxeles. */
+    height: auto; /* Mantiene la proporción de la imagen. */
+    margin: 20px auto 30px auto; /* Centra la imagen horizontalmente (margen automático en los lados) y aplica 20px de margen superior y 30px de margen inferior. */
+    border-radius: 10px; /* Aplica un redondeo de 10 píxeles a las esquinas. */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25); /* Aplica una sombra más pronunciada (desplazamiento en Y de 6px, desenfoque de 18px, color negro con 25% de opacidad). */
+    border: 3px solid #007bff; /* Agrega un borde sólido de 3 píxeles y color azul brillante. */
+}
+
+/* === Pie de Página === */
+footer {
+    background-color: #1a1a1a; /* Establece un color de fondo gris muy oscuro (casi negro). */
+    color: #bbb; /* Establece el color del texto a un gris claro. */
+    text-align: center; /* Centra el texto dentro del pie de página. */
+    padding: 25px 10px; /* Aplica un relleno interior de 25px arriba/abajo y 10px a los lados. */
+    margin-top: 50px; /* Aplica un margen superior grande para separarlo del contenido principal. */
+    font-family: 'Montserrat', sans-serif; /* Aplica la fuente 'Montserrat'. */
+    font-size: 15px; /* Establece el tamaño de fuente. */
+}
+
+footer p {
+    margin: 0; /* Elimina el margen predeterminado de los párrafos dentro del pie de página. */
+}
+
+/* Estilos de lista para los archivos nosotros y servicios */
+.text ul li, .text ol li {
+    font-weight: 500; /* Establece el grosor de la fuente de los ítems de lista a 500. */
+    margin-bottom: 10px; /* Aplica un margen de 10 píxeles debajo de cada ítem de lista. */
+    text-align: left; /* Alinea el texto de los ítems de la lista a la izquierda. */
+    margin-left: 20px; /* Aplica un margen izquierdo para dar indentación a los ítems. */
+}
+
+.text ol li h4 {
+    font-family: 'Oswald', sans-serif; /* Aplica la fuente 'Oswald' a los títulos H4 dentro de ítems de listas ordenadas. */
+    color: #D4AF37; /* Establece un color dorado para estos títulos. */
+    font-size: 22px; /* Establece el tamaño de fuente. */
+    text-align: center; /* Centra el texto de los títulos H4. */
+    margin-top: 0; /* Elimina el margen superior predeterminado. */
+    margin-bottom: 10px; /* Aplica un margen inferior de 10 píxeles. */
+}
+
+
+/* ============================================================== */
+/* === Responsive: Menú Móvil (max-width: 768px) === */
+/* ============================================================== */
+@media (max-width: 768px) { /* Comienza la sección de estilos que solo se aplican cuando el ancho de la ventana es 768px o menor. */
+    /* Mostrar el ícono de hamburguesa */
+    .hamburger-icon {
+        display: flex; /* Muestra el icono de hamburguesa (utilizando flexbox para centrar). */
+        position: absolute; /* Posiciona el icono de forma absoluta respecto a su contenedor posicionado más cercano (el header). */
+        right: 0; /* Lo alinea con el borde derecho del header. */
+        top: 0; /* Lo alinea con el borde superior del header. */
+        height: 100%; /* Ocupa toda la altura del header. */
+        background-color: transparent; /* Fondo transparente. */
+        padding-right: 25px; /* Aplica un relleno a la derecha para separarlo del borde. */
+        color: #007bff; /* Establece el color del icono a azul brillante. */
+        font-size: 30px; /* Establece un tamaño grande para el icono. */
+        align-items: center; /* Centra el icono verticalmente dentro del contenedor flex. */
+        cursor: pointer; /* Muestra un cursor de puntero. */
+        z-index: 1001; /* Asegura que el icono esté por encima de casi todos los demás elementos. */
+    }
+    
+    .hamburger-icon:hover {
+        color: #0056b3; /* Cambia el color del icono a un azul ligeramente más oscuro al pasar el ratón. */
+    }
+
+    /* Banner: Cambiar a una sola columna para que el logo y nombre se apilen */
+    .banner {
+        grid-template-columns: 1fr; /* Cambia el layout de la rejilla a una sola columna, haciendo que los elementos se apilen verticalmente. */
+        font-size: 25px; /* Reduce el tamaño de fuente. */
+        padding: 15px 10px; /* Mantiene el relleno interior. */
+    }
+    
+    .logo {
+        grid-column-start: 1; /* El logo comienza en la única columna. */
+        grid-column-end: 2; /* El logo termina en la línea final de la única columna. */
+        margin-bottom: 5px; /* Agrega un pequeño margen inferior para separarlo del nombre. */
+    }
+
+    .name {
+        grid-column-start: 1; /* El nombre comienza en la única columna. */
+        grid-column-end: 2; /* El nombre termina en la línea final de la única columna. */
+        text-align: center; /* Centra el texto del nombre. */
+    }
+
+    .logo img {
+        width: 80px; /* Reduce el ancho del logo. */
+        height: 80px; /* Reduce la altura del logo. */
+    }
+
+    .text {
+        width: 90%; /* Aumenta el ancho del contenedor de texto al 90% para ocupar más pantalla en dispositivos móviles. */
+        margin: 20px auto; /* Centra el bloque y aplica 20px de margen superior/inferior. */
+        padding: 15px; /* Mantiene el relleno. */
+        font-size: 15px; /* Reduce ligeramente el tamaño de fuente. */
+    }
+
+    .content-image {
+      width: 90%; /* Ajusta el ancho de la imagen al 90%. */
+    }
+    
+    /* Ocultar la navegación por defecto en móvil */
+    .nav-bar {
+        display: none; /* Oculta la barra de navegación por defecto (se mostrará con el checkbox). */
+        flex-direction: column; /* Cambia la dirección del flexbox para apilar los enlaces verticalmente. */
+        width: 100%; /* Ocupa el ancho completo. */
+        position: absolute; /* Posiciona de forma absoluta, permitiendo que se deslice por debajo de otros elementos. */
+        top: 100%; /* Coloca el menú justo debajo del header. */
+        left: 0; /* Lo alinea con el borde izquierdo. */
+        background-color: #333; /* Fondo gris oscuro. */
+        box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* Sombra inferior. */
+        z-index: 999; /* Asegura que el menú esté sobre el contenido principal. */
+    }
+
+    /* Mostrar la navegación cuando el checkbox está marcado */
+    .menu-toggle:checked ~ .nav-bar {
+        display: flex; /* Muestra el menú de navegación cuando el checkbox invisible (`.menu-toggle`) está marcado. */
+    }
+    
+    /* Ocultamos el checkbox */
+    .menu-toggle {
+        opacity: 0; /* Hace que el checkbox sea completamente transparente. */
+        position: absolute; /* Lo posiciona absolutamente. */
+        height: 0; /* Le da una altura cero. */
+        width: 0; /* Le da un ancho cero. */
+    }
+
+    /* Menú en móviles: forzamos el modo vertical y hacemos los botones de ancho completo */
+    .nav-bar .dropdown {
+        width: 100%; /* Hace que cada ítem de lista ocupe todo el ancho. */
+        margin: 0; /* Elimina cualquier margen. */
+        border-bottom: 1px solid #444; /* Agrega un separador de línea gris oscuro debajo de cada enlace. */
+    }
+    
+    .nav-bar .dropdown:last-child {
+        border-bottom: none; /* Elimina el separador inferior del último enlace para evitar doble línea. */
+    }
+
+    .dropbtn {
+        width: 100%; /* Hace que el enlace ocupe todo el ancho del contenedor. */
+        text-align: left; /* Alinea el texto del enlace a la izquierda. */
+        padding: 15px 25px; /* Ajusta el relleno. */
+        background-color: #333; /* Fondo gris oscuro (asegura consistencia). */
+    }
+    
+    .dropbtn:hover {
+        background-color: #007bff; /* Fondo azul brillante al pasar el ratón. */
+    }
+    
+    /* WhatsApp button adjustment */
+    .whatsapp-btn {
+        width: 50px; /* Reduce el ancho del botón flotante. */
+        height: 50px; /* Reduce la altura del botón flotante. */
+        bottom: 15px; /* Lo mueve 15px desde la parte inferior. */
+        right: 15px; /* Lo mueve 15px desde la parte derecha. */
+    }
+    
+    .whatsapp-btn i {
+        font-size: 24px; /* Reduce el tamaño del icono de WhatsApp. */
+    }
+}
+
+/* Estilos de botón de correo y redes sociales (sin cambios relevantes) */
+
+/* Estilos de un botón genérico (usado para el correo) - From Uiverse.io by gagan-gv */ 
+.button {
+    padding: 15px 20px; /* Relleno interior del botón. */
+    font-size: 16px; /* Tamaño de fuente. */
+    background: transparent; /* Fondo transparente. */
+    border: none; /* Sin borde. */
+    position: relative; /* Establece contexto para los pseudo-elementos. */
+    color: #f0f0f0; /* Color del texto gris muy claro. */
+    z-index: 1; /* Asegura que el texto esté por encima de los pseudo-elementos. */
+    text-decoration: none; /* Elimina el subrayado si es un enlace. */
+}
+/* Estilos para los pseudo-elementos after y before (efecto visual) */
+.button::after,
+.button::before {
+    content: ''; /* Propiedad necesaria para mostrar pseudo-elementos. */
+    position: absolute; /* Posición absoluta respecto al botón. */
+    bottom: 0; /* Alineado a la parte inferior. */
+    right: 0; /* Alineado a la parte derecha. */
+    z-index: -99999; /* Mueve los pseudo-elementos detrás del texto. */
+    transition: all .4s; /* Transición suave de 0.4 segundos para todos los cambios de propiedades. */
+}
+
+.button::before {
+    transform: translate(0%, 0%); /* Posición inicial (sin desplazamiento). */
+    width: 100%; /* Ancho completo. */
+    height: 100%; /* Altura completa. */
+    background: #28282d; /* Fondo gris oscuro. */
+    border-radius: 10px; /* Esquinas redondeadas. */
+}
+
+.button::after {
+    transform: translate(10px, 10px); /* Desplaza el elemento 10px hacia la derecha y 10px hacia abajo desde la posición inicial. */
+    width: 35px; /* Ancho inicial pequeño. */
+    height: 35px; /* Altura inicial pequeña. */
+    background: #ffffff15; /* Fondo blanco muy transparente. */
+    backdrop-filter: blur(5px); /* Aplica un desenfoque (blur) de 5px al fondo detrás de este elemento (efecto de cristal). */
+    border-radius: 50px; /* Forma circular. */
+}
+
+.button:hover::before {
+    transform: translate(5%, 20%); /* Desplaza y estira el pseudo-elemento 'before' al pasar el ratón. */
+    width: 110%; /* Aumenta ligeramente el ancho. */
+    height: 110%; /* Aumenta ligeramente la altura. */
+}
+
+.button:hover::after {
+    border-radius: 10px; /* Cambia la forma a cuadrada con esquinas redondeadas. */
+    transform: translate(0, 0); /* Mueve el pseudo-elemento 'after' a su posición original. */
+    width: 100%; /* Ocupa el ancho completo del botón. */
+    height: 100%; /* Ocupa la altura completa del botón. */
+}
+
+.button:active::after {
+    transition: 0s; /* Desactiva la transición al hacer clic. */
+    transform: translate(0, 5%); /* Mueve el pseudo-elemento 'after' ligeramente hacia abajo al hacer clic (efecto de "presionar"). */
+}
+
+/* Estilos para los iconos de redes sociales - From Uiverse.io by wilsondesouza */ 
+ul {
+    list-style: none; /* Elimina los bullets de las listas no ordenadas. */
+}
+
+.example-2 {
+    display: flex; /* Utiliza flexbox. */
+    justify-content: center; /* Centra los iconos horizontalmente. */
+    align-items: center; /* Centra los iconos verticalmente. */
+}
+.example-2 .icon-content {
+    margin: 0 15px; /* Aplica un margen horizontal de 15px para separarlos. */
+    position: relative; /* Establece contexto para la posición del tooltip. */
+}
+.example-2 .icon-content .tooltip {
+    position: absolute; /* Posición absoluta respecto a '.icon-content'. */
+    top: -30px; /* Posiciona el tooltip 30px por encima del icono. */
+    left: 50%; /* Lo mueve al 50% del ancho del padre. */
+    transform: translateX(-50%); /* Ajusta el desplazamiento para centrarlo horizontalmente. */
+    color: #fff; /* Color del texto del tooltip blanco. */
+    padding: 6px 10px; /* Relleno. */
+    border-radius: 5px; /* Esquinas redondeadas. */
+    opacity: 0; /* Oculto por defecto (completamente transparente). */
+    visibility: hidden; /* Oculto por defecto (no interactuable). */
+    font-size: 14px; /* Tamaño de fuente. */
+    transition: all 0.3s ease; /* Transición suave para mostrar/ocultar. */
+}
+.example-2 .icon-content:hover .tooltip {
+    opacity: 1; /* Muestra el tooltip (transparencia total) al pasar el ratón. */
+    visibility: visible; /* Hace el tooltip visible. */
+    top: -50px; /* Lo mueve 50px por encima (efecto de desplazamiento). */
+}
+.example-2 .icon-content a {
+    position: relative; /* Establece contexto para el efecto de relleno. */
+    overflow: hidden; /* Oculta cualquier contenido que desborde (necesario para el efecto de relleno). */
+    display: flex; /* Utiliza flexbox para centrar el icono SVG. */
+    justify-content: center; /* Centra el icono SVG horizontalmente. */
+    align-items: center; /* Centra el icono SVG verticalmente. */
+    width: 55px; /* Ancho del icono. */
+    height: 55px; /* Altura del icono. */
+    border-radius: 50%; /* Forma circular. */
+    color: #4d4d4d; /* Color del icono por defecto (gris oscuro). */
+    background-color: #fff; /* Fondo del círculo blanco. */
+    transition: all 0.3s ease-in-out; /* Transición suave para el cambio de color y sombra. */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil. */
+}
+.example-2 .icon-content a:hover {
+    box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%); /* Sombra más pronunciada al pasar el ratón. */
+}
+.example-2 .icon-content a svg {
+    position: relative; /* Necesario para posicionar el SVG sobre el elemento de relleno. */
+    z-index: 1; /* Asegura que el SVG esté por encima del relleno. */
+    width: 35px; /* Ancho del icono SVG. */
+    height: 35px; /* Altura del icono SVG. */
+}
+.example-2 .icon-content a:hover {
+    color: white; /* Cambia el color del icono (SVG) a blanco al pasar el ratón. */
+}
+.example-2 .icon-content a .filled {
+    position: absolute; /* Posición absoluta respecto al enlace. */
+    top: auto; /* Deshabilita el posicionamiento superior. */
+    bottom: 0; /* Lo alinea con la parte inferior. */
+    left: 0; /* Lo alinea con la parte izquierda. */
+    width: 100%; /* Ancho completo. */
+    height: 0; /* Altura cero (oculto por defecto). */
+    background-color: #000; /* Color de fondo inicial (se sobrescribe por red social). */
+    transition: all 0.3s ease-in-out; /* Transición suave para el efecto de relleno. */
+}
+.example-2 .icon-content a:hover .filled {
+    height: 100%; /* Aumenta la altura al 100% al pasar el ratón (efecto de relleno). */
+}
+
+/* Colores específicos por red social */
+.example-2 .icon-content a[data-social="whatsapp"] .filled,
+.example-2 .icon-content a[data-social="whatsapp"] ~ .tooltip {
+    background-color: #128c7e; /* Establece el color de fondo para el relleno y el tooltip de WhatsApp. */
+}
+
+.example-2 .icon-content a[data-social="facebook"] .filled,
+.example-2 .icon-content a[data-social="facebook"] ~ .tooltip {
+    background-color: #3b5998; /* Establece el color de fondo para el relleno y el tooltip de Facebook. */
+}
+.example-2 .icon-content a[data-social="instagram"] .filled,
+.example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+    /* Fondo degradado para Instagram */
+    background: linear-gradient( /* Aplica un fondo con un degradado lineal con múltiples colores. */
+        45deg,
+        #405de6,
+        #5b51db,
+        #b33ab4,
+        #c135b4,
+        #e1306c,
+        #fd1f1f
+    );
+}
+.example-2 .icon-content a[data-social="youtube"] .filled,
+.example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
+    background-color: #ff0000; /* Establece el color de fondo para el relleno y el tooltip de YouTube (rojo). */
+}
+
+/*Estilos generales del boton whatsapp flotante*/
+.whatsapp-btn {
+    position: fixed; /* Posiciona el elemento de forma fija en la ventana (permanece visible al hacer scroll). */
+    bottom: 20px; /* Lo coloca 20px desde la parte inferior de la ventana. */
+    right: 20px; /* Lo coloca 20px desde la parte derecha de la ventana. */
+    z-index: 9999; /* Asegura que esté por encima de casi todos los demás elementos. */
+    width: 60px; /* Ancho del botón. */
+    height: 60px; /* Altura del botón. */
+    border-radius: 50%; /* Forma circular. */
+    background-color: #25D366; /* Color de WhatsApp (verde brillante). */
+    display: flex; /* Utiliza flexbox. */
+    align-items: center; /* Centra el contenido (el icono) verticalmente. */
+    justify-content: center; /* Centra el contenido (el icono) horizontalmente. */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra sutil. */
+    animation: breathe 2s ease-in-out infinite; /* Aplica la animación llamada 'breathe' (respiración), que dura 2s, tiene un ritmo suave, y se repite indefinidamente. */
+}
+
+/*Estilos solo al icono whatsapp*/
+.whatsapp-btn i {
+    color: #fff; /* Color del icono blanco. */
+    font-size: 24px; /* Tamaño del icono. */
+    animation: beat 2s ease-in-out infinite; /* Aplica la animación llamada 'beat' (latido), que dura 2s, tiene un ritmo suave, y se repite indefinidamente. */
+    text-decoration: none; /* Elimina el subrayado. */
+}
+
+/*Estilos con animation contorno respirando*/
+@keyframes breathe { /* Define la animación llamada 'breathe'. */
+    0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); /* Al inicio (0%), la sombra es transparente con radio cero. */
+}
+    70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); /* Al 70%, la sombra se ha expandido a 15px y su opacidad ha llegado a cero (desvanecimiento). */
+}
+    100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); /* Al final, la sombra vuelve a cero. */
+}
+}
+
+/*Estilos de animacion del icono latiendo*/
+@keyframes beat { /* Define la animación llamada 'beat'. */
+    0% {
+    transform: scale(1); /* Al inicio (0%), el icono tiene su tamaño normal. */
+}
+    50% {
+    transform: scale(1.2); /* A la mitad (50%), el icono se agranda un 20%. */
+}
+    100% {
+    transform: scale(1); /* Al final, el icono vuelve a su tamaño normal. */
+}
+}
+
+
+.manual-container {
+            width: 70%; /* Usa el ancho de la clase .text */
+            margin: 30px auto 20px auto; /* Centra y aplica márgenes. */
+            text-align: justify; /* Justifica el texto. */
+            line-height: 1.7;
+            font-size: 16px;
+            padding: 15px;
+            background-color: white; /* Fondo blanco para el bloque de contenido. */
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        /* Uso de estilos de títulos del CSS original */
+        .manual-container h1 {
+            font-family: 'Oswald', sans-serif;
+            color: #007bff;
+            text-align: center;
+            font-size: 30px;
+            border-bottom: 3px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .manual-container h2 {
+            font-family: 'Oswald', sans-serif;
+            color: #555;
+            text-align: center;
+            font-size: 26px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+        
+        .manual-container h3 {
+            font-family: 'Oswald', sans-serif;
+            color: #007bff; /* Usa el color de los h3 del .text */
+            text-align: center;
+            margin-top: 20px;
+            font-size: 22px;
+        }
+
+        .manual-container ul, .manual-container ol {
+            padding-left: 20px;
+            text-align: left;
+        }
+        
+        .manual-container li {
+             font-weight: 500;
+             margin-bottom: 10px;
+             text-align: left;
+             margin-left: 0;
+        }
+        
+        .manual-container .tip {
+            background-color: #e6f7ff;
+            border-left: 5px solid #007bff;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            text-align: left;
+        }

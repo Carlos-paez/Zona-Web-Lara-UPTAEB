@@ -1,142 +1,138 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Manual de Usuario - Sitio Web Zona Web Lara</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="style.css">
+
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+    <!-- Tu archivo de estilos personalizados -->
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <header>
-        <!-- Sección de encabezado de la página, que incluye logo, nombre y menú de navegación -->
-
-        <div class="banner">
-            <!-- Contenedor visual que agrupa el logo y el nombre de la empresa en una barra superior (banner) -->
-
-            <div class="logo">
-                <!-- Contenedor específico para el logo de la empresa -->
-
-                <img src="assets/logo_zwl.png" class="logo img" alt="Logo de Zona Web Lara">
-                <!-- Imagen del logo, ubicada en la carpeta "assets", con clase CSS "logo img" y texto alternativo accesible -->
-            </div>
-
-            <div class="name">
-                <!-- Contenedor para el nombre textual de la empresa -->
-
-                <h1>Zona Web Lara</h1>
-                <!-- Título principal del encabezado, mostrando el nombre de la empresa en tamaño grande -->
+    <!-- Navbar con logo y menú responsive (usa los estilos de style.css) -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/logo_zwl.png" alt="Logo de Zona Web Lara" width="40" class="rounded-circle me-2" />
+                Zona Web Lara
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="manual.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48">
+                                <path fill="#90caf9" d="M40 45H8V3h22l10 10z" />
+                                <path fill="#e1f5fe" d="M38.5 14H29V4.5z" />
+                                <path fill="#1976d2" d="M16 21h17v2H16zm0 4h13v2H16zm0 4h17v2H16zm0 4h13v2H16z" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
+    </nav>
 
-        <input type="checkbox" id="menu-toggle" class="menu-toggle">
-        <!-- Casilla de verificación oculta (usada como interruptor) para controlar la visibilidad del menú en móviles; no se muestra visualmente pero es clave para la interacción -->
+    <!-- Contenido principal -->
+    <main class="container my-5">
+        <div class="content-card">
+            <h1 class="text-center mb-4">Manual de Usuario - Sitio Web Zona Web Lara</h1>
 
-        <label for="menu-toggle" class="hamburger-icon">☰</label>
-        <!-- Etiqueta clickeable que actúa como ícono de hamburguesa (☰); al hacer clic, activa/desactiva el checkbox y muestra/oculta el menú en dispositivos móviles -->
+            <p class="text-center mb-4">
+                Este manual ha sido diseñado para explicar la arquitectura, el contenido y la forma más efectiva de navegar el sitio web de Zona Web Lara, garantizando que encuentre la información que necesita rápidamente.
+            </p>
 
-        <nav class="nav-bar">
-            <!-- Barra de navegación principal que contiene los enlaces del sitio -->
+            <hr class="my-4" />
 
-            <div class="dropdown">
-                <!-- Contenedor para cada elemento del menú (aunque actualmente no tiene submenús, se usa la clase "dropdown" por posible expansión futura) -->
+            <h2>1. Gestión de Contenido por Página</h2>
 
-                <a href="index.html" class="dropbtn">Inicio</a>
-                <!-- Enlace al inicio del sitio; la clase "dropbtn" sugiere un botón de menú desplegable (aunque aquí es un enlace simple) -->
-            </div>
-
-            <div class="dropdown">
-                <a href="nosotros.html" class="dropbtn">Nosotros</a>
-                <!-- Enlace a la página "Nosotros" -->
-            </div>
-
-            <div class="dropdown">
-                <a href="servicios.html" class="dropbtn">Servicios</a>
-                <!-- Enlace a la página "Servicios" -->
-            </div>
-
-            <div class="dropdown">
-                <a href="contacto.html" class="dropbtn">Contacto</a>
-                <!-- Enlace a la página "Contacto" -->
-            </div>
-
-            <div class="dropdown">
-                <a href="manual.html" class="dropbtn"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48"><path fill="#90caf9" d="M40 45H8V3h22l10 10z"/><path fill="#e1f5fe" d="M38.5 14H29V4.5z"/><path fill="#1976d2" d="M16 21h17v2H16zm0 4h13v2H16zm0 4h17v2H16zm0 4h13v2H16z"/></svg></a>
-                <!-- Enlace a la página "Nosotros" -->
-            </div>
-        </nav>
-    </header>
-
-    <div class="manual-container">
-        <h1>Manual de Usuario - Sitio Web Zona Web Lara</h1>
-
-        <p>Este manual ha sido diseñado para explicar la arquitectura, el contenido y la forma más efectiva de navegar el sitio web de Zona Web Lara, garantizando que encuentre la información que necesita rápidamente.</p>
-
-        <hr>
-
-        <h2>1. Gestión de Contenido por Página</h3>
-        <p>El contenido principal de cada página se enmarca en bloques visuales con fondo blanco, sombra y texto justificado, utilizando la clase <code>.text</code> del CSS.</p>
-        <ul>
-            <li>
-                <strong>Inicio :</strong>
-                <p>Página de bienvenida que presenta el "propósito" de la empresa ("dedicada al mundo digital") y sus cuatro "principios fundamentales" (innovación, calidad, confianza, servicio excepcional). Ofrece una visión rápida y el valor central de la marca.</p>
-            </li>
-            <li>
-                <strong>Nosotros:</strong>
-                <p>Detalla el origen ("Nacimos como una necesidad..."), la "misión" (simplificar la vida del cliente) y los **valores** corporativos, destacando "Honestida", ""Compromiso" e "Innovación".</p>            
-            </li>
-            <li>
-                <strong>Servicios:</strong>
-                <p>Expone la oferta de la empresa de forma organizada en categorías principales:</p>
-                <ol>
-                    <li><strong>Servicios Web y Desarrollo</strong></li>
-                    <li><strong>Servicios de Venta de Productos y Servicios</strong></li>
-                </ol>
-            </li>
-            <li>
-                <strong>Contacto:</strong>
-                <p>Canal de comunicación que incluye un "Formulario de Contacto", información de "Correo Electrónico" (`zonaweblara@gmail.com`) y enlaces a las "Redes Sociales" (Facebook e Instagram), utilizando los estilos de iconos con efecto de relleno definidos en el CSS.</p>
-            </li>
-        </ul>
-
-        <hr>
-
-        <h2>2. Cómo Navegar en el Sitio Web de Forma Eficaz</h2>
-        <p>La navegación es intuitiva y sigue los estándares web, con especial énfasis en la accesibilidad móvil y la comunicación instantánea.</p>
-
-        <h3>2.1. Navegación entre Secciones</h3>
-        <ol>
-            <li>
-                <strong>Uso del Menú Principal:</strong>
-                <p>Utilice los botones "Inicio", "Nosotros", "Servicios" y "Contacto" en el menú de navegación para saltar directamente a la sección deseada. En dispositivos móviles, toque el icono de "Menú Hamburguesa" (☰) para desplegar estas opciones.</p>
-            </li>
-            <li>
-                <strong>Regreso a la Página Principal:</strong>
-                <p>En cualquier momento, haga clic en el "Boton de Inicio" en el Banner superior para volver inmediatamente a la pagina principal.</p>
-            </li>
-        </ol>
-
-        <h3>2.2. Comunicación Rápida y Gestión de Contacto</h3>
-        <div class="tip">
-            <strong><i class="bi bi-whatsapp" style="color:#25D366;"></i> Botón Flotante de WhatsApp</strong>
-            <p>La herramienta de comunicación más eficaz es el "botón flotante de WhatsApp" Está visible en la esquina inferior derecha de la pantalla en todas las páginas, con una animación para llamar su atención.</p>
-            <p>Al hacer clic, se abre una conversación predefinida con la empresa (al número 4125022286), permitiendo una consulta instantánea sin necesidad de completar un formulario.</p>
-        </div>
-
-        <div class="tip" style="border-left-color: #3b5998;">
-            <strong><i class="bi bi-envelope-fill" style="color: #007bff;"></i> Formas de Contacto Adicionales</strong>
-            <p>Si requiere una comunicación formal o una consulta más extensa, diríjase a la página de "Contacto":</p>
-            <ul>
-                <li>Utilice el "Formulario de Contacto" para enviar su mensaje directamente.</li>
-                <li>Haga clic en el botón de "Correo Electrónico" para enviar un mensaje a `zonaweblara@gmail.com`.</li>
-                <li>Siga a la empresa en "Facebook" e "Instagram" a través de los iconos provistos, los cuales cuentan con un efecto visual de relleno al pasar el ratón.</li>
+            <ul class="mb-4">
+                <li class="mb-3">
+                    <strong>Inicio:</strong>
+                    <p>Página de bienvenida que presenta el "propósito" de la empresa ("dedicada al mundo digital") y sus cuatro "principios fundamentales" (innovación, calidad, confianza, servicio excepcional). Ofrece una visión rápida y el valor central de la marca.</p>
+                </li>
+                <li class="mb-3">
+                    <strong>Nosotros:</strong>
+                    <p>Detalla el origen ("Nacimos como una necesidad..."), la "misión" (simplificar la vida del cliente) y los <strong>valores</strong> corporativos, destacando "Honestidad", "Compromiso" e "Innovación".</p>
+                </li>
+                <li class="mb-3">
+                    <strong>Servicios:</strong>
+                    <p>Expone la oferta de la empresa de forma organizada en categorías principales:</p>
+                    <ol>
+                        <li><strong>Servicios Web y Desarrollo</strong></li>
+                        <li><strong>Servicios de Venta de Productos y Servicios</strong></li>
+                    </ol>
+                </li>
+                <li>
+                    <strong>Contacto:</strong>
+                    <p>Canal de comunicación que incluye un "Formulario de Contacto", información de "Correo Electrónico" (<code>zonaweblara@gmail.com</code>) y enlaces a las "Redes Sociales" (Facebook e Instagram), utilizando los estilos de iconos con efecto de relleno definidos en el CSS.</p>
+                </li>
             </ul>
-        </div>
-    </div>
 
-    <footer>
-        <p>&copy; 2025 Zona Web Lara. Manual de Usuario.</p>
+            <hr class="my-4" />
+
+            <h2>2. Cómo Navegar en el Sitio Web de Forma Eficaz</h2>
+            <p>La navegación es intuitiva y sigue los estándares web, con especial énfasis en la accesibilidad móvil y la comunicación instantánea.</p>
+
+            <h3>2.1. Navegación entre Secciones</h3>
+            <ol class="mb-4">
+                <li class="mb-3">
+                    <strong>Uso del Menú Principal:</strong>
+                    <p>Utilice los botones "Inicio", "Nosotros", "Servicios" y "Contacto" en el menú de navegación para saltar directamente a la sección deseada. En dispositivos móviles, toque el icono de "Menú Hamburguesa" (☰) para desplegar estas opciones.</p>
+                </li>
+                <li>
+                    <strong>Regreso a la Página Principal:</strong>
+                    <p>En cualquier momento, haga clic en el "Botón de Inicio" en el Banner superior para volver inmediatamente a la página principal.</p>
+                </li>
+            </ol>
+
+            <h3>2.2. Comunicación Rápida y Gestión de Contacto</h3>
+
+            <!-- Tip 1: WhatsApp -->
+            <div class="content-card tip-whatsapp mb-4" style="border-left: 5px solid #25D366; background: #f0fff4;">
+                <strong><i class="bi bi-whatsapp" style="color:#25D366;"></i> Botón Flotante de WhatsApp</strong>
+                <p>La herramienta de comunicación más eficaz es el <strong>botón flotante de WhatsApp</strong>. Está visible en la esquina inferior derecha de la pantalla en todas las páginas, con una animación para llamar su atención.</p>
+                <p>Al hacer clic, se abre una conversación predefinida con la empresa (al número 4125022286), permitiendo una consulta instantánea sin necesidad de completar un formulario.</p>
+            </div>
+
+            <!-- Tip 2: Otros contactos -->
+            <div class="content-card tip-email mb-4" style="border-left: 5px solid #007bff; background: #f0f7ff;">
+                <strong><i class="bi bi-envelope-fill" style="color: #007bff;"></i> Formas de Contacto Adicionales</strong>
+                <p>Si requiere una comunicación formal o una consulta más extensa, diríjase a la página de "Contacto":</p>
+                <ul class="mb-0">
+                    <li>Utilice el "Formulario de Contacto" para enviar su mensaje directamente.</li>
+                    <li>Haga clic en el botón de "Correo Electrónico" para enviar un mensaje a <code>zonaweblara@gmail.com</code>.</li>
+                    <li>Siga a la empresa en "Facebook" e "Instagram" a través de los iconos provistos, los cuales cuentan con un efecto visual de relleno al pasar el ratón.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Botón flotante de WhatsApp (estilos definidos en style.css) -->
+    <a href="https://wa.me/4125022286?text=Saludos" target="_blank" class="whatsapp-btn">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <p class="mb-0">&copy; 2025 Zona Web Lara. Manual de Usuario.</p>
     </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
