@@ -1,307 +1,365 @@
 /* style.css – Estilos personalizados que complementan Bootstrap */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500&display=swap");
 
 /* === Fuentes predeterminadas === */
 body {
-    font-family: 'Montserrat', sans-serif;
-    color: #333;
-    text-align: center;
+  font-family: "Montserrat", sans-serif;
+  color: #333;
+  text-align: center;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Oswald', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Oswald", sans-serif;
 }
 
 /* === Banner personalizado === */
 .banner {
-    background-image: url("assets/fondo_baner.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #007bff;
-    -webkit-text-stroke: 1px black;
-    font-family: 'Oswald', sans-serif;
-    font-size: 2.2rem;
-    border: 6px solid #1a1a1a;
-    border-radius: 8px;
-    padding: 1rem;
-    text-align: center;
+  background-image: url("assets/fondo_baner.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #007bff;
+  -webkit-text-stroke: 1px black;
+  font-family: "Oswald", sans-serif;
+  font-size: 2.2rem;
+  border: 6px solid #1a1a1a;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
-    .banner {
-        font-size: 2.8rem;
-    }
+  .banner {
+    font-size: 2.8rem;
+  }
 }
 
 .banner .logo img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: 2px solid white;
-    margin-bottom: 0.5rem;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-bottom: 0.5rem;
 }
 
 /* === Cards de contenido === */
 .content-card {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    padding: 1.25rem;
-    margin-bottom: 1.5rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .content-card h3 {
-    color: #007bff;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 0.5rem;
-    margin-top: 0;
+  color: #007bff;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+  margin-top: 0;
 }
 
 /* === Imágenes con estilo === */
 .content-image {
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-    border: 3px solid #007bff;
-    margin: 1.5rem auto;
-    display: block;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  border: 3px solid #007bff;
+  margin: 1.5rem auto;
+  display: block;
 }
 
 /* === Botón flotante de WhatsApp === */
 .whatsapp-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1050;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: #25D366;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    animation: breathe 2s ease-in-out infinite;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1050;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: breathe 2s ease-in-out infinite;
 }
 
 .whatsapp-btn i {
-    color: white;
-    font-size: 24px;
-    animation: beat 2s ease-in-out infinite;
+  color: white;
+  font-size: 24px;
+  animation: beat 2s ease-in-out infinite;
 }
 
 @keyframes breathe {
-    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
-    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
 }
 
 @keyframes beat {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* === Redes sociales === */
 .social-icons .icon-content {
-    margin: 0 10px;
+  margin: 0 10px;
 }
 
 /* === Footer === */
 footer {
-    margin-top: 3rem;
-    background-color: #1a1a1a;
-    color: #bbb;
-    padding: 1.5rem 0;
-    font-size: 0.95rem;
+  margin-top: 3rem;
+  background-color: #1a1a1a;
+  color: #bbb;
+  padding: 1.5rem 0;
+  font-size: 0.95rem;
 }
 
-
-/* Estilos para los iconos de redes sociales - From Uiverse.io by wilsondesouza */ 
+/* Estilos para los iconos de redes sociales - From Uiverse.io by wilsondesouza */
 ul {
-    list-style: none; /* Elimina los bullets de las listas no ordenadas. */
+  list-style: none; /* Elimina los bullets de las listas no ordenadas. */
 }
 
 .example-2 {
-    display: flex; /* Utiliza flexbox. */
-    justify-content: center; /* Centra los iconos horizontalmente. */
-    align-items: center; /* Centra los iconos verticalmente. */
+  display: flex; /* Utiliza flexbox. */
+  justify-content: center; /* Centra los iconos horizontalmente. */
+  align-items: center; /* Centra los iconos verticalmente. */
 }
 .example-2 .icon-content {
-    margin: 0 15px; /* Aplica un margen horizontal de 15px para separarlos. */
-    position: relative; /* Establece contexto para la posición del tooltip. */
+  margin: 0 15px; /* Aplica un margen horizontal de 15px para separarlos. */
+  position: relative; /* Establece contexto para la posición del tooltip. */
 }
 .example-2 .icon-content .tooltip {
-    position: absolute; /* Posición absoluta respecto a '.icon-content'. */
-    top: -30px; /* Posiciona el tooltip 30px por encima del icono. */
-    left: 50%; /* Lo mueve al 50% del ancho del padre. */
-    transform: translateX(-50%); /* Ajusta el desplazamiento para centrarlo horizontalmente. */
-    color: #fff; /* Color del texto del tooltip blanco. */
-    padding: 6px 10px; /* Relleno. */
-    border-radius: 5px; /* Esquinas redondeadas. */
-    opacity: 0; /* Oculto por defecto (completamente transparente). */
-    visibility: hidden; /* Oculto por defecto (no interactuable). */
-    font-size: 14px; /* Tamaño de fuente. */
-    transition: all 0.3s ease; /* Transición suave para mostrar/ocultar. */
+  position: absolute; /* Posición absoluta respecto a '.icon-content'. */
+  top: -30px; /* Posiciona el tooltip 30px por encima del icono. */
+  left: 50%; /* Lo mueve al 50% del ancho del padre. */
+  transform: translateX(
+    -50%
+  ); /* Ajusta el desplazamiento para centrarlo horizontalmente. */
+  color: #fff; /* Color del texto del tooltip blanco. */
+  padding: 6px 10px; /* Relleno. */
+  border-radius: 5px; /* Esquinas redondeadas. */
+  opacity: 0; /* Oculto por defecto (completamente transparente). */
+  visibility: hidden; /* Oculto por defecto (no interactuable). */
+  font-size: 14px; /* Tamaño de fuente. */
+  transition: all 0.3s ease; /* Transición suave para mostrar/ocultar. */
 }
 .example-2 .icon-content:hover .tooltip {
-    opacity: 1; /* Muestra el tooltip (transparencia total) al pasar el ratón. */
-    visibility: visible; /* Hace el tooltip visible. */
-    top: -50px; /* Lo mueve 50px por encima (efecto de desplazamiento). */
+  opacity: 1; /* Muestra el tooltip (transparencia total) al pasar el ratón. */
+  visibility: visible; /* Hace el tooltip visible. */
+  top: -50px; /* Lo mueve 50px por encima (efecto de desplazamiento). */
 }
 .example-2 .icon-content a {
-    position: relative; /* Establece contexto para el efecto de relleno. */
-    overflow: hidden; /* Oculta cualquier contenido que desborde (necesario para el efecto de relleno). */
-    display: flex; /* Utiliza flexbox para centrar el icono SVG. */
-    justify-content: center; /* Centra el icono SVG horizontalmente. */
-    align-items: center; /* Centra el icono SVG verticalmente. */
-    width: 55px; /* Ancho del icono. */
-    height: 55px; /* Altura del icono. */
-    border-radius: 50%; /* Forma circular. */
-    color: #4d4d4d; /* Color del icono por defecto (gris oscuro). */
-    background-color: #fff; /* Fondo del círculo blanco. */
-    transition: all 0.3s ease-in-out; /* Transición suave para el cambio de color y sombra. */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil. */
+  position: relative; /* Establece contexto para el efecto de relleno. */
+  overflow: hidden; /* Oculta cualquier contenido que desborde (necesario para el efecto de relleno). */
+  display: flex; /* Utiliza flexbox para centrar el icono SVG. */
+  justify-content: center; /* Centra el icono SVG horizontalmente. */
+  align-items: center; /* Centra el icono SVG verticalmente. */
+  width: 55px; /* Ancho del icono. */
+  height: 55px; /* Altura del icono. */
+  border-radius: 50%; /* Forma circular. */
+  color: #4d4d4d; /* Color del icono por defecto (gris oscuro). */
+  background-color: #fff; /* Fondo del círculo blanco. */
+  transition: all 0.3s ease-in-out; /* Transición suave para el cambio de color y sombra. */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil. */
 }
 .example-2 .icon-content a:hover {
-    box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%); /* Sombra más pronunciada al pasar el ratón. */
+  box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%); /* Sombra más pronunciada al pasar el ratón. */
 }
 .example-2 .icon-content a svg {
-    position: relative; /* Necesario para posicionar el SVG sobre el elemento de relleno. */
-    z-index: 1; /* Asegura que el SVG esté por encima del relleno. */
-    width: 35px; /* Ancho del icono SVG. */
-    height: 35px; /* Altura del icono SVG. */
+  position: relative; /* Necesario para posicionar el SVG sobre el elemento de relleno. */
+  z-index: 1; /* Asegura que el SVG esté por encima del relleno. */
+  width: 35px; /* Ancho del icono SVG. */
+  height: 35px; /* Altura del icono SVG. */
 }
 .example-2 .icon-content a:hover {
-    color: white; /* Cambia el color del icono (SVG) a blanco al pasar el ratón. */
+  color: white; /* Cambia el color del icono (SVG) a blanco al pasar el ratón. */
 }
 .example-2 .icon-content a .filled {
-    position: absolute; /* Posición absoluta respecto al enlace. */
-    top: auto; /* Deshabilita el posicionamiento superior. */
-    bottom: 0; /* Lo alinea con la parte inferior. */
-    left: 0; /* Lo alinea con la parte izquierda. */
-    width: 100%; /* Ancho completo. */
-    height: 0; /* Altura cero (oculto por defecto). */
-    background-color: #000; /* Color de fondo inicial (se sobrescribe por red social). */
-    transition: all 0.3s ease-in-out; /* Transición suave para el efecto de relleno. */
+  position: absolute; /* Posición absoluta respecto al enlace. */
+  top: auto; /* Deshabilita el posicionamiento superior. */
+  bottom: 0; /* Lo alinea con la parte inferior. */
+  left: 0; /* Lo alinea con la parte izquierda. */
+  width: 100%; /* Ancho completo. */
+  height: 0; /* Altura cero (oculto por defecto). */
+  background-color: #000; /* Color de fondo inicial (se sobrescribe por red social). */
+  transition: all 0.3s ease-in-out; /* Transición suave para el efecto de relleno. */
 }
 .example-2 .icon-content a:hover .filled {
-    height: 100%; /* Aumenta la altura al 100% al pasar el ratón (efecto de relleno). */
+  height: 100%; /* Aumenta la altura al 100% al pasar el ratón (efecto de relleno). */
 }
 
 /* Colores específicos por red social */
 .example-2 .icon-content a[data-social="whatsapp"] .filled,
 .example-2 .icon-content a[data-social="whatsapp"] ~ .tooltip {
-    background-color: #128c7e; /* Establece el color de fondo para el relleno y el tooltip de WhatsApp. */
+  background-color: #128c7e; /* Establece el color de fondo para el relleno y el tooltip de WhatsApp. */
 }
 
 .example-2 .icon-content a[data-social="facebook"] .filled,
 .example-2 .icon-content a[data-social="facebook"] ~ .tooltip {
-    background-color: #3b5998; /* Establece el color de fondo para el relleno y el tooltip de Facebook. */
+  background-color: #3b5998; /* Establece el color de fondo para el relleno y el tooltip de Facebook. */
 }
 .example-2 .icon-content a[data-social="instagram"] .filled,
 .example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
-    /* Fondo degradado para Instagram */
-    background: linear-gradient( /* Aplica un fondo con un degradado lineal con múltiples colores. */
-        45deg,
-        #405de6,
-        #5b51db,
-        #b33ab4,
-        #c135b4,
-        #e1306c,
-        #fd1f1f
-    );
+  /* Fondo degradado para Instagram */
+  background: linear-gradient(
+    /* Aplica un fondo con un degradado lineal con múltiples colores. */ 45deg,
+    #405de6,
+    #5b51db,
+    #b33ab4,
+    #c135b4,
+    #e1306c,
+    #fd1f1f
+  );
 }
 .example-2 .icon-content a[data-social="youtube"] .filled,
 .example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
-    background-color: #ff0000; /* Establece el color de fondo para el relleno y el tooltip de YouTube (rojo). */
+  background-color: #ff0000; /* Establece el color de fondo para el relleno y el tooltip de YouTube (rojo). */
 }
-
 
 /* === Navbar con gradiente (compatible con Bootstrap y diseño original) === */
 .navbar {
-    background: linear-gradient(90deg, #007bff, #1a1a1a) !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(90deg, #007bff, #1a1a1a) !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-brand,
 .navbar-nav .nav-link {
-    color: white !important;
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    font-weight: 500;
-    font-size: 18px;
-    transition: background-color 0.3s, color 0.3s;
+  color: white !important;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 18px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link:focus {
-    background-color: #007bff;
-    color: white !important;
-    border-radius: 4px;
+  background-color: #007bff;
+  color: white !important;
+  border-radius: 4px;
 }
 
 .navbar-nav .nav-link.active {
-    background-color: #0056b3;
-    color: white !important;
-    border-radius: 4px;
+  background-color: #0056b3;
+  color: white !important;
+  border-radius: 4px;
 }
 
 .button {
-    padding: 15px 20px; /* Relleno interior del botón. */
-    font-size: 16px; /* Tamaño de fuente. */
-    background: transparent; /* Fondo transparente. */
-    border: none; /* Sin borde. */
-    position: relative; /* Establece contexto para los pseudo-elementos. */
-    color: #f0f0f0; /* Color del texto gris muy claro. */
-    z-index: 1; /* Asegura que el texto esté por encima de los pseudo-elementos. */
-    text-decoration: none; /* Elimina el subrayado si es un enlace. */
+  padding: 15px 20px; /* Relleno interior del botón. */
+  font-size: 16px; /* Tamaño de fuente. */
+  background: transparent; /* Fondo transparente. */
+  border: none; /* Sin borde. */
+  position: relative; /* Establece contexto para los pseudo-elementos. */
+  color: #f0f0f0; /* Color del texto gris muy claro. */
+  z-index: 1; /* Asegura que el texto esté por encima de los pseudo-elementos. */
+  text-decoration: none; /* Elimina el subrayado si es un enlace. */
 }
 /* Estilos para los pseudo-elementos after y before (efecto visual) */
 .button::after,
 .button::before {
-    content: ''; /* Propiedad necesaria para mostrar pseudo-elementos. */
-    position: absolute; /* Posición absoluta respecto al botón. */
-    bottom: 0; /* Alineado a la parte inferior. */
-    right: 0; /* Alineado a la parte derecha. */
-    z-index: -99999; /* Mueve los pseudo-elementos detrás del texto. */
-    transition: all .4s; /* Transición suave de 0.4 segundos para todos los cambios de propiedades. */
+  content: ""; /* Propiedad necesaria para mostrar pseudo-elementos. */
+  position: absolute; /* Posición absoluta respecto al botón. */
+  bottom: 0; /* Alineado a la parte inferior. */
+  right: 0; /* Alineado a la parte derecha. */
+  z-index: -99999; /* Mueve los pseudo-elementos detrás del texto. */
+  transition: all 0.4s; /* Transición suave de 0.4 segundos para todos los cambios de propiedades. */
 }
 
 .button::before {
-    transform: translate(0%, 0%); /* Posición inicial (sin desplazamiento). */
-    width: 100%; /* Ancho completo. */
-    height: 100%; /* Altura completa. */
-    background: #28282d; /* Fondo gris oscuro. */
-    border-radius: 10px; /* Esquinas redondeadas. */
+  transform: translate(0%, 0%); /* Posición inicial (sin desplazamiento). */
+  width: 100%; /* Ancho completo. */
+  height: 100%; /* Altura completa. */
+  background: #28282d; /* Fondo gris oscuro. */
+  border-radius: 10px; /* Esquinas redondeadas. */
 }
 
 .button::after {
-    transform: translate(10px, 10px); /* Desplaza el elemento 10px hacia la derecha y 10px hacia abajo desde la posición inicial. */
-    width: 35px; /* Ancho inicial pequeño. */
-    height: 35px; /* Altura inicial pequeña. */
-    background: #ffffff15; /* Fondo blanco muy transparente. */
-    backdrop-filter: blur(5px); /* Aplica un desenfoque (blur) de 5px al fondo detrás de este elemento (efecto de cristal). */
-    border-radius: 50px; /* Forma circular. */
+  transform: translate(
+    10px,
+    10px
+  ); /* Desplaza el elemento 10px hacia la derecha y 10px hacia abajo desde la posición inicial. */
+  width: 35px; /* Ancho inicial pequeño. */
+  height: 35px; /* Altura inicial pequeña. */
+  background: #ffffff15; /* Fondo blanco muy transparente. */
+  backdrop-filter: blur(
+    5px
+  ); /* Aplica un desenfoque (blur) de 5px al fondo detrás de este elemento (efecto de cristal). */
+  border-radius: 50px; /* Forma circular. */
 }
 
 .button:hover::before {
-    transform: translate(5%, 20%); /* Desplaza y estira el pseudo-elemento 'before' al pasar el ratón. */
-    width: 110%; /* Aumenta ligeramente el ancho. */
-    height: 110%; /* Aumenta ligeramente la altura. */
+  transform: translate(
+    5%,
+    20%
+  ); /* Desplaza y estira el pseudo-elemento 'before' al pasar el ratón. */
+  width: 110%; /* Aumenta ligeramente el ancho. */
+  height: 110%; /* Aumenta ligeramente la altura. */
 }
 
 .button:hover::after {
-    border-radius: 10px; /* Cambia la forma a cuadrada con esquinas redondeadas. */
-    transform: translate(0, 0); /* Mueve el pseudo-elemento 'after' a su posición original. */
-    width: 100%; /* Ocupa el ancho completo del botón. */
-    height: 100%; /* Ocupa la altura completa del botón. */
+  border-radius: 10px; /* Cambia la forma a cuadrada con esquinas redondeadas. */
+  transform: translate(
+    0,
+    0
+  ); /* Mueve el pseudo-elemento 'after' a su posición original. */
+  width: 100%; /* Ocupa el ancho completo del botón. */
+  height: 100%; /* Ocupa la altura completa del botón. */
 }
 
 .button:active::after {
-    transition: 0s; /* Desactiva la transición al hacer clic. */
-    transform: translate(0, 5%); /* Mueve el pseudo-elemento 'after' ligeramente hacia abajo al hacer clic (efecto de "presionar"). */
+  transition: 0s; /* Desactiva la transición al hacer clic. */
+  transform: translate(
+    0,
+    5%
+  ); /* Mueve el pseudo-elemento 'after' ligeramente hacia abajo al hacer clic (efecto de "presionar"). */
+}
+
+/* From Uiverse.io by Mike11jr */
+.btn {
+  width: 130px;
+  height: 40px;
+  font-size: 1.1em;
+  cursor: pointer;
+  background-color: #171717;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.4s;
+}
+
+.btn:hover {
+  border-radius: 5px;
+  transform: translateY(-10px);
+  box-shadow: 0 7px 0 -2px #f85959, 0 15px 0 -4px #39a2db,
+    0 16px 10px -3px #39a2db;
+}
+
+.btn:active {
+  transition: all 0.2s;
+  transform: translateY(-5px);
+  box-shadow: 0 2px 0 -2px #f85959, 0 8px 0 -4px #39a2db,
+    0 12px 10px -3px #39a2db;
 }

@@ -29,6 +29,7 @@
     <!-- Tu CSS personalizado (debe contener las clases: .text, .button, .example-2, .whatsapp-btn, etc.) -->
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
@@ -100,9 +101,10 @@
           Contáctanos por Correo
         </h3>
         <p class="mb-4">
-          Utiliza el siguiente botón para enviarnos un correo electrónico. Te
-          responderemos a la brevedad posible.
+          Completa el formulario y utiliza el siguiente botón para enviarnos un
+          correo electrónico. Te responderemos a la brevedad posible.
         </p>
+
         <form id="formulario-contacto" class="grid gap-3 grid-cols-2 mb-3">
           <div class="d-flex flex-row">
             <div>
@@ -185,6 +187,10 @@
             </button>
           </div>
         </form>
+      </div>
+
+      <div class="container">
+        <button onclick="copiarTexto()" class="btn">Teléfono</button>
       </div>
 
       <!-- Ubicación -->
@@ -341,5 +347,6 @@
     <!-- Bootstrap JS (requerido para navbar responsive) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="email.js"></script>
+    <script src="copy.js"></script>
   </body>
 </html>
