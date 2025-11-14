@@ -13,6 +13,8 @@ body {
   color: #333;
   background-color: var(--light-bg);
   text-align: center;
+  /* CAMBIO CLAVE 1: Añade padding para evitar que el contenido quede oculto bajo la navbar fija */
+  padding-top: 70px;
 }
 
 h1,
@@ -28,6 +30,11 @@ h4 {
   /* Fondo sólido y limpio, eliminando el gradiente excesivo */
   background-color: var(--dark-bg) !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  /* CAMBIO CLAVE 2: Fija la barra de navegación en la parte superior */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030; /* Asegura que esté sobre el contenido (el valor predeterminado de Bootstrap) */
 }
 
 .navbar-brand,
@@ -50,9 +57,7 @@ h4 {
 .hero-section {
   /* GRADIENTE AZUL Y BLANCO */
   background: linear-gradient(135deg, #ffffff 0%, var(--primary-color) 100%);
-  color: var(
-    --secondary-color
-  ); /* Texto por defecto oscuro para el fondo claro */
+  color: white; /* Texto por defecto BLANCO */
   padding: 8rem 1rem; /* Más altura */
   border-radius: 0 0 15px 15px;
   margin-bottom: 3rem;
@@ -73,7 +78,8 @@ h4 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-shadow: none; /* Se elimina la sombra del texto */
+  /* AÑADIDO: Sombra de texto para hacerlo legible sobre cualquier fondo */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .hero-content .logo img {
@@ -87,14 +93,14 @@ h4 {
 .hero-content h1 {
   font-size: 3rem;
   font-weight: 700;
-  /* Color de título actualizado para fondo claro */
-  color: var(--secondary-color);
+  /* Color de título actualizado a blanco para fondo claro */
+  color: white;
   margin-top: 1rem;
 }
 
 /* Asegurar que el lead se vea bien */
 .hero-content p.lead {
-  color: var(--secondary-color);
+  color: white;
 }
 
 /* === Sección de Contenido con Grid (Alternating Feature Blocks) === */
@@ -212,4 +218,228 @@ footer {
   padding: 1.5rem 0;
   font-size: 0.95rem;
   margin-top: 0;
+}
+
+ul {
+  list-style: none; /* Elimina los bullets de las listas no ordenadas. */
+}
+
+.example-2 {
+  display: flex; /* Utiliza flexbox. */
+  justify-content: center; /* Centra los iconos horizontalmente. */
+  align-items: center; /* Centra los iconos verticalmente. */
+}
+.example-2 .icon-content {
+  margin: 0 15px; /* Aplica un margen horizontal de 15px para separarlos. */
+  position: relative; /* Establece contexto para la posición del tooltip. */
+}
+.example-2 .icon-content .tooltip {
+  position: absolute; /* Posición absoluta respecto a '.icon-content'. */
+  top: -30px; /* Posiciona el tooltip 30px por encima del icono. */
+  left: 50%; /* Lo mueve al 50% del ancho del padre. */
+  transform: translateX(
+    -50%
+  ); /* Ajusta el desplazamiento para centrarlo horizontalmente. */
+  color: #fff; /* Color del texto del tooltip blanco. */
+  padding: 6px 10px; /* Relleno. */
+  border-radius: 5px; /* Esquinas redondeadas. */
+  opacity: 0; /* Oculto por defecto (completamente transparente). */
+  visibility: hidden; /* Oculto por defecto (no interactuable). */
+  font-size: 14px; /* Tamaño de fuente. */
+  transition: all 0.3s ease; /* Transición suave para mostrar/ocultar. */
+}
+.example-2 .icon-content:hover .tooltip {
+  opacity: 1; /* Muestra el tooltip (transparencia total) al pasar el ratón. */
+  visibility: visible; /* Hace el tooltip visible. */
+  top: -50px; /* Lo mueve 50px por encima (efecto de desplazamiento). */
+}
+.example-2 .icon-content a {
+  position: relative; /* Establece contexto para el efecto de relleno. */
+  overflow: hidden; /* Oculta cualquier contenido que desborde (necesario para el efecto de relleno). */
+  display: flex; /* Utiliza flexbox para centrar el icono SVG. */
+  justify-content: center; /* Centra el icono SVG horizontalmente. */
+  align-items: center; /* Centra el icono SVG verticalmente. */
+  width: 55px; /* Ancho del icono. */
+  height: 55px; /* Altura del icono. */
+  border-radius: 50%; /* Forma circular. */
+  color: #4d4d4d; /* Color del icono por defecto (gris oscuro). */
+  background-color: #fff; /* Fondo del círculo blanco. */
+  transition: all 0.3s ease-in-out; /* Transición suave para el cambio de color y sombra. */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil. */
+}
+.example-2 .icon-content a:hover {
+  box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%); /* Sombra más pronunciada al pasar el ratón. */
+}
+.example-2 .icon-content a svg {
+  position: relative; /* Necesario para posicionar el SVG sobre el elemento de relleno. */
+  z-index: 1; /* Asegura que el SVG esté por encima del relleno. */
+  width: 35px; /* Ancho del icono SVG. */
+  height: 35px; /* Altura del icono SVG. */
+}
+.example-2 .icon-content a:hover {
+  color: white; /* Cambia el color del icono (SVG) a blanco al pasar el ratón. */
+}
+.example-2 .icon-content a .filled {
+  position: absolute; /* Posición absoluta respecto al enlace. */
+  top: auto; /* Deshabilita el posicionamiento superior. */
+  bottom: 0; /* Lo alinea con la parte inferior. */
+  left: 0; /* Lo alinea con la parte izquierda. */
+  width: 100%; /* Ancho completo. */
+  height: 0; /* Altura cero (oculto por defecto). */
+  background-color: #000; /* Color de fondo inicial (se sobrescribe por red social). */
+  transition: all 0.3s ease-in-out; /* Transición suave para el efecto de relleno. */
+}
+.example-2 .icon-content a:hover .filled {
+  height: 100%; /* Aumenta la altura al 100% al pasar el ratón (efecto de relleno). */
+}
+
+/* Colores específicos por red social */
+.example-2 .icon-content a[data-social="whatsapp"] .filled,
+.example-2 .icon-content a[data-social="whatsapp"] ~ .tooltip {
+  background-color: #128c7e; /* Establece el color de fondo para el relleno y el tooltip de WhatsApp. */
+}
+
+.example-2 .icon-content a[data-social="facebook"] .filled,
+.example-2 .icon-content a[data-social="facebook"] ~ .tooltip {
+  background-color: #3b5998; /* Establece el color de fondo para el relleno y el tooltip de Facebook. */
+}
+.example-2 .icon-content a[data-social="instagram"] .filled,
+.example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+  /* Fondo degradado para Instagram */
+  background: linear-gradient(
+    /* Aplica un fondo con un degradado lineal con múltiples colores. */ 45deg,
+    #405de6,
+    #5b51db,
+    #b33ab4,
+    #c135b4,
+    #e1306c,
+    #fd1f1f
+  );
+}
+.example-2 .icon-content a[data-social="youtube"] .filled,
+.example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
+  background-color: #ff0000; /* Establece el color de fondo para el relleno y el tooltip de YouTube (rojo). */
+}
+
+/*Estilos generales del boton whatsapp flotante*/
+.whatsapp-btn {
+  position: fixed; /* Posiciona el elemento de forma fija en la ventana (permanece visible al hacer scroll). */
+  bottom: 20px; /* Lo coloca 20px desde la parte inferior de la ventana. */
+  right: 20px; /* Lo coloca 20px desde la parte derecha de la ventana. */
+  z-index: 9999; /* Asegura que esté por encima de casi todos los demás elementos. */
+  width: 60px; /* Ancho del botón. */
+  height: 60px; /* Altura del botón. */
+  border-radius: 50%; /* Forma circular. */
+  background-color: #25d366; /* Color de WhatsApp (verde brillante). */
+  display: flex; /* Utiliza flexbox. */
+  align-items: center; /* Centra el contenido (el icono) verticalmente. */
+  justify-content: center; /* Centra el contenido (el icono) horizontalmente. */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra sutil. */
+  animation: breathe 2s ease-in-out infinite; /* Aplica la animación llamada 'breathe' (respiración), que dura 2s, tiene un ritmo suave, y se repite indefinidamente. */
+}
+
+/*Estilos solo al icono whatsapp*/
+.whatsapp-btn i {
+  color: #fff; /* Color del icono blanco. */
+  font-size: 24px; /* Tamaño del icono. */
+  animation: beat 2s ease-in-out infinite; /* Aplica la animación llamada 'beat' (latido), que dura 2s, tiene un ritmo suave, y se repite indefinidamente. */
+  text-decoration: none; /* Elimina el subrayado. */
+}
+
+/*Estilos con animation contorno respirando*/
+@keyframes breathe {
+  /* Define la animación llamada 'breathe'. */
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); /* Al inicio (0%), la sombra es transparente con radio cero. */
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); /* Al 70%, la sombra se ha expandido a 15px y su opacidad ha llegado a cero (desvanecimiento). */
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); /* Al final, la sombra vuelve a cero. */
+  }
+}
+
+/*Estilos de animacion del icono latiendo*/
+@keyframes beat {
+  /* Define la animación llamada 'beat'. */
+  0% {
+    transform: scale(1); /* Al inicio (0%), el icono tiene su tamaño normal. */
+  }
+  50% {
+    transform: scale(1.2); /* A la mitad (50%), el icono se agranda un 20%. */
+  }
+  100% {
+    transform: scale(1); /* Al final, el icono vuelve a su tamaño normal. */
+  }
+}
+
+.button {
+  padding: 15px 20px; /* Relleno interior del botón. */
+  font-size: 16px; /* Tamaño de fuente. */
+  background: transparent; /* Fondo transparente. */
+  border: none; /* Sin borde. */
+  position: relative; /* Establece contexto para los pseudo-elementos. */
+  color: #f0f0f0; /* Color del texto gris muy claro. */
+  z-index: 1; /* Asegura que el texto esté por encima de los pseudo-elementos. */
+  text-decoration: none; /* Elimina el subrayado si es un enlace. */
+}
+/* Estilos para los pseudo-elementos after y before (efecto visual) */
+.button::after,
+.button::before {
+  content: ""; /* Propiedad necesaria para mostrar pseudo-elementos. */
+  position: absolute; /* Posición absoluta respecto al botón. */
+  bottom: 0; /* Alineado a la parte inferior. */
+  right: 0; /* Alineado a la parte derecha. */
+  z-index: -99999; /* Mueve los pseudo-elementos detrás del texto. */
+  transition: all 0.4s; /* Transición suave de 0.4 segundos para todos los cambios de propiedades. */
+}
+
+.button::before {
+  transform: translate(0%, 0%); /* Posición inicial (sin desplazamiento). */
+  width: 100%; /* Ancho completo. */
+  height: 100%; /* Altura completa. */
+  background: #28282d; /* Fondo gris oscuro. */
+  border-radius: 10px; /* Esquinas redondeadas. */
+}
+
+.button::after {
+  transform: translate(
+    10px,
+    10px
+  ); /* Desplaza el elemento 10px hacia la derecha y 10px hacia abajo desde la posición inicial. */
+  width: 35px; /* Ancho inicial pequeño. */
+  height: 35px; /* Altura inicial pequeña. */
+  background: #ffffff15; /* Fondo blanco muy transparente. */
+  backdrop-filter: blur(
+    5px
+  ); /* Aplica un desenfoque (blur) de 5px al fondo detrás de este elemento (efecto de cristal). */
+  border-radius: 50px; /* Forma circular. */
+}
+
+.button:hover::before {
+  transform: translate(
+    5%,
+    20%
+  ); /* Desplaza y estira el pseudo-elemento 'before' al pasar el ratón. */
+  width: 110%; /* Aumenta ligeramente el ancho. */
+  height: 110%; /* Aumenta ligeramente la altura. */
+}
+
+.button:hover::after {
+  border-radius: 10px; /* Cambia la forma a cuadrada con esquinas redondeadas. */
+  transform: translate(
+    0,
+    0
+  ); /* Mueve el pseudo-elemento 'after' a su posición original. */
+  width: 100%; /* Ocupa el ancho completo del botón. */
+  height: 100%; /* Ocupa la altura completa del botón. */
+}
+
+.button:active::after {
+  transition: 0s; /* Desactiva la transición al hacer clic. */
+  transform: translate(
+    0,
+    5%
+  ); /* Mueve el pseudo-elemento 'after' ligeramente hacia abajo al hacer clic (efecto de "presionar"). */
 }
