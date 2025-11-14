@@ -1,124 +1,256 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zona Web Lara</title>
+    <title>Zona Web Lara | Servicios</title>
 
-    <!-- Bootstrap 5.3 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
 
-    <!-- Fuentes personalizadas -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500&display=swap"
+      rel="stylesheet"
+    />
 
-    <!-- Favicon -->
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 
-    <!-- Estilos personalizados -->
     <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-    <!-- Navbar con logo y menú responsive -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="assets/logo_zwl.png" alt="Logo de Zona Web Lara" width="40" class="rounded-circle me-2" />
-                Zona Web Lara
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="servicios.html">Servicios</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="manual.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48">
-                                <path fill="#90caf9" d="M40 45H8V3h22l10 10z"/>
-                                <path fill="#e1f5fe" d="M38.5 14H29V4.5z"/>
-                                <path fill="#1976d2" d="M16 21h17v2H16zm0 4h13v2H16zm0 4h17v2H16zm0 4h13v2H16z"/>
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img
+            src="assets/logo_zwl.png"
+            alt="Logo de Zona Web Lara"
+            width="40"
+            class="rounded-circle me-2"
+          />
+          Zona Web Lara
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="nosotros.html">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="servicios.html"
+                >Servicios</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacto.html">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="manual.html" title="Manual de Usuario">
+                <i class="bi bi-file-earmark-text-fill"></i>
+              </a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
-    <!-- Contenido principal -->
-    <main class="container my-5">
-        <!-- Introducción -->
-        <div class="content-card">
-            <h3 class="text-center mb-4" style="text-decoration: underline;">
-                Nuestros Servicios: Soluciones Integrales y Conectividad de Vanguardia
+    <header
+      class="hero-section"
+      style="background-image: url('assets/zwl/cyber 2.png')"
+    >
+      <div class="container hero-content">
+        <h1 class="display-3">Nuestros Servicios Integrales</h1>
+        <p class="lead mt-3 mb-4 d-none d-md-block">
+          La combinación perfecta de tecnología, papelería y gestoría en un solo
+          lugar.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="py-5">
+        <h2 class="text-center mb-5 display-5">
+          Explora Nuestras Áreas de Servicio
+        </h2>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-lg border-0 text-center p-3">
+              <div class="card-body">
+                <i class="bi bi-laptop display-3 text-primary mb-3"></i>
+                <h3 class="card-title h4 text-primary">
+                  Cyber & Acceso a Internet
+                </h3>
+                <p class="card-text text-secondary">
+                  Proporcionamos acceso a Internet de alta velocidad en un
+                  entorno seguro y profesional, esencial para estudiantes y
+                  profesionales.
+                </p>
+                <ul class="text-start list-unstyled ps-4">
+                  <li>
+                    <i class="bi bi-check-circle-fill text-success me-2"></i
+                    >Navegación y Búsquedas
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill text-success me-2"></i
+                    >Investigación Documental
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill text-success me-2"></i
+                    >Consultas y Trámites online
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-lg border-0 text-center p-3">
+              <div class="card-body">
+                <i class="bi bi-printer-fill display-3 text-primary mb-3"></i>
+                <h3 class="card-title h4 text-primary">
+                  Impresión, Copiado y Papelería
+                </h3>
+                <p class="card-text text-secondary">
+                  Cubrimos todas tus necesidades de impresión y artículos de
+                  oficina, garantizando calidad y eficiencia.
+                </p>
+                <ul class="text-start list-unstyled ps-4">
+                  <li>
+                    <i class="bi bi-check-circle-fill text-success me-2"></i
+                    >Impresión Láser y a Color
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill text-success me-2"></i
+                    >Fotocopiado de documentos
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill text-success me-2"></i
+                    >Venta de Artículos Escolares y de Oficina
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-lg border-0 text-center p-3">
+              <div class="card-body">
+                <i
+                  class="bi bi-file-earmark-person-fill display-3 text-primary mb-3"
+                ></i>
+                <h3 class="card-title h4 text-primary">
+                  Soporte y Trámites Legales
+                </h3>
+                <p class="card-text text-secondary">
+                  Asistencia en la elaboración y gestión de documentos
+                  importantes, proporcionando apoyo en el ámbito legal y
+                  administrativo.
+                </p>
+                <ul class="text-start list-unstyled ps-4">
+                  <li>
+                    <i class="bi bi-check-circle-fill text-success me-2"></i
+                    >Redacción de Documentos
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill text-success me-2"></i
+                    >Llenado de Formularios
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill text-success me-2"></i
+                    >Asistencia en Trámites Online
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-block py-5">
+        <h2 class="text-center mb-5 display-5">Nuestro Valor Agregado</h2>
+        <div class="row align-items-center mb-5">
+          <div class="col-lg-6 order-lg-1 image-content">
+            <img
+              src="assets/legal2.jpg"
+              class="content-image"
+              alt="Documentos legales o papelería"
+            />
+          </div>
+          <div class="col-lg-6 order-lg-0 text-content info-card">
+            <h3 class="mb-4 text-center">
+              Atención Excepcional y Personalizada
             </h3>
-            <p class="mb-0">
-                Zona Web Lara, C.A. se posiciona como su aliado estratégico y proveedor integral de servicios esenciales, combinando la logística de suministros con la más alta tecnología digital. Ofrecemos comodidad y soluciones prácticas en un mismo lugar.
+            <p class="text-secondary">
+              Nos dedicamos a proporcionar un servicio de atención al cliente
+              excepcional, guiados por nuestro lema: **"Atención de Buenos
+              Amigos, Sonrisas de Satisfacción"**. Nuestro equipo se asegura de
+              que cada interacción sea memorable y de que recibas la asistencia
+              que necesitas con una sonrisa.
             </p>
+          </div>
         </div>
 
-        <img src="assets/zwl/Papeleria.jpg" class="content-image" alt="Imagen de artículos de papelería" />
-
-        <!-- Lista de servicios (reemplazamos <ol> por secciones con cards) -->
-        <div class="content-card my-4">
-            <h4 class="text-center mb-3">Cyber: Experiencia Digital Inmersiva y de Alta Velocidad</h4>
-            <p class="mb-3">
-                Nuestra misión en el Ciber es crear un entorno dinámico e inclusivo para que usted pueda conectar, explorar y participar en el mundo digital. Nos dedicamos a ser el destino al que acuden las personas que buscan una experiencia de navegación fiable y agradable.
+        <div class="row align-items-center">
+          <div class="col-lg-6 image-content">
+            <img
+              src="assets/zwl/juguetes.jpg"
+              class="content-image"
+              alt="Artículos variados y accesorios tecnológicos"
+            />
+          </div>
+          <div class="col-lg-6 text-content info-card">
+            <h3 class="mb-4 text-center">Innovación Constante y Fidelidad</h3>
+            <p class="text-secondary">
+              Buscamos constantemente tecnologías, servicios e ideas innovadoras
+              para adaptarnos continuamente al cambiante panorama digital y
+              seguir siendo un destino de confianza. Nos enorgullece contar con
+              una base de **más de 5000 clientes**, reflejo de nuestro
+              compromiso continuo con la excelencia, la atención personalizada y
+              la calidad de nuestros productos y servicios.
             </p>
-            <ol type="I" class="text-start mb-0">
-                <li class="mb-2">Acceso a Internet de Alta Velocidad: Proporcionamos acceso a Internet de alta velocidad, asegurando una experiencia fluida y agradable que satisface sus necesidades de conexión.</li>
-                <li class="mb-2">Infraestructura de Primera Categoría: Nos dedicamos a ofrecer una infraestructura tecnológica de primera categoría y soluciones punteras, manteniéndonos a la vanguardia de la tecnología.</li>
-                <li class="mb-2">Entorno de Navegación Seguro: Garantizamos navegación segura en un entorno seguro y acogedor.</li>
-                <li class="mb-2">Espacio para el Desarrollo: Ofrecemos un espacio vibrante e integrador donde personas de todos los ámbitos pueden reunirse para conectar, trabajar, aprender y jugar.</li>
-                <li>Amplia Gama de Servicios Digitales: Ponemos a su disposición una amplia gama de servicios para cubrir todas sus demandas tecnológicas.</li>
-            </ol>
+          </div>
         </div>
-        <img src="assets/zwl/cyber 2.png" class="content-image" alt="Imagen de cyber" />
-
-        <div class="content-card my-4">
-            <h4 class="text-center mb-3">Suministros y Logística Esencial</h4>
-            <p class="mb-3">
-                Hemos consolidado una fórmula acertada al ofrecer productos esenciales que atienden las necesidades tanto de estudiantes como de profesionales y público en general.
-            </p>
-            <ol type="I" class="text-start mb-0">
-                <li class="mb-2">Artículos Escolares y de Oficina: Somos su proveedor integral de todos los artículos escolares y de oficina que usted necesita.</li>
-                <li>Servicios Profesionales de Impresión: Ofrecemos diversos y eficientes servicios de impresión.</li>
-            </ol>
-        </div>
-        <img src="assets/zwl/papeleria 2.jpg" class="content-image" alt="Imagen de artículos de papelería" />
-
-        <div class="content-card my-4">
-            <h4 class="text-center mb-3">Nuestro Compromiso con la Excelencia y el Cliente</h4>
-            <p class="mb-3">
-                Nuestra filosofía empresarial está firmemente arraigada en la excelencia y un enfoque centrado en el cliente. Queremos que cada interacción sea memorable.
-            </p>
-            <ol type="I" class="text-start mb-0">
-                <li class="mb-2">Atención Excepcional: Nos dedicamos a proporcionar un servicio de atención al cliente excepcional, guiados por nuestro lema: "Atención de Buenos Amigos, Sonrisas de Satisfacción".</li>
-                <li class="mb-2">Innovación Constante: Buscamos constantemente tecnologías, servicios e ideas innovadoras para adaptarnos continuamente al cambiante panorama digital y seguir siendo un destino de confianza.</li>
-                <li>Fidelidad y Confianza: Nos enorgullece contar con una base de más de 5000 clientes, reflejo de nuestro compromiso continuo con la excelencia, la atención personalizada y la calidad de nuestros productos y servicios.</li>
-            </ol>
-        </div>
-        <img src="assets/legal2.jpg" class="content-image" alt="Documentos legales o papelería" />
+      </section>
     </main>
 
-    <!-- Botón flotante de WhatsApp -->
-    <a href="https://wa.me/4125022286?text=Saludos" target="_blank" class="whatsapp-btn">
-        <i class="bi bi-whatsapp"></i>
+    <a
+      href="https://wa.me/4125022286?text=Saludos"
+      target="_blank"
+      class="whatsapp-btn"
+    >
+      <i class="bi bi-whatsapp"></i>
     </a>
 
-    <!-- Footer -->
-    <footer class="text-center py-4 mt-5 bg-dark text-light">
-        <p class="mb-0">&copy; 2025 Zona Web Lara. Todos los derechos reservados.</p>
+    <footer class="text-center">
+      <div class="container">
+        <p class="mb-0">
+          &copy; 2025 Zona Web Lara. Todos los derechos reservados.
+        </p>
+      </div>
     </footer>
 
-    <!-- Bootstrap JS (requerido para navbar responsive) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  </body>
 </html>

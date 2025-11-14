@@ -1,138 +1,281 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Manual de Usuario - Sitio Web Zona Web Lara</title>
+    <title>Manual de Usuario - Zona Web Lara</title>
 
-    <!-- Bootstrap 5.3 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
 
-    <!-- Tu archivo de estilos personalizados -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+
     <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-
-    <!-- Navbar con logo y menú responsive (usa los estilos de style.css) -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="assets/logo_zwl.png" alt="Logo de Zona Web Lara" width="40" class="rounded-circle me-2" />
-                Zona Web Lara
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="manual.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48">
-                                <path fill="#90caf9" d="M40 45H8V3h22l10 10z" />
-                                <path fill="#e1f5fe" d="M38.5 14H29V4.5z" />
-                                <path fill="#1976d2" d="M16 21h17v2H16zm0 4h13v2H16zm0 4h17v2H16zm0 4h13v2H16z" />
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img
+            src="assets/logo_zwl.png"
+            alt="Logo de Zona Web Lara"
+            width="40"
+            class="rounded-circle me-2"
+          />
+          Zona Web Lara
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="nosotros.html">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="servicios.html">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacto.html">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="manual.html"
+                title="Manual de Usuario"
+              >
+                <i class="bi bi-file-earmark-text-fill"></i> Manual
+              </a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
-    <!-- Contenido principal -->
-    <main class="container my-5">
-        <div class="content-card">
-            <h1 class="text-center mb-4">Manual de Usuario - Sitio Web Zona Web Lara</h1>
+    <header
+      class="hero-section"
+      style="background-image: url('assets/zwl/papeleria 2.jpg')"
+    >
+      <div class="container hero-content">
+        <h1 class="display-3">Manual de Usuario</h1>
+        <p class="lead mt-3 mb-4 d-none d-md-block">
+          Guía rápida para navegar y utilizar todas las funciones del sitio web
+          Zona Web Lara.
+        </p>
+      </div>
+    </header>
 
-            <p class="text-center mb-4">
-                Este manual ha sido diseñado para explicar la arquitectura, el contenido y la forma más efectiva de navegar el sitio web de Zona Web Lara, garantizando que encuentre la información que necesita rápidamente.
-            </p>
-
-            <hr class="my-4" />
-
-            <h2>1. Gestión de Contenido por Página</h2>
-
-            <ul class="mb-4">
-                <li class="mb-3">
-                    <strong>Inicio:</strong>
-                    <p>Página de bienvenida que presenta el "propósito" de la empresa ("dedicada al mundo digital") y sus cuatro "principios fundamentales" (innovación, calidad, confianza, servicio excepcional). Ofrece una visión rápida y el valor central de la marca.</p>
-                </li>
-                <li class="mb-3">
-                    <strong>Nosotros:</strong>
-                    <p>Detalla el origen ("Nacimos como una necesidad..."), la "misión" (simplificar la vida del cliente) y los <strong>valores</strong> corporativos, destacando "Honestidad", "Compromiso" e "Innovación".</p>
-                </li>
-                <li class="mb-3">
-                    <strong>Servicios:</strong>
-                    <p>Expone la oferta de la empresa de forma organizada en categorías principales:</p>
-                    <ol>
-                        <li><strong>Servicios Web y Desarrollo</strong></li>
-                        <li><strong>Servicios de Venta de Productos y Servicios</strong></li>
-                    </ol>
-                </li>
-                <li>
-                    <strong>Contacto:</strong>
-                    <p>Canal de comunicación que incluye un "Formulario de Contacto", información de "Correo Electrónico" (<code>zonaweblara@gmail.com</code>) y enlaces a las "Redes Sociales" (Facebook e Instagram), utilizando los estilos de iconos con efecto de relleno definidos en el CSS.</p>
-                </li>
-            </ul>
-
-            <hr class="my-4" />
-
-            <h2>2. Cómo Navegar en el Sitio Web de Forma Eficaz</h2>
-            <p>La navegación es intuitiva y sigue los estándares web, con especial énfasis en la accesibilidad móvil y la comunicación instantánea.</p>
-
-            <h3>2.1. Navegación entre Secciones</h3>
-            <ol class="mb-4">
-                <li class="mb-3">
-                    <strong>Uso del Menú Principal:</strong>
-                    <p>Utilice los botones "Inicio", "Nosotros", "Servicios" y "Contacto" en el menú de navegación para saltar directamente a la sección deseada. En dispositivos móviles, toque el icono de "Menú Hamburguesa" (☰) para desplegar estas opciones.</p>
-                </li>
-                <li>
-                    <strong>Regreso a la Página Principal:</strong>
-                    <p>En cualquier momento, haga clic en el "Botón de Inicio" en el Banner superior para volver inmediatamente a la página principal.</p>
-                </li>
-            </ol>
-
-            <h3>2.2. Comunicación Rápida y Gestión de Contacto</h3>
-
-            <!-- Tip 1: WhatsApp -->
-            <div class="content-card tip-whatsapp mb-4" style="border-left: 5px solid #25D366; background: #f0fff4;">
-                <strong><i class="bi bi-whatsapp" style="color:#25D366;"></i> Botón Flotante de WhatsApp</strong>
-                <p>La herramienta de comunicación más eficaz es el <strong>botón flotante de WhatsApp</strong>. Está visible en la esquina inferior derecha de la pantalla en todas las páginas, con una animación para llamar su atención.</p>
-                <p>Al hacer clic, se abre una conversación predefinida con la empresa (al número 4125022286), permitiendo una consulta instantánea sin necesidad de completar un formulario.</p>
-            </div>
-
-            <!-- Tip 2: Otros contactos -->
-            <div class="content-card tip-email mb-4" style="border-left: 5px solid #007bff; background: #f0f7ff;">
-                <strong><i class="bi bi-envelope-fill" style="color: #007bff;"></i> Formas de Contacto Adicionales</strong>
-                <p>Si requiere una comunicación formal o una consulta más extensa, diríjase a la página de "Contacto":</p>
-                <ul class="mb-0">
-                    <li>Utilice el "Formulario de Contacto" para enviar su mensaje directamente.</li>
-                    <li>Haga clic en el botón de "Correo Electrónico" para enviar un mensaje a <code>zonaweblara@gmail.com</code>.</li>
-                    <li>Siga a la empresa en "Facebook" e "Instagram" a través de los iconos provistos, los cuales cuentan con un efecto visual de relleno al pasar el ratón.</li>
-                </ul>
-            </div>
+    <main class="container py-5">
+      <section class="mb-5">
+        <h2 class="text-center mb-4 display-6">Bienvenido a Zona Web Lara</h2>
+        <div class="info-card p-4 mx-auto" style="max-width: 800px">
+          <p class="text-secondary text-center mb-0">
+            Esta guía tiene como objetivo familiarizarte con la estructura y las
+            funcionalidades de nuestro sitio web. Aquí encontrarás información
+            sobre cómo acceder a nuestros servicios, quiénes somos y cómo
+            contactarnos de manera efectiva.
+          </p>
         </div>
+      </section>
+
+      <section class="mb-5">
+        <h2 class="text-center mb-4 display-6">Estructura y Navegación</h2>
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="card h-100 shadow-sm p-3">
+              <div class="card-body text-start">
+                <h3 class="card-title text-primary">
+                  <i class="bi bi-compass-fill me-2"></i>Barra de Navegación
+                </h3>
+                <p class="card-text text-secondary">
+                  La barra superior permite el acceso rápido a todas las
+                  secciones principales del sitio:
+                </p>
+                <dl class="row mb-0">
+                  <dt class="col-sm-3">
+                    <i class="bi bi-house-door-fill me-1"></i>Inicio
+                  </dt>
+                  <dd class="col-sm-9">
+                    Página principal con resumen de la empresa y servicios
+                    clave.
+                  </dd>
+
+                  <dt class="col-sm-3">
+                    <i class="bi bi-people-fill me-1"></i>Nosotros
+                  </dt>
+                  <dd class="col-sm-9">
+                    Información detallada sobre la historia, misión, visión y
+                    valores.
+                  </dd>
+
+                  <dt class="col-sm-3">
+                    <i class="bi bi-list-check me-1"></i>Servicios
+                  </dt>
+                  <dd class="col-sm-9">
+                    Listado y descripción de todas las categorías de servicios
+                    ofrecidos.
+                  </dd>
+
+                  <dt class="col-sm-3">
+                    <i class="bi bi-chat-dots-fill me-1"></i>Contacto
+                  </dt>
+                  <dd class="col-sm-9">
+                    Formulario y datos de contacto directo (teléfono, email,
+                    mapa).
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="card h-100 shadow-sm p-3">
+              <div class="card-body text-start">
+                <h3 class="card-title text-primary">
+                  <i class="bi bi-gear-fill me-2"></i>Elementos Comunes
+                </h3>
+                <p class="card-text text-secondary">
+                  Funcionalidades persistentes en todas las páginas:
+                </p>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <i class="bi bi-whatsapp me-2 text-success"></i>**Botón
+                    Flotante de WhatsApp:** Acceso directo a nuestro chat para
+                    consultas rápidas.
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-arrow-up-circle-fill me-2 text-primary"></i
+                    >**Navegación Intuitiva:** El diseño está optimizado para
+                    dispositivos móviles y de escritorio (diseño *responsive*).
+                  </li>
+                  <li>
+                    <i class="bi bi-info-circle-fill me-2 text-secondary"></i
+                    >**Footer:** Contiene información legal básica y derechos de
+                    autor en la parte inferior.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-5">
+        <h2 class="text-center mb-4 display-6">Funcionalidades Clave</h2>
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div
+              class="card h-100 shadow-sm border-0 bg-light p-3"
+              style="border-left: 5px solid #28a745 !important"
+            >
+              <div class="card-body text-start">
+                <h3 class="card-title h5 text-success">
+                  <i class="bi bi-clipboard-check-fill me-2"></i>Copiar el
+                  Número de Teléfono
+                </h3>
+                <p class="card-text text-secondary">
+                  En la página de **Contacto**, puedes copiar nuestro número de
+                  teléfono con un solo clic:
+                </p>
+                <ul class="mb-0 text-secondary">
+                  <li>Busca la sección de **Detalles de Contacto Directo**.</li>
+                  <li>
+                    Presiona el botón **Copiar** junto al número:
+                    <kbd>412-5022286</kbd>.
+                  </li>
+                  <li>
+                    El número se guardará en tu portapapeles para que lo pegues
+                    fácilmente.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div
+              class="card h-100 shadow-sm border-0 bg-light p-3"
+              style="border-left: 5px solid #007bff !important"
+            >
+              <div class="card-body text-start">
+                <h3 class="card-title h5 text-primary">
+                  <i class="bi bi-envelope-fill me-2"></i>Formas de Contacto
+                  Adicionales
+                </h3>
+                <p class="card-text text-secondary">
+                  Para comunicaciones formales o consultas extensas, visita la
+                  página de **Contacto**:
+                </p>
+                <ul class="mb-0 text-secondary">
+                  <li>
+                    **Formulario de Contacto:** Completa el formulario y el
+                    sistema preparará un email en tu cliente de correo.
+                  </li>
+                  <li>
+                    **Redes Sociales:** Sigue los iconos de **Facebook** e
+                    **Instagram** para interactuar con nuestro contenido y
+                    obtener noticias (los iconos tienen efectos visuales
+                    atractivos).
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-5">
+        <h2 class="text-center mb-4 display-6">Requisitos Técnicos</h2>
+        <div class="info-card p-4 mx-auto" style="max-width: 800px">
+          <p class="text-center text-secondary mb-0">
+            Para una experiencia óptima, recomendamos utilizar los navegadores
+            web más recientes, incluyendo **Google Chrome, Mozilla Firefox,
+            Microsoft Edge o Safari**, en sus versiones más actualizadas. El
+            sitio requiere **JavaScript** activado para el correcto
+            funcionamiento de formularios y animaciones.
+          </p>
+        </div>
+      </section>
     </main>
 
-    <!-- Botón flotante de WhatsApp (estilos definidos en style.css) -->
-    <a href="https://wa.me/4125022286?text=Saludos" target="_blank" class="whatsapp-btn">
-        <i class="bi bi-whatsapp"></i>
+    <a
+      href="https://wa.me/4125022286?text=Saludos"
+      target="_blank"
+      class="whatsapp-btn"
+    >
+      <i class="bi bi-whatsapp"></i>
     </a>
 
-    <!-- Footer -->
     <footer class="text-center">
+      <div class="container">
         <p class="mb-0">&copy; 2025 Zona Web Lara. Manual de Usuario.</p>
+      </div>
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  </body>
 </html>
