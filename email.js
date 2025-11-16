@@ -5,7 +5,7 @@ function enviarEmail() {
 
   const cuerpoMensaje = `Hola, mi nombre es ${nombre} y mi correo es ${email}. Mi mensaje es: ${mensaje}`;
 
-  const direccionCorreo = "carlospae<guerra@gmail.com";
+  const direccionCorreo = "zonaweblara@gmail.com";
 
   const asuntoEncoded = encodeURIComponent("Mensaje de contacto");
   const cuerpoEncoded = encodeURIComponent(cuerpoMensaje);

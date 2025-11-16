@@ -23,6 +23,8 @@
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 
     <link rel="stylesheet" href="style.css" />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
@@ -105,7 +107,7 @@
       <section class="mb-5">
         <h2 class="text-center mb-4 display-6">Estructura y Navegación</h2>
         <div class="row g-4">
-          <div class="col-lg-6">
+          <div class="col-lg-6" data-aos="fade-up-left">
             <div class="card h-100 shadow-sm p-3">
               <div class="card-body text-start">
                 <h3 class="card-title text-primary">
@@ -152,7 +154,7 @@
             </div>
           </div>
 
-          <div class="col-lg-6">
+          <div class="col-lg-6" data-aos="fade-up-right">
             <div class="card h-100 shadow-sm p-3">
               <div class="card-body text-start">
                 <h3 class="card-title text-primary">
@@ -192,7 +194,7 @@
               class="card h-100 shadow-sm border-0 bg-light p-3"
               style="border-left: 5px solid #28a745 !important"
             >
-              <div class="card-body text-start">
+              <div class="card-body text-start" data-aos="fade-right">
                 <h3 class="card-title h5 text-success">
                   <i class="bi bi-clipboard-check-fill me-2"></i>Copiar el
                   Número de Teléfono
@@ -221,7 +223,7 @@
               class="card h-100 shadow-sm border-0 bg-light p-3"
               style="border-left: 5px solid #007bff !important"
             >
-              <div class="card-body text-start">
+              <div class="card-body text-start" data-aos="fade-left">
                 <h3 class="card-title h5 text-primary">
                   <i class="bi bi-envelope-fill me-2"></i>Formas de Contacto
                   Adicionales
@@ -250,7 +252,11 @@
 
       <section class="mb-5">
         <h2 class="text-center mb-4 display-6">Requisitos Técnicos</h2>
-        <div class="info-card p-4 mx-auto" style="max-width: 800px">
+        <div
+          class="info-card p-4 mx-auto"
+          style="max-width: 800px"
+          data-aos="zoom-in"
+        >
           <p class="text-center text-secondary mb-0">
             Para una experiencia óptima, recomendamos utilizar los navegadores
             web más recientes, incluyendo **Google Chrome, Mozilla Firefox,
@@ -277,5 +283,9 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

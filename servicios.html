@@ -23,6 +23,8 @@
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 
     <link rel="stylesheet" href="style.css" />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
@@ -95,7 +97,7 @@
           Explora Nuestras Áreas de Servicio
         </h2>
         <div class="row g-4 justify-content-center">
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4" data-aos="flip-left">
             <div class="card h-100 shadow-lg border-0 text-center p-3">
               <div class="card-body">
                 <i class="bi bi-laptop display-3 text-primary mb-3"></i>
@@ -125,7 +127,7 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4" data-aos="flip-left">
             <div class="card h-100 shadow-lg border-0 text-center p-3">
               <div class="card-body">
                 <i class="bi bi-printer-fill display-3 text-primary mb-3"></i>
@@ -154,7 +156,7 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6 col-lg-4" data-aos="flip-left">
             <div class="card h-100 shadow-lg border-0 text-center p-3">
               <div class="card-body">
                 <i
@@ -198,7 +200,10 @@
               alt="Documentos legales o papelería"
             />
           </div>
-          <div class="col-lg-6 order-lg-0 text-content info-card">
+          <div
+            class="col-lg-6 order-lg-0 text-content info-card"
+            data-aos="zoom-out-down"
+          >
             <h3 class="mb-4 text-center">
               Atención Excepcional y Personalizada
             </h3>
@@ -220,7 +225,10 @@
               alt="Artículos variados y accesorios tecnológicos"
             />
           </div>
-          <div class="col-lg-6 text-content info-card">
+          <div
+            class="col-lg-6 text-content info-card"
+            data-aos="zoom-out-right"
+          >
             <h3 class="mb-4 text-center">Innovación Constante y Fidelidad</h3>
             <p class="text-secondary">
               Buscamos constantemente tecnologías, servicios e ideas innovadoras
@@ -252,5 +260,9 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
