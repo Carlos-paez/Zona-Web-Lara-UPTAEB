@@ -471,7 +471,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      AOS.init();
+        AOS.init({
+            once: true, /* La animación solo ocurre una vez. Evita que se repita al subir, eliminando saltos */
+            duration: 1000, /* Duración por defecto */
+            disable: 'mobile' /* OPCIONAL: Si el problema persiste, descomenta esta línea para apagar AOS solo en celulares */
+        });
+
+        // Parche extra: Recalcular AOS cuando carga la página completamente
+        window.addEventListener('load', function() {
+            AOS.refresh();
+        });
     </script>
   </body>
 </html>
