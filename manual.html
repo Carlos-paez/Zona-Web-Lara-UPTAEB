@@ -1,67 +1,156 @@
 <!DOCTYPE html>
+<!--
+  Declaración del tipo de documento HTML5.
+  Le indica al navegador que interprete el archivo como HTML5.
+-->
 <html lang="es">
+  <!--
+    Atributo lang="es": especifica que el contenido está en español.
+    Esto ayuda a motores de búsqueda y tecnologías de asistencia (lectores de pantalla).
+  -->
   <head>
+    <!-- Metadatos y recursos externos usados por la página -->
     <meta charset="UTF-8" />
+    <!--
+      Define la codificación de caracteres (UTF-8) para que se muestren correctamente tildes y caracteres especiales.
+    -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+      Hace que la página sea responsiva en dispositivos móviles:
+      width=device-width -> el ancho de la página coincide con el ancho del dispositivo.
+      initial-scale=1.0 -> zoom inicial en 100%.
+    -->
     <title>Manual de Usuario | Tutorial Detallado</title>
+    <!-- Texto que aparece en la pestaña del navegador. -->
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <!--
+      Enlace a la hoja de estilos de Bootstrap (CDN).
+      Proporciona clases CSS listas para usar (sistema de rejilla, utilidades, componentes).
+      rel="stylesheet" indica que se trata de una hoja de estilos.
+    -->
 
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
     />
+    <!--
+      Iconos de Bootstrap (fuente de iconos). Permite usar elementos <i class="bi bi-..."> para iconos.
+    -->
 
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500&display=swap"
       rel="stylesheet"
     />
+    <!--
+      Importa fuentes desde Google Fonts (Montserrat y Oswald).
+      Estas fuentes se usarán desde CSS para tipografías personalizadas.
+    -->
 
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <!--
+      Icono que aparece en la pestaña del navegador (favicon).
+      href apunta al archivo local assets/favicon.ico.
+    -->
 
     <link rel="stylesheet" href="style.css" />
+    <!--
+      Hoja de estilos local (style.css) donde se colocan los estilos personalizados del sitio.
+      Carga después de Bootstrap para que las reglas aquí puedan sobrescribir a Bootstrap si es necesario.
+    -->
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!--
+      Hoja de estilos de AOS (Animate On Scroll).
+      Proporciona estilos para las animaciones que se activan al hacer scroll.
+    -->
   </head>
   <body>
+    <!--
+      Contenido visible de la página.
+      Usaremos componentes de Bootstrap y clases personalizadas.
+    -->
+
     <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+      <!--
+        Barra de navegación principal (Bootstrap Navbar).
+        - navbar-expand-lg: el menú se expande en pantallas grandes y se colapsa en móviles.
+        - navbar-dark: esquema de colores para fondo oscuro (texto claro).
+        - shadow-sm: pequeña sombra para separar la barra del contenido.
+      -->
       <div class="container">
+        <!--
+          Contenedor centrado y con padding lateral (Bootstrap).
+          Mantiene el contenido alineado y con ancho máximo.
+        -->
         <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <!--
+            Enlace de marca que vuelve a la página principal (index.html).
+            - d-flex align-items-center: usa flexbox para centrar verticalmente el logo y el texto.
+          -->
           <img
             src="assets/logo_zwl.webp"
             alt="Logo de Zona Web Lara"
             width="40"
             class="rounded-circle me-2"
           />
+          <!--
+            Imagen del logo:
+            - src: ruta al archivo del logo.
+            - alt: texto alternativo (importante para accesibilidad).
+            - width: tamaño fijo en píxeles.
+            - rounded-circle: clase de Bootstrap que hace la imagen redonda.
+            - me-2: margin-end (margen a la derecha) para separar logo y texto.
+          -->
           Zona Web Lara
+          <!-- Nombre de la marca que aparece junto al logo. -->
         </a>
+
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
         >
+          <!--
+            Botón que aparece en pantallas pequeñas para desplegar/ocultar el menú.
+            - data-bs-toggle="collapse": indica a Bootstrap que este botón controla un colapso.
+            - data-bs-target="#navbarNav": id del elemento colapsable que será mostrado/ocultado.
+          -->
           <span class="navbar-toggler-icon"></span>
+          <!-- Icono visual del botón (las tres rayas "hamburguesa"). -->
         </button>
+
         <div
           class="collapse navbar-collapse justify-content-end"
           id="navbarNav"
         >
+          <!--
+            Contenedor del menú que se colapsa en móviles.
+            - collapse navbar-collapse: clases necesarias para el comportamiento responsivo.
+            - justify-content-end: alinea los elementos del menú a la derecha.
+            - id="navbarNav": referencia desde el botón toggler.
+          -->
           <ul class="navbar-nav">
+            <!-- Lista de enlaces del menú -->
             <li class="nav-item">
               <a class="nav-link" href="index.html">Inicio</a>
+              <!-- Enlace al inicio -->
             </li>
             <li class="nav-item">
               <a class="nav-link" href="nosotros.html">Nosotros</a>
+              <!-- Enlace a la página "Nosotros" -->
             </li>
             <li class="nav-item">
               <a class="nav-link" href="servicios.html">Servicios</a>
+              <!-- Enlace a "Servicios" -->
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contacto.html">Contacto</a>
+              <!-- Enlace a "Contacto" -->
             </li>
             <li class="nav-item">
               <a
@@ -72,12 +161,20 @@
               >
                 <i class="bi bi-file-earmark-text-fill"></i> Manual
               </a>
+              <!--
+                Enlace activo (página actual):
+                - class="nav-link active": marca visualmente este enlace como la página actual.
+                - aria-current="page": atributo ARIA que mejora accesibilidad indicando que este es el elemento actual.
+                - title: texto emergente al pasar el ratón.
+                - <i class="bi ...">: icono de Bootstrap Icons antes del texto.
+              -->
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
+    <!-- Cabecera principal (hero) -->
     <header
       class="hero-section"
       style="
@@ -86,47 +183,103 @@
         background-position: center;
       "
     >
+      <!--
+        Hero section con imagen de fondo:
+        - style inline: establece la imagen y cómo se muestra.
+        - background-size: cover -> la imagen cubre todo el contenedor (puede recortarse).
+        - background-position: center -> centra la imagen en su área.
+        Nota: usar estilos en CSS externo es más limpio, pero el inline funciona y es válido.
+      -->
       <div class="container hero-content">
+        <!-- Contenido del hero (alineado dentro del contenedor) -->
         <h1 class="display-3">
           Manual de Usuario del Sitio Web: Zona Web Lara
         </h1>
+        <!--
+          Título principal:
+          - display-3: clase de Bootstrap para un tamaño de fuente grande (hero).
+        -->
         <p class="lead mt-3 mb-4 d-none d-md-block">
           Este es tu tutorial detallado. Aprende a encontrar servicios,
           contactarnos y usar todas las funciones del sitio web, ¡es muy fácil!
         </p>
+        <!--
+          Párrafo introductorio:
+          - lead: estilo de Bootstrap para texto destacado.
+          - mt-3 mb-4: margenes superior e inferior.
+          - d-none d-md-block: oculto en pantallas pequeñas (muestra solo en md en adelante).
+            Esto evita texto largo en dispositivos móviles.
+        -->
       </div>
     </header>
 
     <main class="container py-5">
+      <!--
+        Contenedor principal del contenido:
+        - container: margenes automáticos y ancho máximo.
+        - py-5: padding vertical para separar del header y footer.
+      -->
+
       <section class="mb-5">
+        <!-- Sección de introducción -->
         <h2 class="text-center mb-4 display-6">
           🔎 Introducción: Lo Primero que Debes Saber
         </h2>
         <div class="info-card p-4 mx-auto" style="max-width: 900px">
+          <!--
+            Tarjeta informativa centrada:
+            - info-card: clase personalizada (definida en style.css probablemente).
+            - p-4: padding interno.
+            - mx-auto: margen horizontal automático para centrar.
+            - style max-width: limita ancho máximo para mejorar lectura.
+          -->
           <p class="text-secondary text-center mb-0">
             El sitio web está dividido en páginas (como capítulos de un libro).
             Para moverte de una página a otra, solo usarás el Menú en la parte
             superior o los botones grandes en el centro. Todo se maneja con un
             simple clic (o toque en el móvil).
           </p>
+          <!--
+            Texto explicativo con color secundario (menos contraste) y centrado.
+            mb-0 evita margen inferior extra dentro de la tarjeta.
+          -->
         </div>
       </section>
 
       <section class="feature-block py-5 border-top">
+        <!--
+          Sección con características (feature-block).
+          - py-5: padding vertical.
+          - border-top: línea superior para separar visualmente.
+        -->
         <div class="row align-items-center">
+          <!-- Grid de Bootstrap; alineamos verticalmente con align-items-center -->
           <div class="col-lg-6 order-lg-1 image-content">
+            <!-- Columna para la imagen en pantallas grandes -->
             <div class="text-center p-2 border rounded bg-light">
               <img
                 src="Captures/NavBarPC.png"
                 alt="Barra de Menú Principal"
                 class="img-fluid rounded shadow-sm"
               />
+              <!--
+                Imagen explicativa de la navbar:
+                - img-fluid: hace la imagen responsiva (ancho máximo 100%).
+                - rounded: bordes redondeados.
+                - shadow-sm: pequeña sombra para destacar la imagen.
+                - alt: descripción para accesibilidad.
+              -->
             </div>
           </div>
+
           <div
             class="col-lg-6 order-lg-0 text-content info-card"
             data-aos="fade-right"
           >
+            <!--
+              Columna con texto (sitúa su orden diferente en pantallas grandes usando order-lg).
+              - data-aos="fade-right": AOS animará este bloque con efecto 'fade-right' al hacer scroll.
+            -->
             <h2 class="mb-4 text-center">
               1. Navegando el Sitio: La Guía Rápida (Menú)
             </h2>
@@ -136,12 +289,17 @@
               el nombre de la sección a la que deseas ir:
             </p>
             <ol class="text-start ps-3">
+              <!-- Lista ordenada con padding-left para indentar correctamente -->
               <li class="mb-2">
                 <strong class="text-primary"
                   ><i class="bi bi-house-door-fill me-2"></i>Inicio:</strong
                 >
                 Vuelve al principio. Ideal si te pierdes.
               </li>
+              <!--
+                Cada elemento usa un <strong> con clase text-primary para resaltar el título
+                y un icono de Bootstrap Icons (<i class="bi ...">) antes del texto.
+              -->
               <li class="mb-2">
                 <strong class="text-primary"
                   ><i class="bi bi-tools me-2"></i>Servicios:</strong
@@ -164,14 +322,20 @@
             </ol>
             <p class="alert alert-info small mt-3">
               En Móviles: Si usas un teléfono, el menú está oculto tras un icono
-              de tres rayas (llamado hamburguesa). Debes hacer clic en ese
-              icono para que aparezcan los enlaces.
+              de tres rayas (llamado hamburguesa). Debes hacer clic en ese icono
+              para que aparezcan los enlaces.
             </p>
+            <!--
+              Mensaje estilo alerta informativa (Bootstrap alert-info).
+              small reduce el tamaño de fuente.
+            -->
           </div>
         </div>
       </section>
 
       <hr />
+      <!-- Línea separadora horizontal -->
+
       <section class="py-5">
         <div class="row align-items-center">
           <div class="col-lg-6 order-lg-0 image-content">
@@ -182,8 +346,13 @@
                 class="img-fluid rounded"
                 style="max-width: 150px"
               />
+              <!--
+                Imagen mostrando el botón de WhatsApp:
+                - style max-width limita el tamaño de la imagen para que no sea demasiado grande.
+              -->
             </div>
           </div>
+
           <div
             class="col-lg-6 order-lg-1 text-content info-card"
             data-aos="fade-left"
@@ -195,6 +364,7 @@
               Esta es la manera más directa de hablar con nosotros en tiempo
               real. No tienes que buscar números ni abrir otra aplicación.
             </p>
+
             <h3 class="h5 text-primary">Instrucciones:</h3>
             <ol class="text-start ps-3">
               <li class="mb-2">
@@ -210,6 +380,11 @@
                 escribas tu consulta.
               </li>
             </ol>
+            <!--
+              Lista de pasos para usar el botón de WhatsApp.
+              Nota: el número aparece en texto; si se quiere mayor accesibilidad,
+              en otros contextos podría ser conveniente marcarlo como tel: o usar aria-label.
+            -->
           </div>
         </div>
       </section>
@@ -226,8 +401,17 @@
         </p>
 
         <div class="row g-4 pt-4">
+          <!-- g-4: gap entre columnas; pt-4: padding-top -->
           <div class="col-md-6" data-aos="fade-up">
+            <!-- Columna de tarjeta de servicio -->
             <div class="card h-100 shadow-lg border-0 p-3">
+              <!--
+                Card de Bootstrap:
+                - h-100: altura completa dentro del contenedor para igualar alturas.
+                - shadow-lg: sombra pronunciada.
+                - border-0: sin borde visible.
+                - p-3: padding interno.
+              -->
               <div class="card-body">
                 <h3 class="card-title text-primary mb-3">
                   <i class="bi bi-laptop me-2"></i>Cyber y Conexión
@@ -248,6 +432,7 @@
           </div>
 
           <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <!-- data-aos-delay agrega retardo en la animación para este bloque -->
             <div class="card h-100 shadow-lg border-0 p-3">
               <div class="card-body">
                 <h3 class="card-title text-primary mb-3">
@@ -281,6 +466,7 @@
         </p>
 
         <div class="row g-4 pt-4">
+          <!-- Primera columna: Formulario rápido -->
           <div class="col-lg-6" data-aos="fade-right">
             <div class="info-card p-4 h-100">
               <h3 class="h4 text-primary mb-3">
@@ -313,6 +499,7 @@
             </div>
           </div>
 
+          <!-- Segunda columna: Botón "Copiar" teléfono -->
           <div class="col-lg-6" data-aos="fade-left">
             <div class="info-card p-4 h-100">
               <h3 class="h4 text-primary mb-3">
@@ -420,6 +607,10 @@
           style="max-width: 900px"
           data-aos="zoom-in"
         >
+          <!--
+            Bloque con recomendaciones técnicas.
+            - data-aos="zoom-in": animación de zoom al aparecer.
+          -->
           <p class="text-secondary text-center">
             Para que la página se vea perfecta y todo funcione, solo debes
             asegurarte de estas dos cosas:
@@ -441,6 +632,7 @@
       </section>
     </main>
 
+    <!-- Botón flotante de WhatsApp: enlace directo a wa.me con número y mensaje predefinido -->
     <a
       href="https://wa.me/4125022286?text=Saludos"
       target="_blank"
@@ -448,15 +640,31 @@
     >
       <i class="bi bi-whatsapp"></i>
     </a>
+    <!--
+      - href: enlace a la API de wa.me que abre una conversación de WhatsApp con el número indicado.
+      - target="_blank": abre en una nueva pestaña/ventana.
+        Nota (mejor práctica): sería recomendable añadir rel="noopener noreferrer" al usar target="_blank"
+        para seguridad, pero el código original no lo tiene y no lo modificamos.
+      - class="whatsapp-btn": clase personalizada (probablemente definida en style.css) que posiciona y estiliza el botón flotante.
+    -->
 
     <footer class="text-center">
       <div class="container">
         <p class="mb-0">&copy; 2025 Zona Web Lara. Manual de Usuario.</p>
+        <!-- Pie de página simple centrado con la declaración de copyright -->
       </div>
     </footer>
 
+    <!-- Scripts al final del body para optimizar carga -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!--
+      Script de Bootstrap (bundle incluye Popper.js necesario para componentes como dropdowns y tooltips).
+      Cargado desde CDN.
+    -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!--
+      Script de AOS (Animate On Scroll). Permite inicializar y usar las animaciones al hacer scroll.
+    -->
     <script>
       AOS.init({
         once: true /* La animación solo ocurre una vez. Evita que se repita al subir, eliminando saltos */,
@@ -469,6 +677,16 @@
       window.addEventListener("load", function () {
         AOS.refresh();
       });
+      /*
+        Explicación de este bloque:
+        - AOS.init({...}): aquí se configura AOS:
+          - once: true -> las animaciones se ejecutan solo la primera vez que el elemento aparece en la ventana,
+            evitando que vuelvan a reproducirse al hacer scroll hacia arriba/abajo repetidamente.
+          - duration: 1000 -> duración por defecto de las animaciones en milisegundos (1 segundo).
+          - disable: "mobile" -> (comentada) opción para desactivar AOS en dispositivos móviles; útil si hay problemas de rendimiento.
+        - window.addEventListener("load", ...): al cargarse totalmente la ventana (imágenes, estilos, etc.), se llama AOS.refresh()
+          para recalcular posiciones y asegurarse de que las animaciones se disparen correctamente (parche común cuando hay imágenes o contenido dinámico).
+      */
     </script>
   </body>
 </html>

@@ -1,30 +1,48 @@
 /* style.css – Estilos personalizados (OPTIMIZADO Y CORREGIDO) */
 
 /* === 1. CORE & RESET (SOLUCIÓN AL PROBLEMA DE SCROLL) === */
+
+/* Variables CSS globales: colores reutilizables en todo el archivo.
+   Usar variables facilita cambios temáticos sin buscar cada regla. */
 :root {
+  /* EXPLICACIÓN: color principal (se usa, por ejemplo, para enlaces o estados activos). */
   --primary-color: #0d6efd; /* Azul Bootstrap */
+  /* EXPLICACIÓN: color secundario oscuro (titulares, texto importante). */
   --secondary-color: #343a40; /* Gris oscuro */
+  /* EXPLICACIÓN: color de fondo claro general del body. */
   --light-bg: #f8f9fa; /* Fondo claro */
+  /* EXPLICACIÓN: color oscuro usado en navbar/footer. */
   --dark-bg: #212529; /* Fondo oscuro navbar/footer */
 }
 
+/* EXPLICACIÓN: Se aplica a html y body para forzar que no haya scroll horizontal
+   inesperado (problema común con librerías de animación o elementos posicionados).
+   overflow-x: hidden impide que el contenido se desborde horizontalmente. */
 html,
 body {
   /* CRÍTICO: Evita que las animaciones AOS creen scroll horizontal fantasma */
   overflow-x: hidden !important;
+  /* EXPLICACIÓN: asegura que el ancho ocupe 100% del viewport. */
   width: 100%;
+  /* EXPLICACIÓN: posicionamiento relativo por si se utilizan elementos posicionados dentro. */
   position: relative;
 }
 
+/* EXPLICACIÓN: Estilos base del body: tipografía, color, fondo y separación para la navbar fija. */
 body {
+  /* EXPLICACIÓN: fuente principal para el sitio; si no existe, se usa sans-serif. */
   font-family: "Montserrat", sans-serif;
+  /* EXPLICACIÓN: color de texto base (puede ser sobrescrito en secciones). */
   color: #333;
+  /* EXPLICACIÓN: fondo claro usando la variable declarada. */
   background-color: var(--light-bg);
+  /* EXPLICACIÓN: centra el texto por defecto; puede ser sobreescrito en bloques específicos. */
   text-align: center;
-  /* Padding para evitar que el contenido quede bajo la navbar fija */
+  /* EXPLICACIÓN: espacio superior para evitar que contenido quede debajo de una navbar fija. */
   padding-top: 70px;
 }
 
+/* EXPLICACIÓN: configuración tipográfica para encabezados, usando otra familia para contraste. */
 h1,
 h2,
 h3,
@@ -33,18 +51,27 @@ h4 {
   color: var(--secondary-color);
 }
 
+/* EXPLICACIÓN: elimina viñetas por defecto en listas ul. Si necesita viñeta, hay que reasignarla. */
 ul {
   list-style: none;
 }
 
 /* === 2. NAVBAR (CORRECCIÓN MÓVIL) === */
+
+/* EXPLICACIÓN: clase .navbar: fondo oscuro, sombra, fijación superior y z-index alto.
+   position: fixed mantiene la barra visible al hacer scroll. */
 .navbar {
   background-color: var(--dark-bg) !important;
+  /* EXPLICACIÓN: sombra sutil para separar visualmente la navbar del contenido. */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  /* EXPLICACIÓN: la barra se fija en la parte superior de la ventana. */
   position: fixed;
   top: 0;
+  /* EXPLICACIÓN: ocupa todo el ancho disponible. */
   width: 100%;
+  /* EXPLICACIÓN: z-index alto para que esté por encima del resto del contenido. */
   z-index: 1040; /* Asegura estar sobre el contenido */
+  /* EXPLICACIÓN: fuerza renderizado con aceleración 3D para reducir parpadeos en algunos navegadores. */
   transform: translate3d(
     0,
     0,
@@ -52,6 +79,8 @@ ul {
   ); /* Fuerza aceleración de hardware para evitar parpadeos */
 }
 
+/* EXPLICACIÓN: estilos para la marca y los links de la navbar:
+   color blanco, mayúsculas, y transición para hover. */
 .navbar-brand,
 .navbar-nav .nav-link {
   color: white !important;
@@ -61,6 +90,7 @@ ul {
   transition: color 0.3s, background-color 0.3s;
 }
 
+/* EXPLICACIÓN: estado hover y activo de los links: color primario y fondo semitransparente */
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
   color: var(--primary-color) !important;
@@ -69,17 +99,24 @@ ul {
 }
 
 /* AJUSTE ESPECÍFICO PARA MÓVIL (SOLUCIÓN HAMBURGUESA) */
+/* EXPLICACIÓN: media query que aplica ajustes cuando la pantalla es menor o igual a 991px.
+   Esto normalmente corresponde a tablet/ móvil, y configura la expansión del menú colapsado. */
 @media (max-width: 991px) {
   .navbar-collapse {
+    /* EXPLICACIÓN: fondo sólido igual al de la navbar para tapar contenido que queda detrás. */
     background-color: var(
       --dark-bg
     ); /* Fondo sólido para tapar el contenido de atrás */
+    /* EXPLICACIÓN: posiciona el menú desplegado justo debajo de la barra. */
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
+    /* EXPLICACIÓN: espacio interno dentro del menú para enlaces. */
     padding: 20px;
+    /* EXPLICACIÓN: sombra más pronunciada para el panel móvil. */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    /* EXPLICACIÓN: línea superior tenue para separación visual. */
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     /* Permite scroll dentro del menú si es muy largo */
     max-height: 80vh;
@@ -89,18 +126,25 @@ ul {
 
 /* === 3. HERO SECTION === */
 /* === 3. HERO SECTION === */
+
+/* EXPLICACIÓN: sección hero (cabecera visual grande). Usa degradado por defecto por si la imagen falla. */
 .hero-section {
   /* Mantenemos el degradado como base por si la imagen no carga */
   background: linear-gradient(135deg, #212529 0%, var(--primary-color) 100%);
+  /* EXPLICACIÓN: texto en blanco para contraste con el fondo oscuro/degradado. */
   color: white;
+  /* EXPLICACIÓN: espacio grande arriba/abajo para enfatizar la sección. */
   padding: 8rem 1rem;
+  /* EXPLICACIÓN: bordes redondeados en la parte inferior para diseño suave. */
   border-radius: 0 0 15px 15px;
   margin-bottom: 3rem;
+  /* EXPLICACIÓN: relativo para que el pseudo-elemento ::before (overlay) se posicione respecto a este contenedor. */
   position: relative; /* Necesario para posicionar el overlay */
   overflow: hidden;
 }
 
-/* AQUI ESTÁ LA MAGIA: La capa oscura sobre la imagen */
+/* EXPLICACIÓN: pseudo-elemento ::before actúa como capa oscura encima del fondo (overlay),
+   creando contraste para texto legible. */
 .hero-section::before {
   content: "";
   position: absolute;
@@ -110,9 +154,11 @@ ul {
   height: 100%;
   /* Fondo negro al 65% de opacidad. Ajusta el 0.65 si quieres más o menos oscuridad */
   background-color: rgba(0, 0, 0, 0.65);
+  /* EXPLICACIÓN: z-index 1 coloca la capa oscura por encima del fondo pero debajo del contenido cuando éste tiene z-index mayor. */
   z-index: 1; /* Se coloca ENCIMA de la imagen de fondo */
 }
 
+/* EXPLICACIÓN: contenedor de contenido dentro del hero. z-index mayor para estar sobre el overlay. */
 .hero-content {
   position: relative;
   z-index: 2; /* El texto se coloca ENCIMA de la capa oscura */
@@ -124,6 +170,7 @@ ul {
   text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.8);
 }
 
+/* EXPLICACIÓN: logo dentro del hero: tamaño fijo, borde blanco y sombra para resaltar. */
 .hero-content .logo img {
   width: 100px;
   height: 100px;
@@ -131,6 +178,7 @@ ul {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
+/* EXPLICACIÓN: estilo del título principal en hero: tamaño grande y contorno sutil. */
 .hero-content h1 {
   font-size: 3rem;
   font-weight: 700;
@@ -140,12 +188,15 @@ ul {
   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.1);
 }
 
+/* EXPLICACIÓN: párrafo principal con clase .lead: color ligeramente más suave y peso medio. */
 .hero-content p.lead {
   color: #f8f9fa; /* Blanco humo, un poco más suave que el título */
   font-weight: 500;
 }
 
 /* === 4. SECCIONES DE CONTENIDO (GRID) === */
+
+/* EXPLICACIÓN: bloque de características o secciones: padding vertical, borde inferior y contención de floats. */
 .feature-block {
   padding: 3rem 0;
   border-bottom: 1px solid #eee;
@@ -153,21 +204,25 @@ ul {
   overflow: hidden;
 }
 
+/* EXPLICACIÓN: quita el borde inferior en el último bloque para buen acabado visual. */
 .feature-block:last-child {
   border-bottom: none;
 }
 
+/* EXPLICACIÓN: contenedor de texto alineado a la izquierda con padding interno. */
 .text-content {
   text-align: left;
   padding: 1.5rem;
 }
 
+/* EXPLICACIÓN: contenedor para imágenes; centra su contenido vertical y horizontalmente. */
 .image-content {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* EXPLICACIÓN: imagen de contenido: limita anchura máxima, redondea bordes, sombra y comportamiento hover. */
 .content-image {
   width: 100%;
   max-width: 550px;
@@ -177,14 +232,18 @@ ul {
   border: none;
   margin: 0;
   display: block;
+  /* EXPLICACIÓN: transición para suavizar la transformación al hacer hover. */
   transition: transform 0.3s ease-in-out;
 }
 
+/* EXPLICACIÓN: efecto hover que escala ligeramente la imagen para dar interactividad. */
 .content-image:hover {
   transform: scale(1.02);
 }
 
 /* === 5. TARJETAS DE INFORMACIÓN === */
+
+/* EXPLICACIÓN: tarjeta de información con borde lateral del color primario, fondo blanco y sombra ligera. */
 .info-card {
   background-color: white;
   border-left: 5px solid var(--primary-color);
@@ -195,6 +254,7 @@ ul {
   text-align: left;
 }
 
+/* EXPLICACIÓN: título dentro de la tarjeta: color primario y centrado (diseño elegido). */
 .info-card h3 {
   color: var(--primary-color);
   border-bottom: none;
@@ -203,12 +263,15 @@ ul {
   text-align: center;
 }
 
+/* EXPLICACIÓN: listas dentro de tarjetas usan listas internas (números o viñetas) posicionadas dentro. */
 .info-card ol,
 .info-card ul {
   list-style-position: inside;
 }
 
 /* === 6. FOOTER === */
+
+/* EXPLICACIÓN: pie de página con fondo oscuro, color de texto tenue y padding. */
 footer {
   background-color: var(--dark-bg);
   color: #bbb;
@@ -218,15 +281,21 @@ footer {
 }
 
 /* === 7. REDES SOCIALES (Example-2) === */
+
+/* EXPLICACIÓN: contenedor de íconos sociales centrado y con alineación vertical centrada. */
 .example-2 {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+/* EXPLICACIÓN: cada icono tiene margen lateral y posición relativa para tooltips y overlays. */
 .example-2 .icon-content {
   margin: 0 15px;
   position: relative;
 }
+
+/* EXPLICACIÓN: tooltip positioned arriba del icono; inicialmente oculto (opacity 0 y visibility hidden). */
 .example-2 .icon-content .tooltip {
   position: absolute;
   top: -30px;
@@ -240,11 +309,15 @@ footer {
   font-size: 14px;
   transition: all 0.3s ease;
 }
+
+/* EXPLICACIÓN: al hover del contenedor se muestra el tooltip y se eleva su posición (animación suave). */
 .example-2 .icon-content:hover .tooltip {
   opacity: 1;
   visibility: visible;
   top: -50px;
 }
+
+/* EXPLICACIÓN: estilo del enlace que contiene el icono: caja circular, centrado, con overflow para el efecto .filled. */
 .example-2 .icon-content a {
   position: relative;
   overflow: hidden;
@@ -259,16 +332,23 @@ footer {
   transition: all 0.3s ease-in-out;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* EXPLICACIÓN: estado hover del enlace: aumenta la sombra y cambia el color del icono a blanco para contraste. */
 .example-2 .icon-content a:hover {
   box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
   color: white;
 }
+
+/* EXPLICACIÓN: svg dentro del enlace recibe tamaño y z-index para permanecer arriba del overlay .filled. */
 .example-2 .icon-content a svg {
   position: relative;
   z-index: 1;
   width: 35px;
   height: 35px;
 }
+
+/* EXPLICACIÓN: elemento .filled es la capa que "llena" el botón desde abajo en hover.
+   Inicialmente su height es 0; en hover se expande para crear el efecto de color. */
 .example-2 .icon-content a .filled {
   position: absolute;
   top: auto;
@@ -279,20 +359,28 @@ footer {
   background-color: #000;
   transition: all 0.3s ease-in-out;
 }
+
+/* EXPLICACIÓN: al pasar el ratón, se anima la altura de .filled hasta cubrir el botón. */
 .example-2 .icon-content a:hover .filled {
   height: 100%;
 }
-/* Colores específicos Redes Sociales */
+
+/* === Colores específicos por red social === */
+/* EXPLICACIÓN: se usan selectores por atributo data-social para aplicar color/gradiente específico. */
+
+/* WhatsApp: color verde y tooltip del mismo color. */
 .example-2 .icon-content a[data-social="whatsapp"] .filled,
 .example-2 .icon-content a[data-social="whatsapp"] ~ .tooltip {
   background-color: #128c7e;
 }
 
+/* Facebook: azul clásico. */
 .example-2 .icon-content a[data-social="facebook"] .filled,
 .example-2 .icon-content a[data-social="facebook"] ~ .tooltip {
   background-color: #3b5998;
 }
 
+/* Instagram: gradiente característico aplicado tanto al .filled como al tooltip adyacente. */
 .example-2 .icon-content a[data-social="instagram"] .filled,
 .example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
   background: linear-gradient(
@@ -305,16 +393,21 @@ footer {
     #fd1f1f
   );
 }
+
+/* YouTube: rojo vibrante. */
 .example-2 .icon-content a[data-social="youtube"] .filled,
 .example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
   background-color: #ff0000;
 }
 
 /* === 8. BOTÓN FLOTANTE WHATSAPP === */
+
+/* EXPLICACIÓN: botón flotante con posición fija (bottom-right), tamaño circular, animación y alto z-index. */
 .whatsapp-btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
+  /* EXPLICACIÓN: debe quedar por encima de otros elementos (incluso la navbar). */
   z-index: 1050; /* Más alto que la navbar */
   width: 60px;
   height: 60px;
@@ -324,10 +417,12 @@ footer {
   align-items: center;
   justify-content: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  /* EXPLICACIÓN: animación de respiración para llamar la atención sutilmente. */
   animation: breathe 2s ease-in-out infinite;
   text-decoration: none;
 }
 
+/* EXPLICACIÓN: icono dentro del botón: color blanco y animación 'beat' de latido. */
 .whatsapp-btn i {
   color: #fff;
   font-size: 24px;
@@ -335,6 +430,7 @@ footer {
 }
 
 /* Animaciones de WhatsApp */
+/* EXPLICACIÓN: keyframes para el efecto 'breathe' que expande/contrae la sombra exterior. */
 @keyframes breathe {
   0% {
     box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
@@ -347,6 +443,7 @@ footer {
   }
 }
 
+/* EXPLICACIÓN: keyframes para el 'beat' que escala el icono simulando un latido. */
 @keyframes beat {
   0% {
     transform: scale(1);
@@ -360,6 +457,9 @@ footer {
 }
 
 /* === 9. BOTONES PERSONALIZADOS (Formulario) === */
+
+/* EXPLICACIÓN: clase .button diseñada para botones con efectos de capas usando ::before y ::after.
+   Se utiliza display inline-block para que el elemento respete padding y dimensiones como botón. */
 .button {
   padding: 15px 20px;
   font-size: 16px;
@@ -372,6 +472,8 @@ footer {
   display: inline-block; /* Asegura comportamiento de botón */
 }
 
+/* EXPLICACIÓN: se preparan pseudo-elementos ::after y ::before que crearán las capas visuales.
+   Ambos son posicionados absoluta y con z-index -1 para quedar detrás del contenido del botón. */
 .button::after,
 .button::before {
   content: "";
@@ -382,6 +484,7 @@ footer {
   transition: all 0.4s;
 }
 
+/* EXPLICACIÓN: ::before es la capa base oscura detrás del botón con tamaño inicial que cubre. */
 .button::before {
   transform: translate(0%, 0%);
   width: 100%;
@@ -390,21 +493,25 @@ footer {
   border-radius: 10px;
 }
 
+/* EXPLICACIÓN: ::after es una pequeña burbuja blanca semi-transparente que se transforma en hover. */
 .button::after {
   transform: translate(10px, 10px);
   width: 35px;
   height: 35px;
   background: #ffffff15;
+  /* EXPLICACIÓN: backdrop-filter aplica desenfoque detrás del pseudo-elemento (soporta solo navegadores modernos). */
   backdrop-filter: blur(5px);
   border-radius: 50px;
 }
 
+/* EXPLICACIÓN: en hover, ::before se desplaza y agranda ligeramente para dar sensación de movimiento. */
 .button:hover::before {
   transform: translate(5%, 20%);
   width: 110%;
   height: 110%;
 }
 
+/* EXPLICACIÓN: en hover, ::after cambia a rectángulo (border-radius menor) y se coloca detrás como fondo completo. */
 .button:hover::after {
   border-radius: 10px;
   transform: translate(0, 0);
@@ -412,6 +519,7 @@ footer {
   height: 100%;
 }
 
+/* EXPLICACIÓN: al hacer click (active), ::after tiene transición cero para respuesta inmediata, y se desplaza un poco hacia abajo. */
 .button:active::after {
   transition: 0s;
   transform: translate(0, 5%);

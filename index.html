@@ -1,51 +1,89 @@
 <!DOCTYPE html>
+<!-- Declaración del tipo de documento: indica que este es un documento HTML5 -->
+
 <html lang="es">
+  <!-- Etiqueta raíz del documento HTML. El atributo 'lang="es"' indica que el contenido está en español para accesibilidad y SEO -->
+
   <head>
+    <!-- Sección de metadatos y recursos del documento. No se muestra visualmente al usuario -->
+
     <meta charset="UTF-8" />
+    <!-- Especifica la codificación de caracteres como UTF-8, que soporta caracteres internacionales y especiales -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Configura la vista en dispositivos móviles: ancho igual al del dispositivo y escala inicial de 1 (sin zoom) -->
+
     <title>Zona Web Lara | Inicio</title>
+    <!-- Título de la página que aparece en la pestaña del navegador y en los resultados de búsqueda -->
+
+    <!-- Enlace a Bootstrap 5 CSS desde CDN (Content Delivery Network) para estilos responsivos y componentes predefinidos -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+
+    <!-- Carga fuentes personalizadas desde Google Fonts: Montserrat (400 y 700) y Oswald (500) -->
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Icono de la pestaña del navegador (favicon), ubicado en la carpeta 'assets' -->
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+
+    <!-- Archivo CSS personalizado local (style.css) para sobrescribir o añadir estilos propios -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Iconos de Bootstrap Icons desde CDN, usados en botones y elementos interactivos -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
     />
+
+    <!-- Estilos para la librería AOS (Animate On Scroll): animaciones al hacer scroll -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
+
   <body>
+    <!-- Contenido visible de la página web -->
+
+    <!-- Barra de navegación fija en la parte superior usando clases de Bootstrap -->
     <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+      <!-- Contenedor que limita el ancho del contenido y centra los elementos -->
       <div class="container">
+        <!-- Logotipo y nombre de la marca como enlace a la página de inicio -->
         <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <!-- Imagen del logotipo, redondeada y con margen derecho -->
           <img
             src="assets/logo_zwl.webp"
             alt="Logo"
             width="40"
             class="rounded-circle me-2"
           />
+          <!-- Texto de la marca -->
           Zona Web Lara
         </a>
+
+        <!-- Botón de menú colapsable para dispositivos móviles -->
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
         >
+          <!-- Icono predeterminado del menú hamburguesa proporcionado por Bootstrap -->
           <span class="navbar-toggler-icon"></span>
         </button>
+
+        <!-- Contenedor colapsable del menú de navegación. Alineado a la derecha en pantallas grandes -->
         <div
           class="collapse navbar-collapse justify-content-end"
           id="navbarNav"
         >
+          <!-- Lista de enlaces de navegación -->
           <ul class="navbar-nav">
             <li class="nav-item">
+              <!-- Enlace activo a la página de inicio -->
               <a class="nav-link active" aria-current="page" href="index.html"
                 >Inicio</a
               >
@@ -59,6 +97,7 @@
             <li class="nav-item">
               <a class="nav-link" href="contacto.html">Contacto</a>
             </li>
+            <!-- Ícono de manual de usuario (sin texto visible) -->
             <li class="nav-item">
               <a class="nav-link" href="manual.html" title="Manual de Usuario">
                 <i class="bi bi-file-earmark-text-fill"></i>
@@ -69,8 +108,11 @@
       </div>
     </nav>
 
+    <!-- Sección hero (cabecera principal) con imagen de fondo implícita en CSS -->
     <header class="hero-section">
+      <!-- Contenedor centrado con márgenes verticales y horizontales -->
       <div class="container hero-content">
+        <!-- Logo grande en la sección hero -->
         <div class="logo">
           <img
             src="assets/logo_zwl.webp"
@@ -78,22 +120,29 @@
             alt="Logo de Zona Web Lara"
           />
         </div>
+        <!-- Título principal de la página -->
         <div class="name mt-3">
           <h1 class="display-3">Soluciones Digitales y Papelería en Lara</h1>
         </div>
+        <!-- Texto secundario (lead) visible solo en pantallas medianas o grandes -->
         <p class="lead mt-3 mb-4 d-none d-md-block">
           Tu centro integral de tecnología, impresión y artículos de oficina en
           Pavía.
         </p>
+        <!-- Botón principal que redirige a la página de servicios -->
         <a href="servicios.html" class="btn btn-primary btn-lg shadow-lg"
           >Descubre Nuestros Servicios</a
         >
       </div>
     </header>
 
+    <!-- Contenido principal de la página -->
     <main class="container">
+      <!-- Primera sección de características: "Quiénes Somos" -->
       <section class="feature-block py-5">
+        <!-- Fila de Bootstrap para alinear imagen y texto -->
         <div class="row align-items-center">
+          <!-- Columna con imagen, aparece a la derecha en pantallas grandes (order-lg-1) -->
           <div class="col-lg-6 order-lg-1 image-content">
             <img
               src="assets/zwl/Local.webp"
@@ -101,6 +150,8 @@
               alt="Local de Zona Web Lara"
             />
           </div>
+          <!-- Columna con texto, aparece a la izquierda en pantallas grandes (order-lg-0) -->
+          <!-- Aplicación de animación AOS: aparece desde la derecha al hacer scroll -->
           <div class="col-lg-6 order-lg-0 text-content" data-aos="fade-right">
             <h2 class="mb-4">Quiénes Somos y Nuestra Trayectoria</h2>
             <p class="text-secondary">
@@ -115,6 +166,7 @@
               tecnológicos y las nuevas demandas del mercado, sin sacrificar la
               calidad y la eficiencia.
             </p>
+            <!-- Botón que lleva a la página "Nosotros" -->
             <a href="nosotros.html" class="btn btn-outline-primary mt-3"
               >Saber más de Nosotros <i class="bi bi-arrow-right"></i
             ></a>
@@ -122,8 +174,10 @@
         </div>
       </section>
 
+      <!-- Segunda sección de características: "Propuesta de Valor" -->
       <section class="feature-block py-5">
         <div class="row align-items-center">
+          <!-- Imagen a la izquierda (por defecto) -->
           <div class="col-lg-6 image-content">
             <img
               src="assets/zwl/cyber.webp"
@@ -131,14 +185,16 @@
               alt="Cyber Café"
             />
           </div>
+          <!-- Texto a la derecha con animación AOS desde la izquierda -->
           <div class="col-lg-6 text-content" data-aos="fade-left">
             <h2 class="mb-4">Nuestra Propuesta de Valor Integral</h2>
             <p class="text-secondary">
               Nuestra misión es crear un entorno dinámico e inclusivo donde las
               personas puedan conectarse, explorar y participar plenamente en el
               mundo digital. Para lograrlo, ofrecemos una propuesta de valor
-              única que combina **tecnología y conveniencia** en un solo lugar.
+              única que combina tecnología y conveniencia en un solo lugar.
             </p>
+            <!-- Tarjeta informativa con la misión resumida -->
             <div class="info-card mt-4">
               <h3 class="h5">Misión Resumida</h3>
               <p class="text-center mb-0">
@@ -151,12 +207,16 @@
         </div>
       </section>
 
+      <!-- Sección de "Servicios Clave": tarjetas en cuadrícula -->
       <section class="py-5">
         <h2 class="text-center mb-5 display-5">Servicios Clave</h2>
+        <!-- Cuadrícula de 4 columnas en pantallas grandes, 2 en medianas, 1 en móviles -->
         <div class="row g-4">
+          <!-- Tarjeta 1: Infraestructura Tecnológica -->
           <div class="col-md-6 col-lg-3">
             <div class="card h-100 text-center shadow-sm border-0">
               <div class="card-body">
+                <!-- Icono de laptop de Bootstrap Icons -->
                 <i class="bi bi-laptop display-4 text-primary mb-3"></i>
                 <h5 class="card-title">Infraestructura Tecnológica</h5>
                 <p class="card-text text-secondary">
@@ -166,6 +226,7 @@
               </div>
             </div>
           </div>
+          <!-- Tarjeta 2: Comodidad Centralizada -->
           <div class="col-md-6 col-lg-3">
             <div class="card h-100 text-center shadow-sm border-0">
               <div class="card-body">
@@ -178,6 +239,7 @@
               </div>
             </div>
           </div>
+          <!-- Tarjeta 3: Soluciones Integrales -->
           <div class="col-md-6 col-lg-3">
             <div class="card h-100 text-center shadow-sm border-0">
               <div class="card-body">
@@ -190,6 +252,7 @@
               </div>
             </div>
           </div>
+          <!-- Tarjeta 4: Atención Excepcional -->
           <div class="col-md-6 col-lg-3">
             <div class="card h-100 text-center shadow-sm border-0">
               <div class="card-body">
@@ -206,35 +269,51 @@
       </section>
     </main>
 
+    <!-- Botón flotante de WhatsApp (enlace directo al chat de WhatsApp con mensaje predefinido) -->
     <a
       href="https://wa.me/4125022286?text=Saludos"
       target="_blank"
       class="whatsapp-btn"
     >
+      <!-- Icono de WhatsApp de Bootstrap Icons -->
       <i class="bi bi-whatsapp"></i>
     </a>
 
+    <!-- Pie de página (footer) centrado -->
     <footer class="text-center">
       <div class="container">
+        <!-- Texto con copyright y año actualizado a 2025 -->
         <p class="mb-0">
           &copy; 2025 Zona Web Lara. Todos los derechos reservados.
         </p>
       </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            once: true, /* La animación solo ocurre una vez. Evita que se repita al subir, eliminando saltos */
-            duration: 1000, /* Duración por defecto */
-            disable: 'mobile' /* OPCIONAL: Si el problema persiste, descomenta esta línea para apagar AOS solo en celulares */
-        });
+    <!-- Scripts al final del body para mejorar el rendimiento de carga -->
 
-        // Parche extra: Recalcular AOS cuando carga la página completamente
-        window.addEventListener('load', function() {
-            AOS.refresh();
-        });
+    <!-- Bootstrap JS (incluye Popper.js) para funcionalidad interactiva (menú colapsable, etc.) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Librería AOS (Animate On Scroll) para animaciones al hacer scroll -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Script personalizado para inicializar y ajustar AOS -->
+    <script>
+      // Inicializa AOS con opciones personalizadas
+      AOS.init({
+        once: true,
+        /* La animación solo ocurre una vez al hacer scroll. Evita repeticiones al subir/bajar, mejorando la experiencia */
+        duration: 1000,
+        /* Duración de la animación en milisegundos (1 segundo) */
+        disable: "mobile",
+        /* Opción comentada por defecto: si se descomenta, desactivaría AOS en móviles para mejorar rendimiento */
+      });
+
+      // Recalcula las animaciones AOS una vez que la página ha cargado completamente
+      // Útil para asegurar que las animaciones se apliquen correctamente tras imágenes o fuentes
+      window.addEventListener("load", function () {
+        AOS.refresh();
+      });
     </script>
   </body>
 </html>

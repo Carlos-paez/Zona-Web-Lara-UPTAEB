@@ -1,49 +1,117 @@
 <!DOCTYPE html>
+<!--
+  Declaración del tipo de documento HTML5.
+  Indica al navegador que renderice el documento como HTML moderno.
+-->
 <html lang="es">
+  <!--
+    Atributo lang="es" para indicar que el contenido está en español.
+    Esto ayuda a motores de búsqueda y a tecnologías de asistencia (lectores de pantalla).
+  -->
   <head>
+    <!-- Metadatos y enlaces a recursos -->
+
     <meta charset="UTF-8" />
+    <!--
+      Define la codificación de caracteres del documento (UTF-8 permite acentos y caracteres especiales).
+    -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+      Meta viewport para que el sitio sea responsivo en móviles:
+      - width=device-width hace que el ancho de la página sea el ancho del dispositivo.
+      - initial-scale=1.0 evita zoom inicial no deseado.
+    -->
+
     <title>Zona Web Lara | Contacto</title>
+    <!--
+      Título que aparece en la pestaña del navegador y en resultados de búsqueda.
+    -->
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <!--
+      Enlace al CSS de Bootstrap (CDN).
+      Proporciona utilidades, grid, componentes y estilos básicos.
+    -->
 
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
     />
+    <!--
+      Iconos de Bootstrap (clase .bi). Permite usar íconos mediante <i class="bi bi-...">.
+    -->
 
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500&display=swap"
       rel="stylesheet"
     />
+    <!--
+      Importa las fuentes Montserrat y Oswald desde Google Fonts.
+      Se usan para tipografía personalizada en el sitio.
+    -->
 
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
+    <!--
+      Font Awesome (otra librería de íconos). Se agrega por compatibilidad o íconos adicionales.
+    -->
 
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <!--
+      Favicon que aparece en la pestaña del navegador.
+    -->
 
     <link rel="stylesheet" href="style.css" />
+    <!--
+      Hoja de estilos local del proyecto. Contiene estilos personalizados (clases como .hero-section, .info-card, .whatsapp-btn, etc.).
+    -->
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!--
+      CSS de AOS (Animate On Scroll) para animaciones al hacer scroll.
+      Permite usar atributos data-aos en elementos HTML.
+    -->
   </head>
 
   <body>
+    <!-- ======= Barra de navegación (Navbar) ======= -->
     <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+      <!--
+        Navbar con clases de Bootstrap:
+        - navbar-expand-lg: la barra se expande en pantallas grandes y colapsa en pequeñas.
+        - navbar-dark: estilo oscuro (colores de texto adaptados).
+        - shadow-sm: sombra pequeña debajo de la barra.
+      -->
       <div class="container">
+        <!-- Contenedor centrado y con padding horizontal (Bootstrap .container) -->
         <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <!--
+            Enlace al inicio con marca (logo + texto).
+            .d-flex y .align-items-center para alinear verticalmente el logo y el texto.
+          -->
           <img
             src="assets/logo_zwl.webp"
             alt="Logo de Zona Web Lara"
             width="40"
             class="rounded-circle me-2"
           />
+          <!--
+            Imagen del logo:
+            - src: ruta relativa al archivo.
+            - alt: texto alternativo para accesibilidad.
+            - width: tamaño en píxeles.
+            - rounded-circle: borde redondeado (Bootstrap).
+            - me-2: margin-end para separar imagen del texto (espacio a la derecha).
+          -->
           Zona Web Lara
         </a>
+
         <button
           class="navbar-toggler"
           type="button"
@@ -52,20 +120,35 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+        <!--
+          Botón que aparece en vistas pequeñas para desplegar/colapsar el menú.
+          - data-bs-toggle y data-bs-target son atributos usados por Bootstrap JS para controlar el colapso.
+        -->
+
         <div
           class="collapse navbar-collapse justify-content-end"
           id="navbarNav"
         >
+          <!--
+            Contenedor de los enlaces del navbar.
+            - collapse navbar-collapse: hace la animación/colapso en móviles.
+            - justify-content-end: alinea los enlaces a la derecha.
+            - id="navbarNav": referencia usada por el botón toggler.
+          -->
           <ul class="navbar-nav">
+            <!-- Lista de enlaces de navegación -->
             <li class="nav-item">
               <a class="nav-link" href="index.html">Inicio</a>
             </li>
+
             <li class="nav-item">
               <a class="nav-link" href="nosotros.html">Nosotros</a>
             </li>
+
             <li class="nav-item">
               <a class="nav-link" href="servicios.html">Servicios</a>
             </li>
+
             <li class="nav-item">
               <a
                 class="nav-link active"
@@ -73,10 +156,17 @@
                 href="contacto.html"
                 >Contacto</a
               >
+              <!--
+                El enlace "Contacto" tiene:
+                - class="active": indica visualmente la página actual.
+                - aria-current="page": mejora accesibilidad indicando la página actual a lectores de pantalla.
+              -->
             </li>
+
             <li class="nav-item">
               <a class="nav-link" href="manual.html" title="Manual de Usuario">
                 <i class="bi bi-file-earmark-text-fill"></i>
+                <!-- Icono (Bootstrap Icons) que representa un manual/documento -->
               </a>
             </li>
           </ul>
@@ -84,6 +174,7 @@
       </div>
     </nav>
 
+    <!-- ======= Header / Hero Section ======= -->
     <header
       class="hero-section"
       style="
@@ -92,19 +183,55 @@
         background-position: center;
       "
     >
+      <!--
+        Sección hero con imagen de fondo:
+        - background-image: ruta a la imagen de cabecera.
+        - background-size: cover -> hace que la imagen cubra todo el contenedor.
+        - background-position: center -> centra la imagen.
+        La clase .hero-section probablemente tenga estilos adicionales en style.css.
+      -->
       <div class="container hero-content">
+        <!-- Contenido dentro del hero -->
         <h1 class="display-3">Hablemos de tu Proyecto</h1>
+        <!--
+          Título principal:
+          - display-3: clase de Bootstrap para un texto grande y llamativo.
+        -->
+
         <p class="lead mt-3 mb-4 d-none d-md-block">
           Estamos listos para ayudarte. Contáctanos por el medio que prefieras.
         </p>
+        <!--
+          Párrafo descriptivo:
+          - lead: estilo de Bootstrap para texto destacado.
+          - mt-3 mb-4: margenes superior e inferior.
+          - d-none d-md-block: oculto en pantallas pequeñas, visible a partir de md (responsive).
+        -->
       </div>
     </header>
 
+    <!-- ======= Main / Contenido principal ======= -->
     <main class="container py-5">
+      <!--
+        Contenedor principal con padding vertical (py-5).
+        Aquí se ubican el formulario y la columna de información de contacto.
+      -->
       <div class="row g-5">
+        <!--
+          Grid de Bootstrap:
+          - row: fila.
+          - g-5: gap entre columnas.
+        -->
+
+        <!-- Columna izquierda: formulario -->
         <div class="col-lg-6">
           <h2 class="mb-4 text-center">Envíanos un Mensaje</h2>
+
           <div class="info-card p-4">
+            <!--
+              .info-card es una clase personalizada (estilos en style.css).
+              p-4: padding interno del bloque.
+            -->
             <form
               id="formulario-contacto"
               class="text-start"
@@ -112,8 +239,19 @@
               data-aos-easing="linear"
               data-aos-duration="1500"
             >
+              <!--
+                Formulario con:
+                - id para referenciar desde JavaScript (email.js u otros).
+                - class text-start para alinear texto a la izquierda.
+                - Atributos data-aos para animación al aparecer (AOS: fade-down, easing linear, duración 1500ms).
+              -->
+
               <div class="mb-3">
+                <!-- Grupo del campo Nombre -->
                 <label for="nombre" class="form-label">Nombre Completo</label>
+                <!--
+                  <label for="nombre"> enlaza con el input que tiene id="nombre" (accesibilidad).
+                -->
                 <input
                   type="text"
                   class="form-control"
@@ -121,8 +259,16 @@
                   required
                   placeholder="Tu nombre"
                 />
+                <!--
+                  Input de tipo texto:
+                  - class form-control para estilo Bootstrap.
+                  - required: campo obligatorio.
+                  - placeholder: texto guía dentro del input.
+                -->
               </div>
+
               <div class="mb-3">
+                <!-- Grupo del campo Email -->
                 <label for="email" class="form-label">Correo Electrónico</label>
                 <input
                   type="email"
@@ -131,8 +277,13 @@
                   required
                   placeholder="tu.correo@ejemplo.com"
                 />
+                <!--
+                  Input tipo email valida sintaxis básica de correo en navegadores modernos.
+                -->
               </div>
+
               <div class="mb-3">
+                <!-- Grupo del campo Mensaje -->
                 <label for="mensaje" class="form-label"
                   >Tu Mensaje o Consulta</label
                 >
@@ -143,23 +294,46 @@
                   required
                   placeholder="Quiero saber más sobre..."
                 ></textarea>
+                <!--
+                  Textarea para mensaje más largo:
+                  - rows="5" indica altura aproximada.
+                -->
               </div>
 
               <div class="d-grid">
+                <!--
+                  d-grid convierte el contenedor en una cuadricula; útil para que el botón ocupe todo el ancho.
+                -->
                 <button
                   class="button"
                   style="margin-top: 20px; margin-bottom: 20px"
                 >
+                  <!--
+                    Botón principal del formulario.
+                    Observa que dentro del botón hay un <a href="mailto:...">: al hacer clic se abrirá la app de correo.
+                    Nota: El uso de <a> dentro de <button> funciona pero no es la práctica más común — aquí el objetivo es disparar la acción mailto.
+                  -->
                   <a
                     href="mailto:zonaweblara@gmail.com"
                     style="text-decoration: none; color: inherit"
                   >
+                    <!--
+                      Enlace mailto:
+                      - Al pulsarlo, abre cliente de correo predeterminado con la dirección ya aplicada.
+                      - style inline para quitar subrayado y heredar color del botón.
+                    -->
+
+                    <!-- SVG del icono (parecido al logo de Google Mail/colores) -->
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="1.33em"
                       height="1em"
                       viewBox="0 0 256 193"
                     >
+                      <!--
+                        SVG compuesto por varios <path> con diferentes colores.
+                        Cada <path> aporta una parte del icono.
+                      -->
                       <path
                         fill="#4285f4"
                         d="M58.182 192.05V93.14L27.507 65.077L0 49.504v125.091c0 9.658 7.825 17.455 17.455 17.455z"
@@ -181,41 +355,69 @@
                         d="m0 49.504l26.759 20.07L58.182 93.14V17.504L41.89 5.286C24.61-7.66 0 4.646 0 26.23z"
                       />
                     </svg>
-                      Enviar Correo
+                    Enviar Correo
+                    <!--
+                      Texto visible junto al icono dentro del botón.
+                      El espacio antes de "Enviar Correo" es un espacio duro (se observa por la entidad o espacio directo).
+                    -->
                   </a>
                 </button>
               </div>
             </form>
           </div>
+
           <p class="text-muted text-center mt-3">
             <i class="bi bi-info-circle-fill me-2"></i>Al enviar, se abrirá tu
             aplicación de correo electrónico predeterminada.
           </p>
+          <!--
+            Nota informativa para el usuario indicando que se abrirá el cliente de correo.
+            .text-muted baja la intensidad del texto, .text-center centra el párrafo.
+          -->
         </div>
 
+        <!-- Columna derecha: información de contacto -->
         <div
           class="col-lg-6"
           data-aos="fade-right"
           data-aos-offset="300"
           data-aos-easing="ease-in-sine"
         >
+          <!--
+            Columna con atributos data-aos para animación (fade-right).
+            data-aos-offset controla el desplazamiento para iniciar la animación.
+          -->
           <h2 class="mb-4 text-center">Nuestra Información de Contacto</h2>
 
           <div class="info-card p-4 mb-4">
             <h3 class="h5 text-center mb-4 text-primary">
               Detalles de Contacto Directo
             </h3>
+
             <ul class="list-unstyled text-start">
+              <!-- Lista sin estilos de listas (sin bullets) -->
+
               <li
                 class="mb-4 d-flex align-items-center justify-content-between"
               >
+                <!--
+                  Elemento de lista que muestra el teléfono y un botón "Copiar".
+                  - d-flex y align-items-center alinean el contenido verticalmente.
+                  - justify-content-between separa el contenido en extremos (texto a la izquierda, botón a la derecha).
+                -->
                 <div class="d-flex align-items-center">
                   <i class="bi bi-phone-fill text-primary me-3 fs-4"></i>
+                  <!-- Icono de teléfono (Bootstrap Icons). fs-4 ajusta tamaño. -->
+
                   <span
-                    >**Teléfono:**
-                    <span id="412-5022286">412-5022286</span></span
+                    >Teléfono: <span id="412-5022286">412-5022286</span></span
                   >
+                  <!--
+                    Texto con número telefónico.
+                    - El número está envuelto en un <span id="412-5022286"> — eso permite copiarlo desde JS (aunque el id numérico no es una práctica ideal; preferible usar id sin caracteres especiales). Aquí se mantiene tal cual.
+                  -->
                 </div>
+
                 <button
                   class="btn btn-sm btn-outline-primary"
                   onclick="copiarTexto()"
@@ -223,42 +425,64 @@
                 >
                   <i class="bi bi-clipboard"></i> Copiar
                 </button>
+                <!--
+                  Botón que al hacer clic ejecuta la función copiarTexto() definida en copy.js.
+                  - title proporciona tooltip nativo al pasar el ratón.
+                -->
               </li>
 
               <li class="mb-4 d-flex align-items-center">
                 <i class="bi bi-envelope-fill text-primary me-3 fs-4"></i>
                 <span
-                  >**Email:**
+                  >Email:
                   <a
                     href="mailto:zonaweblara@gmail.com"
                     class="text-decoration-none text-secondary"
                     >zonaweblara@gmail.com</a
                   ></span
                 >
+                <!--
+                  Email mostrado como enlace mailto: al click abrirá el cliente de correo.
+                -->
               </li>
 
               <li class="d-flex align-items-center">
                 <i class="bi bi-geo-alt-fill text-primary me-3 fs-4"></i>
                 <span
-                  >**Ubicación:** Carrera 3 entre Calles 14 y 15, Pavía, Estado
+                  >Ubicación: Carrera 3 entre Calles 14 y 15, Pavía, Estado
                   Lara.</span
                 >
+                <!--
+                  Dirección física. Icono de localización (Bootstrap Icons).
+                -->
               </li>
             </ul>
 
             <h3 class="h5 text-center mt-5 mb-4 text-primary">
               Síguenos en Redes
             </h3>
+
             <div class="d-flex justify-content-center gap-4">
+              <!-- Contenedor centrado para íconos de redes sociales -->
               <ul class="example-2">
+                <!-- Lista personalizada (clases .example-2 y .icon-content están definidas en style.css) -->
+
+                <!-- === WhatsApp === -->
                 <li class="icon-content">
                   <a
                     data-social="whatsapp"
                     aria-label="Whatsapp"
                     href="https://wa.me/4125022286?text=Saludos"
                   >
+                    <!--
+                      Enlace a API de WhatsApp (wa.me) para abrir chat directo con número y mensaje predefinido.
+                      - data-social se puede usar por CSS/JS para estilos/funcionalidad específicas.
+                      - aria-label mejora accesibilidad.
+                    -->
                     <div class="filled"></div>
+                    <!-- Elemento decorativo (relleno) manejado por CSS. -->
 
+                    <!-- SVG con el icono de WhatsApp -->
                     <svg
                       xml:space="preserve"
                       viewBox="0 0 24 24"
@@ -275,8 +499,10 @@
                     </svg>
                   </a>
                   <div class="tooltip">Whatsapp</div>
+                  <!-- Tooltip personalizado que se muestra en hover (estilos en CSS). -->
                 </li>
 
+                <!-- === Facebook === -->
                 <li class="icon-content">
                   <a
                     data-social="facebook"
@@ -284,6 +510,7 @@
                     href="https://www.facebook.com/zona.web.lara.2023"
                   >
                     <div class="filled"></div>
+                    <!-- SVG icono de Facebook -->
                     <svg
                       xml:space="preserve"
                       viewBox="0 0 24 24"
@@ -302,6 +529,7 @@
                   <div class="tooltip">Facebook</div>
                 </li>
 
+                <!-- === Instagram === -->
                 <li class="icon-content">
                   <a
                     data-social="instagram"
@@ -309,6 +537,7 @@
                     href="https://www.instagram.com/zonaweblara?igsh=YzljYTk1ODg3Zg=="
                   >
                     <div class="filled"></div>
+                    <!-- SVG icono de Instagram -->
                     <svg
                       xml:space="preserve"
                       viewBox="0 0 16 16"
@@ -331,12 +560,22 @@
           </div>
 
           <h3 class="h5 text-center mb-3">¿Dónde Encontrarnos?</h3>
+          <!--
+            Título para la sección del mapa.
+          -->
+
           <div
             class="ratio ratio-4x3 shadow-lg rounded-3"
             data-aos="flip-left"
             data-aos-easing="ease-out-cubic"
             data-aos-duration="2000"
           >
+            <!--
+              Contenedor responsivo para el iframe del mapa:
+              - ratio-4x3: aspecto 4:3 (Bootstrap).
+              - shadow-lg y rounded-3: sombra grande y bordes redondeados.
+              - data-aos para animación flip-left.
+            -->
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15707.954752187313!2d-69.29415449999999!3d10.09101145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e833405c92c57f7%3A0x8e833405c92c57f7!2sPavi%CC%81a%2C%20Lara%2C%20Venezuela!5e0!3m2!1sen!2sus!4v1678252200000!5m2!1sen!2sus"
               style="border: 0"
@@ -345,40 +584,83 @@
               referrerpolicy="no-referrer-when-downgrade"
               class="rounded-3"
             ></iframe>
+            <!--
+              IFrame incorporado con Google Maps:
+              - src contiene parámetros que definen la ubicación y zoom.
+              - style="border:0" quita el borde por defecto.
+              - allowfullscreen permite modo pantalla completa.
+              - loading="lazy" retarda la carga hasta que sea necesario (mejora rendimiento).
+              - referrerpolicy controla la política de referencia.
+              - class rounded-3 aplica esquinas redondeadas.
+            -->
           </div>
         </div>
       </div>
     </main>
 
+    <!-- Botón flotante de WhatsApp -->
     <a
       href="https://wa.me/4125022286?text=Saludos"
       target="_blank"
       class="whatsapp-btn"
     >
       <i class="bi bi-whatsapp"></i>
+      <!--
+        Botón flotante que abre WhatsApp en nueva pestaña (target="_blank").
+        .whatsapp-btn es una clase personalizada que fija el botón en la esquina (estilos en style.css).
+      -->
     </a>
 
+    <!-- Footer -->
     <footer class="text-center">
       <div class="container">
         <p class="mb-0">© 2025 Zona Web Lara. Todos los derechos reservados.</p>
+        <!--
+          Información de derechos de autor.
+        -->
       </div>
     </footer>
 
+    <!-- ======= Scripts (JS) ======= -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="copy.js"></script>
-    <script src="email.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            once: true, /* La animación solo ocurre una vez. Evita que se repita al subir, eliminando saltos */
-            duration: 1000, /* Duración por defecto */
-            disable: 'mobile' /* OPCIONAL: Si el problema persiste, descomenta esta línea para apagar AOS solo en celulares */
-        });
+    <!--
+      Bundle de Bootstrap que incluye Popper y funcionalidades JS (collapse, dropdowns, modals...).
+    -->
 
-        // Parche extra: Recalcular AOS cuando carga la página completamente
-        window.addEventListener('load', function() {
-            AOS.refresh();
-        });
+    <script src="copy.js"></script>
+    <!--
+      Archivo local copy.js (contiene, presumiblemente, la función copiarTexto() usada en el botón "Copiar").
+      Se carga aquí para que el DOM ya exista cuando el script se ejecute.
+    -->
+
+    <script src="email.js"></script>
+    <!--
+      Archivo local email.js (posible manejo de validación/envío de formulario).
+    -->
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!--
+      Librería AOS (Animate On Scroll) para animaciones al hacer scroll.
+    -->
+
+    <script>
+      /* Inicialización de AOS con opciones */
+      AOS.init({
+        once: true /* La animación solo ocurre una vez. Evita que se repita al subir, eliminando saltos */,
+        duration: 1000 /* Duración por defecto de las animaciones (en ms) */,
+        disable:
+          "mobile" /* OPCIONAL: Si el problema persiste, descomenta esta línea para apagar AOS solo en celulares */,
+      });
+
+      // Parche extra: Recalcular AOS cuando carga la página completamente
+      window.addEventListener("load", function () {
+        AOS.refresh();
+      });
+      /* 
+          - AOS.init(): configura la librería con las opciones pasadas.
+          - window.addEventListener('load', ...) asegura que AOS refresque sus cálculos
+            cuando todas las imágenes y recursos estén cargados (evita que las animaciones se desplacen mal).
+        */
     </script>
   </body>
 </html>
