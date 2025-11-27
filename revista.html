@@ -1,408 +1,647 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Revista Digital: Proyecto Zona Web Lara</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zona Web Lara | Revista Digital Interactiva</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Oswald:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <style>
-        /* === ESTILOS DE LA REVISTA (Basados en tu style.css) === */
-        :root {
-            --primary-color: #0d6efd; /* Azul Bootstrap */
-            --secondary-color: #343a40; /* Gris oscuro */
-            --light-bg: #f8f9fa; 
-            --dark-bg: #212529;
-            --paper-color: #ffffff;
-        }
+      :root {
+        --primary: #0d6efd;
+        --dark: #212529;
+        --light: #f8f9fa;
+        --glass-bg: rgba(255, 255, 255, 0.95);
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
 
+      body {
+        background-color: #e0e5ec;
+        background-image: radial-gradient(#0d6efd 0.5px, transparent 0.5px),
+          radial-gradient(#0d6efd 0.5px, #e0e5ec 0.5px);
+        background-size: 20px 20px;
+        background-position: 0 0, 10px 10px;
+        font-family: "Montserrat", sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      .display-font {
+        font-family: "Oswald", sans-serif;
+        text-transform: uppercase;
+      }
+
+      /* === CONTENEDOR PRINCIPAL (REVISTA) === */
+      .magazine-wrapper {
+        width: 95%;
+        max-width: 1200px;
+        height: 90vh;
+        background: var(--glass-bg);
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        display: flex;
+        overflow: hidden;
+        position: relative;
+        backdrop-filter: blur(10px);
+      }
+
+      /* === MENÚ LATERAL (DESKTOP) === */
+      .sidebar {
+        width: 80px;
+        background: var(--dark);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+        z-index: 10;
+        transition: width 0.3s;
+      }
+
+      .nav-icon {
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 1.6rem;
+        margin: 1.5rem 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: none;
+        border: none;
+        position: relative;
+      }
+
+      .nav-icon:hover,
+      .nav-icon.active {
+        color: var(--primary);
+        transform: translateX(5px);
+      }
+
+      .nav-icon.active::after {
+        content: "";
+        position: absolute;
+        right: -20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 5px;
+        height: 30px;
+        background: var(--primary);
+        border-radius: 5px 0 0 5px;
+      }
+
+      /* === ÁREA DE CONTENIDO === */
+      .content-area {
+        flex: 1;
+        position: relative;
+        overflow-y: auto;
+        scroll-behavior: smooth;
+        background: white;
+      }
+
+      .page-section {
+        display: none;
+        padding: 3rem 4rem;
+        min-height: 100%;
+        animation: slideIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .page-section.active {
+        display: block;
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* === ESTILOS ESPECÍFICOS === */
+
+      /* Portada */
+      .cover {
+        background: linear-gradient(
+            rgba(13, 110, 253, 0.8),
+            rgba(33, 37, 41, 0.9)
+          ),
+          url("assets/zwl/Local.webp");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .badge-custom {
+        background: white;
+        color: var(--dark);
+        padding: 5px 15px;
+        border-radius: 50px;
+        font-weight: bold;
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+        letter-spacing: 2px;
+      }
+
+      /* Servicios (Cards) */
+      .service-card {
+        border: 1px solid #eee;
+        border-radius: 15px;
+        padding: 2rem;
+        text-align: center;
+        transition: 0.3s;
+        background: white;
+        height: 100%;
+      }
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(13, 110, 253, 0.1);
+        border-color: var(--primary);
+      }
+      .icon-box {
+        width: 70px;
+        height: 70px;
+        background: rgba(13, 110, 253, 0.1);
+        color: var(--primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        margin: 0 auto 1.5rem;
+      }
+
+      /* Nosotros */
+      .mission-box {
+        background: #f8f9fa;
+        padding: 2rem;
+        border-left: 5px solid var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      /* === GALERÍA (CORREGIDO PARA SIMETRÍA) === */
+      .gallery-grid {
+        display: grid;
+        /* 'auto-fill' evita que la última foto se estire si está sola en la fila */
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+      }
+      .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        /* Fuerza proporción rectangular uniforme (4:3) para todos los contenedores */
+        aspect-ratio: 4/3;
+        background: #e9ecef;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      }
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        /* Recorta la imagen para llenar el contenedor sin deformarse */
+        object-fit: cover;
+        transition: 0.5s ease;
+      }
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+
+      .gallery-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 12px;
+        transform: translateY(100%);
+        transition: 0.3s;
+        font-size: 0.9rem;
+        text-align: center;
+        backdrop-filter: blur(2px);
+      }
+      .gallery-item:hover .gallery-overlay {
+        transform: translateY(0);
+      }
+
+      /* === MOBILE RESPONSIVE === */
+      @media (max-width: 768px) {
         body {
-            background-color: #e9ecef;
-            font-family: "Montserrat", sans-serif;
-            margin: 0;
-            height: 100vh;
-            overflow: hidden; /* Evita scroll del body, usaremos navegación interna */
-            display: flex;
-            justify-content: center;
-            align-items: center;
+          height: auto;
+          padding: 10px;
+          align-items: flex-start;
         }
 
-        h1, h2, h3, h4 {
-            font-family: "Oswald", sans-serif;
-            text-transform: uppercase;
+        .magazine-wrapper {
+          flex-direction: column-reverse; /* Menú abajo en móvil */
+          height: 95vh;
+          width: 100%;
         }
 
-        /* Contenedor principal de la revista */
-        .magazine-container {
-            position: relative;
-            width: 90%;
-            max-width: 1000px;
-            height: 85vh;
-            background-color: var(--paper-color);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-            border-radius: 5px;
-            display: flex;
-            overflow: hidden;
+        .sidebar {
+          width: 100%;
+          height: 60px;
+          flex-direction: row;
+          justify-content: space-around;
+          padding: 0;
         }
 
-        /* Navegación lateral */
-        .nav-strip {
-            width: 60px;
-            background-color: var(--dark-bg);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 20px;
-            z-index: 10;
+        .nav-icon {
+          margin: 0;
+          font-size: 1.4rem;
+        }
+        .nav-icon:hover,
+        .nav-icon.active {
+          transform: translateY(-5px);
+        }
+        .nav-icon.active::after {
+          width: 30px;
+          height: 4px;
+          top: -5px;
+          right: auto;
+          left: 50%;
+          transform: translateX(-50%);
         }
 
-        .nav-btn {
-            color: rgba(255,255,255,0.5);
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            cursor: pointer;
-            transition: 0.3s;
-            background: none;
-            border: none;
+        .page-section {
+          padding: 2rem 1.5rem;
+          padding-bottom: 80px;
         }
 
-        .nav-btn:hover, .nav-btn.active {
-            color: var(--primary-color);
-            transform: scale(1.2);
+        h1 {
+          font-size: 2.5rem;
         }
 
-        /* Páginas */
-        .pages-wrapper {
-            flex-grow: 1;
-            position: relative;
-            overflow-y: auto; /* Permite scroll dentro de la página si es muy larga */
-            scroll-behavior: smooth;
+        /* Ajuste galería móvil */
+        .gallery-grid {
+          grid-template-columns: 1fr;
         }
-
-        .page {
-            display: none; /* Ocultamos todas por defecto */
-            padding: 3rem;
-            height: 100%;
-            overflow-y: auto;
-            animation: fadeIn 0.8s ease;
-        }
-
-        .page.active {
-            display: block; /* Mostramos la activa */
-        }
-
-        /* Animación de cambio de página */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Estilos específicos por página */
-        
-        /* PORTADA */
-        .cover-page {
-            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-color) 100%);
-            color: white;
-            display: flex !important;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-        }
-        
-        .cover-page::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: url('assets/zwl/Local.webp') no-repeat center center; /* Usando imagen de tus assets */
-            background-size: cover;
-            opacity: 0.3;
-            z-index: 0;
-        }
-
-        .cover-content {
-            position: relative;
-            z-index: 2;
-            border: 5px solid white;
-            padding: 3rem;
-        }
-
-        /* ARTÍCULOS */
-        .article-header {
-            border-bottom: 4px solid var(--primary-color);
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-        }
-
-        .drop-cap {
-            float: left;
-            font-size: 3.5rem;
-            line-height: 3rem;
-            padding-top: 4px;
-            padding-right: 8px;
-            padding-left: 3px;
-            font-family: "Oswald", sans-serif;
-            color: var(--primary-color);
-        }
-
-        .highlight-box {
-            background-color: #f1f8ff;
-            border-left: 5px solid var(--primary-color);
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            font-style: italic;
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            transition: transform 0.3s;
-        }
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            font-family: "Oswald";
-        }
-
-        /* TEAM */
-        .team-list {
-            list-style: none;
-            padding: 0;
-        }
-        .team-item {
-            border-bottom: 1px solid #eee;
-            padding: 10px 0;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        /* Footer de la revista */
-        .mag-footer {
-            margin-top: 3rem;
-            font-size: 0.8rem;
-            color: #888;
-            text-align: center;
-            border-top: 1px solid #eee;
-            padding-top: 1rem;
-        }
-
-        /* Responsividad */
-        @media (max-width: 768px) {
-            .magazine-container {
-                width: 100%;
-                height: 100vh;
-                border-radius: 0;
-            }
-            .cover-content {
-                padding: 1rem;
-                border-width: 2px;
-            }
-            .drop-cap { font-size: 2.5rem; }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <div class="magazine-wrapper">
+      <nav class="sidebar shadow">
+        <button
+          class="nav-icon active"
+          onclick="navTo('portada')"
+          title="Inicio"
+        >
+          <i class="bi bi-house-door"></i>
+        </button>
+        <button
+          class="nav-icon"
+          onclick="navTo('diagnostico')"
+          title="Diagnóstico"
+        >
+          <i class="bi bi-graph-up-arrow"></i>
+        </button>
+        <button
+          class="nav-icon"
+          onclick="navTo('solucion')"
+          title="Solución Web"
+        >
+          <i class="bi bi-window-stack"></i>
+        </button>
+        <button class="nav-icon" onclick="navTo('servicios')" title="Servicios">
+          <i class="bi bi-grid-fill"></i>
+        </button>
+        <button class="nav-icon" onclick="navTo('nosotros')" title="Identidad">
+          <i class="bi bi-buildings"></i>
+        </button>
+        <button class="nav-icon" onclick="navTo('galeria')" title="Galería">
+          <i class="bi bi-images"></i>
+        </button>
 
-    <div class="magazine-container">
-        <nav class="nav-strip">
-            <button class="nav-btn active" onclick="showPage(1)" title="Portada"><i class="bi bi-journal-bookmark-fill"></i></button>
-            <button class="nav-btn" onclick="showPage(2)" title="El Problema"><i class="bi bi-search"></i></button>
-            <button class="nav-btn" onclick="showPage(3)" title="Metodología y Datos"><i class="bi bi-bar-chart-line-fill"></i></button>
-            <button class="nav-btn" onclick="showPage(4)" title="La Solución"><i class="bi bi-laptop"></i></button>
-            <button class="nav-btn" onclick="showPage(5)" title="Créditos"><i class="bi bi-people-fill"></i></button>
-            
-            <a href="index.html" class="nav-btn mt-auto mb-4" title="Ir al Sitio Web"><i class="bi bi-box-arrow-right"></i></a>
-        </nav>
+        <div style="flex-grow: 1" class="d-none d-md-block"></div>
 
-        <div class="pages-wrapper">
-            
-            <div class="page active cover-page" id="page-1">
-                <div class="cover-content">
-                    <img src="assets/logo_zwl.webp" alt="Logo" width="80" class="mb-3 rounded-circle shadow">
-                    <h4>UPTAEB - PNF Informática</h4>
-                    <h1 class="display-3 fw-bold">INFORME DIGITAL<br>2025</h1>
-                    <p class="lead">Implementación de Sitio Web Informativo para "Zona Web Lara C.A."</p>
-                    <hr style="opacity: 1; border-top: 3px solid white;">
-                    <p class="small">Trayecto I | Sección 1403 | Pavía, Lara</p>
-                </div>
+        <a href="index.html" class="nav-icon" title="Salir al Sitio"
+          ><i class="bi bi-box-arrow-right text-danger"></i
+        ></a>
+      </nav>
+
+      <div class="content-area">
+        <section id="portada" class="page-section active cover">
+          <div data-aos="zoom-in">
+            <span class="badge-custom">REVISTA DIGITAL 2025</span>
+            <img
+              src="assets/logo_zwl.webp"
+              alt="Logo"
+              width="100"
+              class="mb-3 rounded-circle border border-3 border-white"
+            />
+            <h1 class="display-2 fw-bold mb-3">ZONA WEB LARA</h1>
+            <p class="lead mb-4 opacity-75">
+              Innovación Tecnológica y Gestión Digital en Pavía
+            </p>
+            <div class="d-flex gap-3 justify-content-center">
+              <a
+                href="informe.pdf"
+                target="_blank"
+                class="btn btn-primary btn-lg rounded-pill px-4 text-decoration-none"
+              >
+                <i class="bi bi-file-earmark-pdf-fill me-2"></i>Leer Informe
+              </a>
+              <a
+                href="index.html"
+                class="btn btn-outline-light btn-lg rounded-pill px-4"
+                >Ver Web</a
+              >
             </div>
+          </div>
+        </section>
 
-            <div class="page" id="page-2">
-                <header class="article-header">
-                    <h2>01. Contexto y Diagnóstico</h2>
-                    <p class="text-muted">¿Por qué era necesaria una transformación digital?</p>
-                </header>
-                
-                <div class="row">
-                    <div class="col-lg-8">
-                        <p><span class="drop-cap">L</span>a comunidad <strong>"Zona Web Lara C.A."</strong>, ubicada en Pavía, ha sido un pilar en la venta de artículos de oficina y servicios tecnológicos desde 2015[cite: 213]. Sin embargo, a pesar de contar con una base de más de 5000 clientes[cite: 236], el equipo de investigación detectó una necesidad crítica.</p>
-                        
-                        <p>Se constató que los medios de reconocimiento publicitario disponibles eran considerablemente generalizados y limitados (boca a oreja), restringiendo su alcance[cite: 201]. Además, existía un bajo conocimiento sobre el uso de la web para actividades productivas.</p>
+        <section id="diagnostico" class="page-section">
+          <div class="container-fluid">
+            <h2 class="text-primary mb-4 border-bottom pb-2">
+              01. El Reto Digital
+            </h2>
+            <div class="row align-items-center">
+              <div class="col-lg-7">
+                <p class="lead">¿Por qué es necesaria una web?</p>
+                <p>
+                  La investigación realizada en la comunidad de Pavía reveló
+                  datos contundentes. [cite_start]A pesar de tener más de 5000
+                  clientes [cite: 113] [cite_start]y una trayectoria desde
+                  2015[cite: 90], la presencia digital era limitada.
+                </p>
 
-                        <div class="highlight-box">
-                            "El diagnóstico situacional identificó problemáticas como el limitado acceso a tecnologías actuales y la dificultad para la realización de publicidad web." [cite: 203]
-                        </div>
+                <div class="row mt-4 g-3">
+                  <div class="col-sm-6">
+                    <div class="p-3 border rounded bg-light text-center">
+                      <h3 class="display-4 text-danger fw-bold">71%</h3>
+                      [cite_start]
+                      <p class="small text-muted mb-0">
+                        Desconocía si existía una web informativa[cite: 216].
+                      </p>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="card shadow-sm border-0 bg-light">
-                            <div class="card-body">
-                                <h5 class="card-title text-primary">Objetivo General</h5>
-                                <p class="card-text small">Implementar un sitio web informativo para el Cyber "Zona Web Lara C.A." ubicado en Pavia, Barquisimeto, estado Lara, año 2025. [cite: 57]</p>
-                            </div>
-                        </div>
-                        <img src="assets/zwl/Local.webp" class="img-fluid rounded mt-3 shadow-sm" alt="Fachada del Local">
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="p-3 border rounded bg-light text-center">
+                      <h3 class="display-4 text-success fw-bold">100%</h3>
+                      [cite_start]
+                      <p class="small text-muted mb-0">
+                        Apoyó la creación del proyecto UPTAEB[cite: 238].
+                      </p>
                     </div>
+                  </div>
                 </div>
+              </div>
+              <div class="col-lg-5 mt-4 mt-lg-0 text-center">
+                <img
+                  src="assets/zwl/Local.webp"
+                  class="img-fluid rounded-3 shadow"
+                  alt="Local Físico"
+                />
+                <p class="small text-muted mt-2 fst-italic">
+                  El punto físico necesitaba una extensión virtual.
+                </p>
+              </div>
             </div>
+          </div>
+        </section>
 
-            <div class="page" id="page-3">
-                <header class="article-header">
-                    <h2>02. Lo que dicen los datos</h2>
-                    <p class="text-muted">Análisis cuantitativo y validación de la propuesta.</p>
-                </header>
-
-                <div class="row g-4">
-                    <div class="col-md-12 mb-3">
-                        <p>La investigación fue de tipo <strong>Cuantitativa</strong>[cite: 26], utilizando encuestas mixtas y observación directa. Se encuestó al personal y a una muestra de clientes para validar la viabilidad.</p>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="stat-card">
-                            <div class="stat-number">71%</div>
-                            <p class="text-muted">De los encuestados afirmó <strong>NO</strong> contar con un sitio web informativo previamente[cite: 339].</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="stat-card">
-                            <div class="stat-number">100%</div>
-                            <p class="text-muted">Estuvo <strong>DE ACUERDO</strong> con la realización del proyecto socio-tecnológico[cite: 353].</p>
-                        </div>
-                    </div>
-
-                    <div class="col-12 mt-4">
-                        <h4>Impacto Esperado</h4>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Potencialización comercial lograda[cite: 97].</li>
-                            <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Respuesta a la brecha tecnológica mediante alfabetización[cite: 98].</li>
-                            <li class="list-group-item"><i class="bi bi-check-circle text-success me-2"></i> Mejora en el acceso a la información de servicios como papelería y trámites[cite: 72].</li>
-                        </ul>
-                    </div>
+        <section id="solucion" class="page-section">
+          <h2 class="text-primary mb-4 border-bottom pb-2">
+            02. La Solución Web
+          </h2>
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <h4>Tecnologías Implementadas</h4>
+              [cite_start]
+              <p>
+                Se desarrolló un portal web moderno, rápido y adaptable
+                utilizando estándares actuales[cite: 341].
+              </p>
+              <ul class="list-group list-group-flush mt-3">
+                <li class="list-group-item">
+                  <i class="bi bi-filetype-html text-primary me-2"></i>
+                  <strong>HTML5 & CSS3:</strong> Estructura semántica y diseño
+                  visual.
+                </li>
+                <li class="list-group-item">
+                  <i class="bi bi-bootstrap-fill text-primary me-2"></i>
+                  <strong>Bootstrap 5:</strong> Responsividad total en móviles.
+                </li>
+                <li class="list-group-item">
+                  <i class="bi bi-code-square text-primary me-2"></i>
+                  <strong>JavaScript:</strong> Interactividad y funciones
+                  dinámicas.
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <div class="card bg-dark text-white border-0 h-100">
+                <div
+                  class="card-body d-flex flex-column justify-content-center text-center p-5"
+                >
+                  <i class="bi bi-laptop display-1 mb-3"></i>
+                  <h3>Alcance del Proyecto</h3>
+                  <p class="opacity-75">
+                    Desde la publicidad digital hasta la capacitación del
+                    personal mediante manuales interactivos.
+                  </p>
                 </div>
+              </div>
             </div>
+          </div>
+        </section>
 
-            <div class="page" id="page-4">
-                <header class="article-header">
-                    <h2>03. La Solución Tecnológica</h2>
-                    <p class="text-muted">Desarrollo e implementación del Sitio Web Informativo.</p>
-                </header>
+        <section id="servicios" class="page-section">
+          <div class="text-center mb-5">
+            <h2 class="text-primary">03. Nuestros Servicios</h2>
+            <p class="text-muted">Soluciones integrales en un solo lugar</p>
+          </div>
 
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <p>El producto resultante es un sitio web moderno, desarrollado utilizando tecnologías estándar como <strong>HTML5, CSS3 y Bootstrap 5</strong>.</p>
-                        <p>El sitio incluye secciones clave para la comunidad:</p>
-                        <ul>
-                            <li><strong>Inicio:</strong> Propuesta de valor y bienvenida.</li>
-                            <li><strong>Servicios:</strong> Catálogo detallado (Impresión, Cyber, Legal).</li>
-                            <li><strong>Manual de Usuario:</strong> Capacitación integrada para el personal[cite: 62].</li>
-                            <li><strong>Contacto:</strong> Integración con mapas y WhatsApp API.</li>
-                        </ul>
-                        <a href="index.html" target="_blank" class="btn btn-primary mt-3">Ver Sitio Web En Vivo</a>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="p-3 bg-dark rounded text-white font-monospace small shadow">
-                            <span style="color:#ff79c6">Target:</span> Zona Web Lara<br>
-                            <span style="color:#8be9fd">Tech Stack:</span> HTML, CSS, JS<br>
-                            <span style="color:#50fa7b">Status:</span> Publicado 2025<br>
-                            <br>
-                            &lt;header class="hero-section"&gt;<br>
-                            &nbsp;&nbsp;&lt;h1&gt;Soluciones Digitales&lt;/h1&gt;<br>
-                            &lt;/header&gt;
-                        </div>
-                        <p class="text-center small text-muted mt-2">Fragmento de la estructura semántica del proyecto.</p>
-                    </div>
+          <div class="row g-4">
+            <div class="col-md-6 col-xl-3">
+              <div class="service-card">
+                <div class="icon-box"><i class="bi bi-wifi"></i></div>
+                <h5>Cyber & Internet</h5>
+                <p class="small text-secondary">
+                  Navegación de alta velocidad, investigaciones y videollamadas
+                  en un ambiente cómodo.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+              <div class="service-card">
+                <div class="icon-box"><i class="bi bi-printer"></i></div>
+                <h5>Impresión & Copiado</h5>
+                <p class="small text-secondary">
+                  Impresiones láser, fotocopias, escaneo de documentos y
+                  material POP.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+              <div class="service-card">
+                <div class="icon-box">
+                  <i class="bi bi-file-earmark-text"></i>
                 </div>
+                <h5>Gestión Legal</h5>
+                <p class="small text-secondary">
+                  Redacción de documentos, trámites en línea y asesoría básica
+                  administrativa.
+                </p>
+              </div>
             </div>
-
-            <div class="page" id="page-5">
-                <header class="article-header">
-                    <h2>04. Créditos y Equipo</h2>
-                    <p class="text-muted">Los responsables detrás del proyecto.</p>
-                </header>
-
-                <div class="row justify-content-center">
-                    <div class="col-md-8">
-                        <div class="text-center mb-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Logo_UPTAEB.svg/1200px-Logo_UPTAEB.svg.png" alt="Logo UPTAEB" style="height: 80px;">
-                            <h5 class="mt-2">Universidad Politécnica Territorial Andrés Eloy Blanco</h5>
-                        </div>
-
-                        <h4 class="mb-3 text-primary">Participantes [cite: 6]</h4>
-                        <ul class="team-list">
-                            <li class="team-item"><strong>Carlos Páez</strong> <span>C.I: 31.470.100</span></li>
-                            <li class="team-item"><strong>Félix Tapia</strong> <span>C.I: 30.753.601</span></li>
-                            <li class="team-item"><strong>Jeisson Terán</strong> <span>C.I: 31.221.235</span></li>
-                            <li class="team-item"><strong>Jesús Torrealba</strong> <span>C.I: 31.769.551</span></li>
-                            <li class="team-item"><strong>Juan Almarza</strong> <span>C.I: 30.754.019</span></li>
-                        </ul>
-
-                        <div class="row mt-4">
-                            <div class="col-6">
-                                <strong>Tutor Académico:</strong><br>
-                                Lda. María Linares [cite: 12]
-                            </div>
-                            <div class="col-6 text-end">
-                                <strong>Tutor Externo:</strong><br>
-                                Lda. Máyela Cadevilla [cite: 13]
-                            </div>
-                        </div>
-                        
-                        <div class="mag-footer">
-                            &copy; 2025 Zona Web Lara. Todos los derechos reservados.<br>
-                            Basado en el informe técnico del proyecto socio-productivo trayecto I.
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md-6 col-xl-3">
+              <div class="service-card">
+                <div class="icon-box"><i class="bi bi-tools"></i></div>
+                <h5>Soporte Técnico</h5>
+                <p class="small text-secondary">
+                  Mantenimiento preventivo y correctivo de computadoras y
+                  equipos de oficina.
+                </p>
+              </div>
             </div>
+          </div>
+        </section>
 
-        </div>
+        <section id="nosotros" class="page-section bg-light">
+          <div class="row align-items-center h-100">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+              <img
+                src="assets/zwl/papeleria 2.webp"
+                alt="Papelería"
+                class="img-fluid rounded-4 shadow-lg w-100 object-fit-cover"
+                style="height: 400px"
+              />
+            </div>
+            <div class="col-lg-6 ps-lg-5">
+              <h2 class="text-dark mb-4">Identidad Corporativa</h2>
+
+              <div class="mission-box" data-aos="fade-left">
+                <h4 class="text-primary">
+                  <i class="bi bi-bullseye me-2"></i>Misión
+                </h4>
+                <p class="mb-0 small">
+                  Crear un entorno dinámico e inclusivo donde las personas
+                  puedan conectarse y participar en el mundo digital, proveyendo
+                  infraestructura de primera categoría.
+                </p>
+              </div>
+
+              <div
+                class="mission-box"
+                data-aos="fade-left"
+                data-aos-delay="100"
+                style="border-color: #28a745"
+              >
+                <h4 class="text-success">
+                  <i class="bi bi-eye me-2"></i>Visión
+                </h4>
+                <p class="mb-0 small">
+                  Ser el principal ciber que revoluciona la conexión digital,
+                  manteniéndonos a la vanguardia tecnológica y fomentando la
+                  innovación en Pavía.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="galeria" class="page-section">
+          <h2 class="text-primary mb-4 border-bottom pb-2">
+            05. Galería de Actividades
+          </h2>
+          <p class="mb-4">
+            Registro fotográfico del equipo y las instalaciones de Zona Web
+            Lara.
+          </p>
+
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img src="assets/zwl/Tecnologia-2.webp" alt="Tecnología" />
+              <div class="gallery-overlay">Área Tecnológica</div>
+            </div>
+            <div class="gallery-item">
+              <img src="assets/zwl/cyber.webp" alt="Cyber Area" />
+              <div class="gallery-overlay">Estaciones de Trabajo</div>
+            </div>
+            <div class="gallery-item">
+              <img src="assets/zwl/Papeleria.webp" alt="Stock Papelería" />
+              <div class="gallery-overlay">Inventario de Papelería</div>
+            </div>
+            <div class="gallery-item">
+              <img src="assets/zwl/juguetes.webp" alt="Variedades" />
+              <div class="gallery-overlay">Sección de Variedades</div>
+            </div>
+            <div class="gallery-item">
+              <img src="assets/zwl/Local.webp" alt="Fachada" />
+              <div class="gallery-overlay">Productos principales/div>
+            </div>
+          </div>
+
+          <div class="mt-5 pt-4 border-top text-center">
+            <h4>Créditos del Proyecto</h4>
+            [cite_start]
+            <p class="text-muted small">
+              Desarrollado por: Carlos Páez, Félix Tapia, Jeisson Terán, Jesús
+              Torrealba, Juan Almarza [cite: 9-12].
+            </p>
+            <p class="text-muted small">&copy; 2025 UPTAEB - PNF Informática</p>
+          </div>
+        </section>
+      </div>
     </div>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        function showPage(pageNumber) {
-            // 1. Ocultar todas las páginas
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => page.classList.remove('active'));
+      // Inicializar animaciones
+      AOS.init({ duration: 800, container: ".content-area" });
 
-            // 2. Desactivar todos los botones
-            const btns = document.querySelectorAll('.nav-btn');
-            btns.forEach(btn => btn.classList.remove('active'));
+      // Función de navegación
+      function navTo(sectionId) {
+        // 1. Ocultar todas las secciones
+        document.querySelectorAll(".page-section").forEach((sec) => {
+          sec.classList.remove("active");
+        });
 
-            // 3. Mostrar la página seleccionada
-            const selectedPage = document.getElementById('page-' + pageNumber);
-            if (selectedPage) {
-                selectedPage.classList.add('active');
-                // Scroll al top de la página al cambiar
-                selectedPage.scrollTop = 0; 
-            }
+        // 2. Desactivar botones del menú
+        document.querySelectorAll(".nav-icon").forEach((btn) => {
+          btn.classList.remove("active");
+        });
 
-            // 4. Activar el botón correspondiente (ajustando índice porque los botones son 0-indexados en el array)
-            // Nota: los botones de navegación son los primeros 5, el último es un enlace 'a'.
-            if (btns[pageNumber - 1]) {
-                btns[pageNumber - 1].classList.add('active');
-            }
+        // 3. Mostrar sección deseada
+        const target = document.getElementById(sectionId);
+        if (target) {
+          target.classList.add("active");
+          // Scroll al inicio de la sección
+          document.querySelector(".content-area").scrollTop = 0;
         }
+
+        // 4. Activar botón correspondiente
+        // Si es un botón nav-icon con onclick que coincida
+        const activeBtn = document.querySelector(
+          `.nav-icon[onclick="navTo('${sectionId}')"]`
+        );
+        if (activeBtn) activeBtn.classList.add("active");
+      }
     </script>
-</body>
+  </body>
 </html>

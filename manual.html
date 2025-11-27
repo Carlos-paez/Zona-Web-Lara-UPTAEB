@@ -124,34 +124,21 @@
           <!-- Icono visual del botón (las tres rayas "hamburguesa"). -->
         </button>
 
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarNav"
-        >
-          <!--
-            Contenedor del menú que se colapsa en móviles.
-            - collapse navbar-collapse: clases necesarias para el comportamiento responsivo.
-            - justify-content-end: alinea los elementos del menú a la derecha.
-            - id="navbarNav": referencia desde el botón toggler.
-          -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav">
-            <!-- Lista de enlaces del menú -->
             <li class="nav-item">
               <a class="nav-link" href="index.html">Inicio</a>
-              <!-- Enlace al inicio -->
             </li>
             <li class="nav-item">
               <a class="nav-link" href="nosotros.html">Nosotros</a>
-              <!-- Enlace a la página "Nosotros" -->
             </li>
             <li class="nav-item">
               <a class="nav-link" href="servicios.html">Servicios</a>
-              <!-- Enlace a "Servicios" -->
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contacto.html">Contacto</a>
-              <!-- Enlace a "Contacto" -->
             </li>
+            
             <li class="nav-item">
               <a
                 class="nav-link active"
@@ -159,18 +146,24 @@
                 href="manual.html"
                 title="Manual de Usuario"
               >
-                <i class="bi bi-file-earmark-text-fill"></i> Manual
+                <i class="bi bi-file-earmark-text-fill"></i>
               </a>
-              <!--
-                Enlace activo (página actual):
-                - class="nav-link active": marca visualmente este enlace como la página actual.
-                - aria-current="page": atributo ARIA que mejora accesibilidad indicando que este es el elemento actual.
-                - title: texto emergente al pasar el ratón.
-                - <i class="bi ...">: icono de Bootstrap Icons antes del texto.
-              -->
+            </li>
+
+            <li class="nav-item ms-1">
+              <a
+                class="nav-link opacity-25"
+                href="revista.html"
+                title="Revista Digital (Secreto)"
+                style="font-size: 0.8rem;"
+              >
+                <i class="bi bi-card-image"></i>
+              </a>
             </li>
           </ul>
         </div>
+      </div>
+    </nav>
       </div>
     </nav>
 
