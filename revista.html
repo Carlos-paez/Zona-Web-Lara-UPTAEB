@@ -202,7 +202,7 @@
         margin-bottom: 1rem;
       }
 
-      /* === GALERÍA (CORREGIDO PARA SIMETRÍA) === */
+      /* === GALERÍA (Simétrica) === */
       .gallery-grid {
         display: grid;
         /* 'auto-fill' evita que la última foto se estire si está sola en la fila */
@@ -357,7 +357,8 @@
             <p class="lead mb-4 opacity-75">
               Innovación Tecnológica y Gestión Digital en Pavía
             </p>
-            <div class="d-flex gap-3 justify-content-center">
+
+            <div class="d-flex gap-3 justify-content-center flex-wrap">
               <a
                 href="informe.pdf"
                 target="_blank"
@@ -365,6 +366,16 @@
               >
                 <i class="bi bi-file-earmark-pdf-fill me-2"></i>Leer Informe
               </a>
+
+              <div class="d-flex gap-3 justify-content-center flex-wrap">
+              <a
+                href="Diapositivas.pdf"
+                target="_blank"
+                class="btn btn-primary btn-lg rounded-pill px-4 text-decoration-none"
+              >
+                <i class="bi bi-file-earmark-pdf-fill me-2"></i>Diapositivas
+              </a>
+
               <a
                 href="index.html"
                 class="btn btn-outline-light btn-lg rounded-pill px-4"
@@ -384,9 +395,8 @@
                 <p class="lead">¿Por qué es necesaria una web?</p>
                 <p>
                   La investigación realizada en la comunidad de Pavía reveló
-                  datos contundentes. A pesar de tener más de 5000
-                  clientes y una trayectoria desde
-                  2015, la presencia digital era limitada.
+                  datos contundentes. A pesar de tener más de 5000 clientes y
+                  una trayectoria desde 2015, la presencia digital era limitada.
                 </p>
 
                 <div class="row mt-4 g-3">
@@ -590,7 +600,7 @@
             </div>
             <div class="gallery-item">
               <img src="assets/zwl/Local.webp" alt="Fachada" />
-              <div class="gallery-overlay">Productos principales/div>
+              <div class="gallery-overlay">Fachada del Local</div>
             </div>
           </div>
 
@@ -631,8 +641,7 @@
           document.querySelector(".content-area").scrollTop = 0;
         }
 
-        // 4. Activar botón correspondiente
-        // Si es un botón nav-icon con onclick que coincida
+        // 4. Activar botón correspondiente (buscando por el onclick)
         const activeBtn = document.querySelector(
           `.nav-icon[onclick="navTo('${sectionId}')"]`
         );
